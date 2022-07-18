@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => {
         width: '20%',
         borderRadius: '0.25rem',
       },
-    },
+    },  
   };
 });
 
