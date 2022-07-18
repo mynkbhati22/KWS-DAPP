@@ -1,8 +1,9 @@
 import * as React from 'react';
 // @mui
-import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography, ImageList, ImageListItem } from '@mui/material';
+import useStyles from '../components/style';
+
 // components
 import Page from '../components/Page';
 
@@ -10,98 +11,6 @@ import Page from '../components/Page';
 
 import defidev from '../components/images/defidev.jpeg';
 // STYLES
-
-const useStyles = makeStyles((theme) => {
-  return {
-    kwsHeading: {
-      fontSize: '2.2rem',
-      fontFamily: 'Poppins, sans-serif',
-      [theme.breakpoints.down('md')]: {
-        fontSize: '20px !important',
-      },
-      [theme.breakpoints.down('lg')]: {
-        fontSize: '30px',
-      },
-    },
-    headertext: {
-      color: '#6C7989',
-      fontSize: '17px',
-      width: '90%',
-      [theme.breakpoints.down('lg')]: {
-        width: '100%',
-      },
-    },
-    defidev: {
-      position: 'relative',
-      width: '80%',
-      display: 'block',
-      margin: 'auto',
-      borderRadius: '0.25rem',
-      [theme.breakpoints.down('md')]: {
-        width: '80%',
-        display: 'block',
-        margin: 'auto',
-      },
-      [theme.breakpoints.down('lg')]: {
-        width: '80%',
-        display: 'block',
-        margin: 'auto',
-      },
-    },
-    box: {
-      [theme.breakpoints.up('xl')]: {
-        position: 'absolute',
-        top: '25%',
-        right: '100px',
-        zIndex: '-1',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        height: '300px',
-        width: '25%',
-        borderRadius: '0.25rem',
-      },
-      [theme.breakpoints.down('xl')]: {
-        position: 'absolute',
-        top: '25%',
-        right: '60px',
-        zIndex: '-1',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        height: '180px',
-        width: '25%',
-        borderRadius: '0.25rem',
-      },
-      [theme.breakpoints.down('lg')]: {
-        position: 'absolute',
-        top: '25%',
-        right: '50px',
-        zIndex: '-1',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        height: '210px',
-        width: '25%',
-        borderRadius: '0.25rem',
-      },
-      [theme.breakpoints.down('md')]: {
-        position: 'absolute',
-        top: '14%',
-        right: '40px',
-        zIndex: '-1',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        height: '150px',
-        width: '25%',
-        borderRadius: '0.25rem',
-      },
-      [theme.breakpoints.up('sm')]: {
-        position: 'absolute',
-        top: '37%',
-        right: '40px',
-        zIndex: '-1',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        height: '170px',
-        width: '20%',
-        borderRadius: '0.25rem',
-      },
-    },  
-  };
-});
 
 export default function DashboardApp() {
   const theme = useTheme();
