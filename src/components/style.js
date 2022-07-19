@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core';
-import { height } from '@mui/system';
 
 export default makeStyles((theme) => {
   return {
+    // HEADING
     kwsHeading: {
       fontSize: '2.2rem',
       fontFamily: 'Poppins, sans-serif',
@@ -21,9 +21,10 @@ export default makeStyles((theme) => {
         width: '100%',
       },
     },
+    // HEADER IMAGE
     defidev: {
       position: 'relative',
-      width: '80%',
+      width: '65%',
       display: 'block',
       margin: 'auto',
       borderRadius: '0.25rem',
@@ -38,28 +39,85 @@ export default makeStyles((theme) => {
         margin: 'auto',
       },
     },
-    box: {
+    // PLAYICON :: HOVER
+    playiconButton: {
+      '&:hover': {
+        background: 'none',
+      },
+    },
+    // MODAL
+    modalStyle: {
       [theme.breakpoints.up('xl')]: {
         position: 'absolute',
-        left: 'auto',
-        right: '80px',
-        width: '29%',
-        top: '19%',
-        height: '34%',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        borderRadius: '0.25rem',
-        zIndex: '-1',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '500px',
+        height: '400px',
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: '24',
+        p: '4',
       },
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.up('md')]: {
         position: 'absolute',
-        left: 'auto',
-        right: '60px',
-        width: '29%',
-        top: '30%',
-        height: '30%',
-        background: 'linear-gradient(45deg,#f68733,#a54500)',
-        borderRadius: '0.25rem',
-        zIndex: '-1',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '500px',
+        height: '400px',
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: '24',
+        p: '4',
+      },
+      [theme.breakpoints.up('sm')]: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '500px',
+        height: '400px',
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: '24',
+        p: '4',
+      },
+      [theme.breakpoints.down('sm')]: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '300px',
+        overflowX: 'hidden',
+        height: '403px',
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: '24',
+        p: '4',
+      },
+    },
+    // IFRAME VIDEO
+    iframeVideo: {
+      marginTop: '0px',
+      marginLeft: '0px',
+      width: '497px',
+      height: '399px',
+      border: 'none',
+    },
+    // QUOTE/COMMUNITY BUTTON
+
+    button: {
+      backgroundColor: '#22abe3',
+      color: '#fff',
+      '&:hover': {
+        background: '#F68733',
+        color: '#000',
+      },
+    },
+    birdButton: {
+      '&:hover': {
+        background: 'none',
       },
     },
   };

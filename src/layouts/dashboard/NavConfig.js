@@ -1,3 +1,6 @@
+// @mui
+import HomeIcon from '@mui/icons-material/Home';
+
 // component
 import Iconify from '../../components/Iconify';
 
@@ -7,32 +10,38 @@ const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 
 const navConfig = [
   {
-    title: 'dashboard',
-    path: '/dashboard/app',
-    icon: getIcon('eva:pie-chart-2-fill'),
+    title: 'Home',
+    path: '/',
+    icon: <HomeIcon />,
   },
+
   {
-    title: 'user',
-    path: '/dashboard/user',
-    icon: getIcon('eva:people-fill'),
-  },
-  {
-    title: 'product',
-    path: '/dashboard/products',
-    icon: getIcon('eva:shopping-bag-fill'),
-  },
-  {
-    title: 'blog',
+    title: 'portfolio',
     path: '/dashboard/blog',
     icon: getIcon('eva:file-text-fill'),
   },
   {
-    title: 'login',
-    path: '/login',
-    icon: getIcon('eva:lock-fill'),
+    title: 'create token',
+    path: '/dashboard/blog',
+    icon: getIcon('eva:file-text-fill'),
   },
   {
-    title: 'register',
+    title: 'request audit',
+    path: '/dashboard/blog',
+    icon: getIcon('eva:file-text-fill'),
+  },
+  {
+    title: 'request KYC',
+    path: '/dashboard/blog',
+    icon: getIcon('eva:file-text-fill'),
+  },
+  // {
+  //   title: 'login',
+  //   path: '/login',
+  //   icon: getIcon('eva:lock-fill'),
+  // },
+  {
+    title: 'contact us',
     path: '/register',
     icon: getIcon('eva:person-add-fill'),
   },

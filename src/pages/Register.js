@@ -66,14 +66,14 @@ export default function Register() {
       <RootStyle>
         <HeaderStyle>
           <Logo />
-          {smUp && (
+          {/* {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
               Already have an account? {''}
               <Link variant="subtitle2" component={RouterLink} to="/login">
                 Login
               </Link>
             </Typography>
-          )}
+          )} */}
         </HeaderStyle>
 
         {mdUp && (
@@ -109,14 +109,14 @@ export default function Register() {
               .
             </Typography>
 
-            {!smUp && (
+            {/* {!smUp && (
               <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
                 Already have an account?{' '}
                 <Link variant="subtitle2" to="/login" component={RouterLink}>
                   Login
                 </Link>
               </Typography>
-            )}
+            )} */}
           </ContentStyle>
         </Container>
       </RootStyle>

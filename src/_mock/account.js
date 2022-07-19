@@ -1,9 +1,8 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'Jaydon Frankie',
-  email: 'demo@minimals.cc',
-  photoURL: '/static/mock-images/avatars/avatar_default.jpg',
+  displayName: 'Arrnaya Community',
+  photoURL: '/static/mock-images/NFT.jpg',
 };
 
 export default account;

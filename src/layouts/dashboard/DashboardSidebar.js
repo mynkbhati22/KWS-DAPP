@@ -5,7 +5,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
 // mock
-import account from '../../_mock/account';
+// import account from '../../_mock/account';
 // hooks
 import useResponsive from '../../hooks/useResponsive';
 // components
@@ -14,8 +14,10 @@ import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 
 //
-// import kwsbird from '../../components/images/kwsbird.png';
+import kwsbird from '../../components/images/kwsbird.png';
+import NFT from '../../components/images/NFT.jpg';
 import navConfig from './NavConfig';
+import useStyles from '../../components/style';
 
 // ----------------------------------------------------------------------
 
@@ -44,6 +46,7 @@ DashboardSidebar.propTypes = {
 };
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+  const classes = useStyles();
   const { pathname } = useLocation();
 
   const isDesktop = useResponsive('up', 'lg');
@@ -66,20 +69,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         <Logo />
       </Box>
 
-      <Box sx={{ mb: 5, mx: 2.5 }}>
-        <Link underline="none" component={RouterLink} to="#">
-          <AccountStyle>
-            <Avatar src={account.photoURL} alt="photoURL" />
-            <Box sx={{ ml: 2 }}>
-              <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                {account.displayName}
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {account.role}
-              </Typography>
-            </Box>
-          </AccountStyle>
-        </Link>
+      <Box sx={{ mb: 5, mx: 4 }}>
+        <Button href="https://t.me/arrnayacommunity" target="_blank" className={classes.button}>
+          <Avatar sx={{ width: 40, height: 40 }} src={NFT} />
+          <Box sx={{ display: 'flex', marginLeft: '7px' }}>
+            <Typography>Arrnaya's</Typography>
+            <Typography sx={{ paddingLeft: '7px' }}>Community</Typography>
+          </Box>
+        </Button>
       </Box>
 
       <NavSection navConfig={navConfig} />
@@ -87,11 +84,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box sx={{ flexGrow: 1 }} />
 
       <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
-        <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative', filter:"none " }}>
-          {/* <Box component="img" src={kwsbird} sx={{ width: 100, position: 'absolute', top: -50 }} /> */}
+        <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative', filter: 'none ' }}>
+          <Button href="/" target="_blank" className={classes.birdButton}>
+            <Box component="img" src={kwsbird} sx={{ width: 70, position: 'absolute', top: -50 }} />
+          </Button>
 
-          <Button href="/" target="_blank" variant="contained">
-            Get a Quote
+          <Button href="https://t.me/ARRN4YA" target="_blank" className={classes.button}>
+            Get Instant Quote
           </Button>
         </Stack>
       </Box>
