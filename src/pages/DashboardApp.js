@@ -10,6 +10,7 @@ import { CardMedia } from '@material-ui/core';
 
 // components
 import DynamicContent from '../components/DynamicContent';
+import Bottom from '../components/Bottom';
 import Page from '../components/Page';
 import useStyles from '../components/style';
 
@@ -99,6 +100,7 @@ export default function DashboardApp() {
       </Container>
 
       <DynamicContent />
+      <Bottom />
     </Page>
   );
 }

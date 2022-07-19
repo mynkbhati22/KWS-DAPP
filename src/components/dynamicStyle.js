@@ -14,7 +14,7 @@ export default makeStyles((theme) => {
       [theme.breakpoints.down('sm')]: {
         width: '100%',
         fontSize: '20px',
-        marginTop:"45px"
+        marginTop: '45px',
       },
     },
     dynamicPara: {
@@ -31,6 +31,11 @@ export default makeStyles((theme) => {
         fontSize: '16px',
         marginTop: '40px',
       },
+    },
+
+    checkIcon: {
+      fontSize: '50px',
+      color: 'rgba(43,144,217,.1)',
     },
   };
 });
