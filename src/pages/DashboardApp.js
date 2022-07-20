@@ -11,6 +11,7 @@ import { CardMedia } from '@material-ui/core';
 // components
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import TokenomicsInfo from '../components/TokenomicsInfo';
 import DynamicContent from '../components/DynamicContent';
 import bbtlaunch from '../components/images/bbtlaunchapd.png';
 import bbtproject from '../components/images/bbtproject.png';
@@ -108,6 +109,7 @@ export default function DashboardApp() {
 
       <DynamicContent />
       <Bottom />
+      <TokenomicsInfo />
     </Page>
   );
 }
