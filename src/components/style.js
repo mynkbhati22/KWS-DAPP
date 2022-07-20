@@ -110,6 +110,7 @@ export default makeStyles((theme) => {
     button: {
       backgroundColor: '#22abe3',
       color: '#fff',
+      transition: '0.5s',
       '&:hover': {
         background: '#F68733',
         color: '#000',

@@ -9,7 +9,14 @@ import Modal from '@mui/material/Modal';
 import { CardMedia } from '@material-ui/core';
 
 // components
+import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import DynamicContent from '../components/DynamicContent';
+import bbtlaunch from '../components/images/bbtlaunchapd.png';
+import bbtproject from '../components/images/bbtproject.png';
+import lottery from '../components/images/lottery.png';
+import nftmarket from '../components/images/nftmarket.png';
+import ryoshiproject from '../components/images/ryoshiproject.png';
 import Bottom from '../components/Bottom';
 import Page from '../components/Page';
 import useStyles from '../components/style';
