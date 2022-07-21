@@ -41,7 +41,7 @@ export default function LanguagePopover() {
 
   return (
     <>
-      <IconButton
+      {/* <IconButton
         ref={anchorRef}
         onClick={handleOpen}
         sx={{
@@ -76,7 +76,7 @@ export default function LanguagePopover() {
             </MenuItem>
           ))}
         </Stack>
-      </MenuPopover>
+      </MenuPopover> */}
     </>
   );
 }

@@ -45,7 +45,7 @@ export default function AccountPopover() {
 
   return (
     <>
-      <IconButton
+      {/* <IconButton
         ref={anchorRef}
         onClick={handleOpen}
         sx={{
@@ -104,7 +104,7 @@ export default function AccountPopover() {
         <MenuItem onClick={handleClose} sx={{ m: 1 }}>
           Logout
         </MenuItem>
-      </MenuPopover>
+      </MenuPopover> */}
     </>
   );
 }

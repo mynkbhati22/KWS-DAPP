@@ -22,17 +22,17 @@ const navConfig = [
   },
   {
     title: 'create token',
-    path: '/dashboard/blog',
+    path: '/',
     icon: getIcon('eva:file-text-fill'),
   },
   {
     title: 'request audit',
-    path: '/dashboard/blog',
+    path: '/',
     icon: getIcon('eva:file-text-fill'),
   },
   {
     title: 'request KYC',
-    path: '/dashboard/blog',
+    path: '/',
     icon: getIcon('eva:file-text-fill'),
   },
   // {

@@ -121,5 +121,11 @@ export default makeStyles((theme) => {
         background: 'none',
       },
     },
+
+    footerHover : {
+      '&:hover' :{
+          color:'#F68733'
+        },
+    },
   };
 });

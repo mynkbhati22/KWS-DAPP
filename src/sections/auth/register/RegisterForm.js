@@ -56,7 +56,7 @@ export default function RegisterForm() {
 
         <RHFTextField name="email" label="Email address" />
 
-        <RHFTextField
+        {/* <RHFTextField
           name="password"
           label="Password"
           type={showPassword ? 'text' : 'password'}
@@ -69,7 +69,7 @@ export default function RegisterForm() {
               </InputAdornment>
             ),
           }}
-        />
+        /> */}
 
         <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
           Contact Us

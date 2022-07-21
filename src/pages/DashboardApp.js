@@ -40,12 +40,12 @@ export default function DashboardApp() {
           <Grid item xs={12} sm={6} md={6}>
             <Typography variant="h2" className={classes.kwsHeading}>
               Leading{' '}
-              <Typography component="span" variant="h2" color="#22ABE3" className={classes.kwsHeading}>
+              <Typography  component={'span'} variant="h2" color="#22ABE3" className={classes.kwsHeading}>
                 Blockchain
               </Typography>
             </Typography>
             <Typography variant="h2" gutterBottom className={classes.kwsHeading}>
-              <Typography component="span" variant="h2" color="#22ABE3" className={classes.kwsHeading}>
+              <Typography  component={'span'} variant="h2" color="#22ABE3" className={classes.kwsHeading}>
                 Development{' '}
               </Typography>
               Services
@@ -68,11 +68,11 @@ export default function DashboardApp() {
                 />
               </Grid>
               <Typography sx={{ display: 'grid', marginTop: '25px', marginLeft: '18px' }}>
-                <Typography component="span" sx={{ textAlign: 'left', color: '#6C7989', fontWeight: 300 }}>
+                <Typography  component={'span'} sx={{ textAlign: 'left', color: '#6C7989', fontWeight: 300 }}>
                   Watch
                 </Typography>
                 <Typography
-                  component="span"
+                   component={'span'}
                   sx={{ letterSpacing: '2px', fontFamily: 'Poppins, sans-serif', color: '#343A40' }}
                 >
                   INTRO VIDEO

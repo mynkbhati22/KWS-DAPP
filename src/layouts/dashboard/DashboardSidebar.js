@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
+import { Box, Link, Button, Drawer, Typography, Avatar, Stack, ImageList, ImageListItem } from '@mui/material';
 // mock
 // import account from '../../_mock/account';
 // hooks
@@ -11,6 +11,8 @@ import useResponsive from '../../hooks/useResponsive';
 // components
 import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
+import Iconify from '../../components/Iconify';
+
 import NavSection from '../../components/NavSection';
 
 //
@@ -88,10 +90,68 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           <Button href="/" target="_blank" className={classes.birdButton}>
             <Box component="img" src={kwsbird} sx={{ width: 70, position: 'absolute', top: -50 }} />
           </Button>
+          <Box>
+            <Typography sx={{ marginBottom: '7px' }}>
+              <Link
+                href="mailto:info@kesaviwebsolutions.com"
+                target="_blank"
+                sx={{ textDecoration: 'none', color: '#6C7989', transition: '0.5s' }}
+                className={classes.footerHover}
+              >
+                info@kesaviwebsolutions.com
+              </Link>
+            </Typography>
+            <Typography sx={{ textAlign: 'center', color: '#6C7989', cursor: 'pointer', transition: '0.5s' }}>
+              <Link
+                href="tel:+918700212323"
+                target="_blank"
+                className={classes.footerHover}
+                sx={{ textDecoration: 'none', color: '#6C7989', transition: '0.5s' }}
+              >
+                {' '}
+                +91 8700212323
+              </Link>
+            </Typography>
+          </Box>
+
+          <Stack direction="row" spacing={2}>
+            <Link
+              fullwidth="true"
+              size="large"
+              color="inherit"
+              variant="outlined"
+              href="https://api.whatsapp.com/send/?phone=918700212323&text&type=phone_number&app_absent=0"
+              target="_blank"
+            >
+              <Iconify icon="logos:whatsapp-icon" color="#DF3E30" width={22} height={22} />
+            </Link>
+
+            <Link fullwidth="true" size="large" color="inherit" variant="outlined" href="https://t.me/ARRN4YA"  target="_blank">
+              <Iconify icon="logos:telegram" color="#1877F2" width={22} height={22} />
+            </Link>
+
+            <Link
+              fullwidth="true"
+              size="large"
+              color="inherit"
+              variant="outlined"
+              href="https://twitter.com/KesaviS"
+              target="_blank"
+            >
+              <Iconify icon="eva:twitter-fill" color="#1C9CEA" width={22} height={22} />
+            </Link>
+          </Stack>
 
           <Button href="https://t.me/ARRN4YA" target="_blank" className={classes.button}>
             Get Instant Quote
           </Button>
+          <ImageList sx={{ display: 'block', margin: '20px auto' }}>
+            <ImageListItem>
+              <Link href="https://www.coinpayments.net/index.php" target="_blank">
+                <img src="https://www.coinpayments.net/images/pub/buynow-blue2.png" alt="" />
+              </Link>
+            </ImageListItem>
+          </ImageList>
         </Stack>
       </Box>
     </Scrollbar>

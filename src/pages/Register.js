@@ -87,16 +87,14 @@ export default function Register() {
 
         <Container>
           <ContentStyle>
-            <Typography variant="h4" gutterBottom>
-              Get started absolutely free.
+            <Typography variant="h3" gutterBottom sx={{textAlign:"center"}}>
+              CONTACT US
             </Typography>
-
-            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Free forever. No credit card needed.</Typography>
 
             <AuthSocial />
 
             <RegisterForm />
-
+            {/* 
             <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
               By registering, I agree to Minimal&nbsp;
               <Link underline="always" color="text.primary" href="#">
@@ -107,7 +105,7 @@ export default function Register() {
                 Privacy Policy
               </Link>
               .
-            </Typography>
+            </Typography> */}
 
             {/* {!smUp && (
               <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>

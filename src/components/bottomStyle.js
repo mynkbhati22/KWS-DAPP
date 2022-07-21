@@ -64,8 +64,8 @@ export default makeStyles((theme) => {
       },
       [theme.breakpoints.down('sm')]: {
         width: '100%',
-       display:"block",
-       marign:"auto"
+        display: 'block',
+        marign: 'auto',
       },
     },
   };
