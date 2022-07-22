@@ -122,10 +122,16 @@ export default makeStyles((theme) => {
       },
     },
 
-    footerHover : {
-      '&:hover' :{
-          color:'#F68733'
-        },
+    footerHover: {
+      '&:hover': {
+        color: '#F68733',
+      },
+    },
+    // USER PAGE
+    checkbox: {
+      '&:hover': {
+        background: 'transparent',
+      },
     },
   };
 });

@@ -22,8 +22,8 @@ const navConfig = [
   },
   {
     title: 'create token',
-    path: '/createtoken',
-    icon: getIcon('eva:file-text-fill'),
+    path: '/create-token',
+    icon: getIcon('eva:people-fill'),
   },
   {
     title: 'request audit',

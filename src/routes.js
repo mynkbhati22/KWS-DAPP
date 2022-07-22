@@ -10,7 +10,7 @@ import NotFound from './pages/Page404';
 import Register from './pages/Register';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
-import CreateToken from './pages/CreateToken';
+
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { path: '/', element: <DashboardApp /> },
-        { path: 'user', element: <User /> },
+        { path: 'create-token', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'portfolio', element: <Blog /> },
       ],
@@ -31,7 +31,6 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         { path: '/', element: <Navigate to="/dashboard/app" /> },
-        { path: 'createtoken', element: <CreateToken /> },
         { path: 'auditrequest ', element: <Register /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to="/404" /> },

@@ -1,43 +1,28 @@
 import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+
 // material
 import {
-  Card,
-  Table,
-  Stack,
-  Avatar,
-  Button,
-  Checkbox,
-  TableRow,
-  TableBody,
-  TableCell,
   Container,
   Typography,
-  TableContainer,
-  TablePagination,
+  FormControl,
+  TextField,
+  MenuItem,
+  InputLabel,
+  Select,
+  Checkbox,
+  Box,
+  FormControlLabel,
+  Grid,
+  FormHelperText,
+  Button,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 // components
 import Page from '../components/Page';
-import Label from '../components/Label';
-import Scrollbar from '../components/Scrollbar';
-import Iconify from '../components/Iconify';
-import SearchNotFound from '../components/SearchNotFound';
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../sections/@dashboard/user';
+import useStyles from '../components/style';
 // mock
 import USERLIST from '../_mock/user';
-
-// ----------------------------------------------------------------------
-
-const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
-  { id: '' },
-];
 
 // ----------------------------------------------------------------------
 
@@ -69,6 +54,39 @@ function applySortFilter(array, comparator, query) {
   }
   return stabilizedThis.map((el) => el[0]);
 }
+
+// ARRAY(SELECT TOKENS)
+const tokenValues = [
+  {
+    value: 'Basic Token',
+    label: 'Basic Token',
+  },
+  {
+    value: 'Baby Token',
+    label: 'Baby Token',
+  },
+  {
+    value: 'Reflection Token',
+    label: 'Reflection Token',
+  },
+  {
+    value: 'Apy Token',
+    label: 'Apy Token',
+  },
+];
+const ContentStyle = styled('div')(({ theme }) => ({
+  maxWidth: 500,
+  margin: 'auto',
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  padding: '20px 20px',
+  border: '1px solid',
+  borderRadius: '12px',
+}));
+
+// CHECKBOX
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export default function User() {
   const [page, setPage] = useState(0);
@@ -132,103 +150,153 @@ export default function User() {
 
   const isUserNotFound = filteredUsers.length === 0;
 
+  // TOKENS
+  const [tokens, setTokens] = useState('Basic Token');
+  // ROUTERS
+  const [age, setAge] = useState('Pancakeswap');
+  // CLASSES
+  const classes = useStyles();
+
+  const handleChange = (e) => {
+    setTokens(e.target.value);
+    setAge(e.target.value);
+  };
+  // CHECKBOX
+  const [checked, setChecked] = useState([true, false]);
+
+  const handleChange2 = (e) => {
+    setChecked([checked[0], e.target.checked]);
+  };
+
+  const handleChange3 = (e) => {
+    setChecked([e.target.checked, checked[1]]);
+  };
+
   return (
     <Page title="User">
-      <Container>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-          <Typography variant="h4" gutterBottom>
-            User
+      <Container maxWidth="sm">
+        <ContentStyle>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <TextField
+              id="outlined-select-currency"
+              select
+              label="Select Token"
+              value={tokens}
+              onChange={handleChange}
+              helperText="Please select your currency"
+            >
+              {tokenValues.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <TextField id="outlined-search" label="Name" type="text" />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <TextField id="outlined-search" label="Symbol" type="text" />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <TextField
+              id="outlined-search"
+              label="Decimal"
+              defaultValue="18"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <TextField id="filled-number" label="Total Supply" type="number" />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-label">Router</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Age"
+              onChange={handleChange}
+            >
+              <MenuItem value="Pancakeswap">Pancakeswap</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <Typography>Wallet to Wallet transfer without fee</Typography>
+            <Box>
+              <FormControlLabel
+                label="Yes"
+                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
+              />
+              <FormControlLabel
+                label="No"
+                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
+              />
+            </Box>
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <Typography>Max Transaction Limit Available</Typography>
+            <Box>
+              <FormControlLabel
+                label="Yes"
+                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
+              />
+              <FormControlLabel
+                label="No"
+                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
+              />
+            </Box>
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <Typography>Max Wallet Limit Available</Typography>
+            <Box>
+              <FormControlLabel
+                label="Yes"
+                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
+              />
+              <FormControlLabel
+                label="No"
+                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
+              />
+            </Box>
+          </FormControl>
+          <Grid container spacing={1}>
+            <Grid item xs={12} sm={6} md={6}>
+              <FormControl>
+                <TextField id="filled-number" label="Total Buy Fees" type="number" />
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6}>
+              <FormControl>
+                <TextField id="filled-number" label="Total Sell Fees (<=25)" type="number" />
+              </FormControl>
+            </Grid>
+          </Grid>
+          <Typography variant="h4" fontWeight="900" fontFamily="Poppins, sans-serif">
+            Fees Share
           </Typography>
-          <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
+          <FormHelperText sx={{ color: 'red', fontSize: '15px' }}>Shares Should be up to 100 </FormHelperText>
+          <Grid container spacing={1} sx={{ marginTop: '10px' }}>
+            <Grid item xs={12} sm={6} md={6}>
+              <FormControl>
+                <TextField id="filled-number" label="Liquidity Share" type="number" />
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6}>
+              <FormControl>
+                <TextField id="filled-number" label="Marketing Share" type="number" />
+              </FormControl>
+            </Grid>
+          </Grid>
+          <FormControl sx={{ marginTop: '10px' }}>
+            <TextField id="outlined-search" label="Marketing Wallet" type="text" />
+          </FormControl>
+          <Button sx={{ border: '1px solid', display: 'block', margin: '20px auto', width: '100%' }}>
+            Create Token
           </Button>
-        </Stack>
-
-        <Card>
-          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
-
-          <Scrollbar>
-            <TableContainer sx={{ minWidth: 800 }}>
-              <Table>
-                <UserListHead
-                  order={order}
-                  orderBy={orderBy}
-                  headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
-                  numSelected={selected.length}
-                  onRequestSort={handleRequestSort}
-                  onSelectAllClick={handleSelectAllClick}
-                />
-                <TableBody>
-                  {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl, isVerified } = row;
-                    const isItemSelected = selected.indexOf(name) !== -1;
-
-                    return (
-                      <TableRow
-                        hover
-                        key={id}
-                        tabIndex={-1}
-                        role="checkbox"
-                        selected={isItemSelected}
-                        aria-checked={isItemSelected}
-                      >
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, name)} />
-                        </TableCell>
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={name} src={avatarUrl} />
-                            <Typography variant="subtitle2" noWrap>
-                              {name}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-                        <TableCell align="left">{company}</TableCell>
-                        <TableCell align="left">{role}</TableCell>
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
-                        <TableCell align="left">
-                          <Label variant="ghost" color={(status === 'banned' && 'error') || 'success'}>
-                            {sentenceCase(status)}
-                          </Label>
-                        </TableCell>
-
-                        <TableCell align="right">
-                          <UserMoreMenu />
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                  {emptyRows > 0 && (
-                    <TableRow style={{ height: 53 * emptyRows }}>
-                      <TableCell colSpan={6} />
-                    </TableRow>
-                  )}
-                </TableBody>
-
-                {isUserNotFound && (
-                  <TableBody>
-                    <TableRow>
-                      <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                        <SearchNotFound searchQuery={filterName} />
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                )}
-              </Table>
-            </TableContainer>
-          </Scrollbar>
-
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={USERLIST.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Card>
+        </ContentStyle>
       </Container>
     </Page>
   );
