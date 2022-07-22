@@ -24,6 +24,13 @@ const TitleStyle = styled(Link)({
   display: '-webkit-box',
   WebkitBoxOrient: 'vertical',
 });
+const DescriptionStyle = styled(Link)({
+  height: 44,
+  overflow: 'hidden',
+  WebkitLineClamp: 2,
+  display: '-webkit-box',
+  WebkitBoxOrient: 'vertical',
+});
 
 const AvatarStyle = styled(Avatar)(({ theme }) => ({
   zIndex: 9,
@@ -58,15 +65,15 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index }) {
-  const { cover, title, view, comment, share, author, createdAt } = post;
+  const { cover, title, description,to,author} = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
-  const POST_INFO = [
-    { number: comment, icon: 'eva:message-circle-fill' },
-    { number: view, icon: 'eva:eye-fill' },
-    { number: share, icon: 'eva:share-fill' },
-  ];
+  // const POST_INFO = [
+  //   { number: comment, icon: 'eva:message-circle-fill' },
+  //   { number: view, icon: 'eva:eye-fill' },
+  //   { number: share, icon: 'eva:share-fill' },
+  // ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
@@ -81,7 +88,7 @@ export default function BlogPostCard({ post, index }) {
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                bgcolor: (theme) => alpha(theme.palette.grey[900], 0.72),
+                backgroundColor: 'rgb(48 53 60 / 30%)',
               },
             }),
             ...(latestPostLarge && {
@@ -132,18 +139,18 @@ export default function BlogPostCard({ post, index }) {
             }),
           }}
         >
-          <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
+          {/* <Typography gutterBottom variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
             {fDate(createdAt)}
-          </Typography>
+          </Typography> */}
 
           <TitleStyle
-            to="#"
+            to="/"
             color="inherit"
             variant="subtitle2"
             underline="hover"
             component={RouterLink}
             sx={{
-              ...(latestPostLarge && { typography: 'h5', height: 60 }),
+              ...(latestPostLarge && { typography: 'h5', height: 70 }),
               ...((latestPostLarge || latestPost) && {
                 color: 'common.white',
               }),
@@ -152,7 +159,23 @@ export default function BlogPostCard({ post, index }) {
             {title}
           </TitleStyle>
 
-          <InfoStyle>
+          <DescriptionStyle
+            to="https://www.metfx.io/"
+            color="inherit"
+            variant="subtitle3"
+            underline="hover"
+            component={RouterLink}
+            sx={{
+              ...(latestPostLarge && { varient: 'h6', height: 70 }),
+              ...((latestPostLarge || latestPost) && {
+                color: 'common.white',
+              }),
+            }}
+          >
+            {description}
+          </DescriptionStyle>
+
+          {/* <InfoStyle>
             {POST_INFO.map((info, index) => (
               <Box
                 key={index}
@@ -169,7 +192,7 @@ export default function BlogPostCard({ post, index }) {
                 <Typography variant="caption">{fShortenNumber(info.number)}</Typography>
               </Box>
             ))}
-          </InfoStyle>
+          </InfoStyle> */}
         </CardContent>
       </Card>
     </Grid>

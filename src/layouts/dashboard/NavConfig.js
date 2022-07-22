@@ -17,17 +17,17 @@ const navConfig = [
 
   {
     title: 'portfolio',
-    path: '/dashboard/blog',
+    path: '/portfolio',
     icon: getIcon('eva:file-text-fill'),
   },
   {
     title: 'create token',
-    path: '/',
+    path: '/createtoken',
     icon: getIcon('eva:file-text-fill'),
   },
   {
     title: 'request audit',
-    path: '/',
+    path: '/auditrequest',
     icon: getIcon('eva:file-text-fill'),
   },
   {

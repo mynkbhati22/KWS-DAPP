@@ -10,19 +10,20 @@ import NotFound from './pages/Page404';
 import Register from './pages/Register';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
+import CreateToken from './pages/CreateToken';
 
 // ----------------------------------------------------------------------
 
 export default function Router() {
   return useRoutes([
     {
-      path: '/dashboard',
+      path: '/',
       element: <DashboardLayout />,
       children: [
-        { path: 'app', element: <DashboardApp /> },
+        { path: '/', element: <DashboardApp /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> },
+        { path: 'portfolio', element: <Blog /> },
       ],
     },
     {
@@ -30,8 +31,8 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         { path: '/', element: <Navigate to="/dashboard/app" /> },
-        { path: 'login', element: <Login /> },
-        { path: 'register', element: <Register /> },
+        { path: 'createtoken', element: <CreateToken /> },
+        { path: 'auditrequest ', element: <Register /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to="/404" /> },
       ],
