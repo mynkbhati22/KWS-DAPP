@@ -1,14 +1,13 @@
-import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Card, Link, Container, Typography } from '@mui/material';
+import { Card, Container, Typography } from '@mui/material';
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
 import Page from '../components/Page';
 import Logo from '../components/Logo';
 // sections
-import { RegisterForm } from '../sections/auth/register';
+
 import AuthSocial from '../sections/auth/AuthSocial';
 
 // ----------------------------------------------------------------------
@@ -57,8 +56,6 @@ const ContentStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Register() {
-  const smUp = useResponsive('up', 'sm');
-
   const mdUp = useResponsive('up', 'md');
 
   return (
@@ -66,16 +63,7 @@ export default function Register() {
       <RootStyle>
         <HeaderStyle>
           <Logo />
-          {/* {smUp && (
-            <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Already have an account? {''}
-              <Link variant="subtitle2" component={RouterLink} to="/login">
-                Login
-              </Link>
-            </Typography>
-          )} */}
         </HeaderStyle>
-
         {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
@@ -87,34 +75,10 @@ export default function Register() {
 
         <Container>
           <ContentStyle>
-            <Typography variant="h3" gutterBottom sx={{textAlign:"center"}}>
+            <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', marginTop: '-200px' }}>
               CONTACT US
             </Typography>
-
             <AuthSocial />
-
-            <RegisterForm />
-            {/* 
-            <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-              By registering, I agree to Minimal&nbsp;
-              <Link underline="always" color="text.primary" href="#">
-                Terms of Service
-              </Link>
-              {''}and{''}
-              <Link underline="always" color="text.primary" href="#">
-                Privacy Policy
-              </Link>
-              .
-            </Typography> */}
-
-            {/* {!smUp && (
-              <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
-                Already have an account?{' '}
-                <Link variant="subtitle2" to="/login" component={RouterLink}>
-                  Login
-                </Link>
-              </Typography>
-            )} */}
           </ContentStyle>
         </Container>
       </RootStyle>

@@ -89,17 +89,23 @@ const ContentStyle = styled('div')(({ theme }) => ({
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export default function User() {
+  // CLASSES
+  const classes = useStyles();
+
   const [page, setPage] = useState(0);
-
   const [order, setOrder] = useState('asc');
-
   const [selected, setSelected] = useState([]);
-
   const [orderBy, setOrderBy] = useState('name');
-
   const [filterName, setFilterName] = useState('');
-
   const [rowsPerPage, setRowsPerPage] = useState(5);
+  // CHECKBOX
+  const [checked, setChecked] = useState([true, false]);
+  // TOKENS
+  const [tokens, setTokens] = useState('Basic Token');
+  // ROUTERS
+  const [age, setAge] = useState('Pancakeswap');
+  // BABY TOKEN
+  const [babyToken, setBabyToken] = useState(false);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -150,19 +156,10 @@ export default function User() {
 
   const isUserNotFound = filteredUsers.length === 0;
 
-  // TOKENS
-  const [tokens, setTokens] = useState('Basic Token');
-  // ROUTERS
-  const [age, setAge] = useState('Pancakeswap');
-  // CLASSES
-  const classes = useStyles();
-
   const handleChange = (e) => {
     setTokens(e.target.value);
     setAge(e.target.value);
   };
-  // CHECKBOX
-  const [checked, setChecked] = useState([true, false]);
 
   const handleChange2 = (e) => {
     setChecked([checked[0], e.target.checked]);
@@ -171,15 +168,20 @@ export default function User() {
   const handleChange3 = (e) => {
     setChecked([e.target.checked, checked[1]]);
   };
+  // TOKEN VALUES
+  const ShowValues = () => {
+    setBabyToken(!babyToken);
+    console.log('changed');
+  };
 
   return (
-    <Page title="User">
+    <Page title="KWS:Create Token">
       <Container maxWidth="xl">
-      <Typography variant='h2' sx={{textAlign:"center", marginBottom:"10px"}}>
-        Create Token
-      </Typography>
+        <Typography variant="h2" sx={{ textAlign: 'center', marginBottom: '10px' }}>
+          Create Token
+        </Typography>
         <ContentStyle>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <FormControl sx={{ m: 1, minWidth: 120}}>
             <TextField
               id="outlined-select-currency"
               select
@@ -189,7 +191,7 @@ export default function User() {
               helperText="Please select your currency"
             >
               {tokenValues.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
+                <MenuItem key={option.value} value={option.value} onClick={() => ShowValues()}>
                   {option.label}
                 </MenuItem>
               ))}
@@ -201,19 +203,40 @@ export default function User() {
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="outlined-search" label="Symbol" type="text" />
           </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <TextField
-              id="outlined-search"
-              label="Decimal"
-              defaultValue="18"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-          </FormControl>
+          {babyToken ? (
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <TextField
+                id="outlined-search"
+                label="Decimal"
+                defaultValue="18"
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+            </FormControl>
+          ) : (
+            ''
+          )}
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="filled-number" label="Total Supply" type="number" />
           </FormControl>
+          {babyToken ? (
+            <>
+              {' '}
+              <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <TextField
+                  id="outlined-search"
+                  label="Reward Token Address (that cannot be BNB or WBNB )"
+                  type="text"
+                />
+              </FormControl>
+              <FormControl>
+                <TextField id="filled-number" label="Minimum Token Balance Needed for Rewards" type="number" />
+              </FormControl>
+            </>
+          ) : (
+            ''
+          )}
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <InputLabel id="demo-simple-select-label">Router</InputLabel>
             <Select
@@ -280,7 +303,7 @@ export default function User() {
           <Typography variant="h4" fontWeight="900" fontFamily="Poppins, sans-serif">
             Fees Share
           </Typography>
-          <FormHelperText sx={{ color: 'red', fontSize: '15px' }}>Shares Should be up to 100 </FormHelperText>
+          <FormHelperText sx={{ color: '#F68734', fontSize: '15px' }}>Shares Should be up to 100 </FormHelperText>
           <Grid container spacing={1} sx={{ marginTop: '10px' }}>
             <Grid item xs={12} sm={6} md={6}>
               <FormControl>
@@ -292,6 +315,15 @@ export default function User() {
                 <TextField id="filled-number" label="Marketing Share" type="number" />
               </FormControl>
             </Grid>
+            {babyToken ? (
+              <Grid item xs={12} sm={6} md={4}>
+                <FormControl>
+                  <TextField id="filled-number" label="Reward Share" type="number" />
+                </FormControl>
+              </Grid>
+            ) : (
+              ''
+            )}
           </Grid>
           <FormControl sx={{ marginTop: '10px' }}>
             <TextField id="outlined-search" label="Marketing Wallet" type="text" />

@@ -34,7 +34,7 @@ export default function DashboardApp() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Page title="Dashboard">
+    <Page title="Kesavi Web Solutions - Digital Wings to your business!">
       <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={6}>

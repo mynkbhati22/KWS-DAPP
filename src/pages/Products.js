@@ -25,7 +25,7 @@ export default function EcommerceShop() {
   };
 
   return (
-    <Page title="Dashboard: Products">
+    <Page title="KWS: Partners">
       <Partners />
     </Page>
   );

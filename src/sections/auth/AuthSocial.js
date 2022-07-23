@@ -22,10 +22,10 @@ export default function AuthSocial() {
         </Button>
       </Stack>
 
-      <Divider sx={{ my: 3 }}>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+      <Divider sx={{ my: 5 }}>
+        {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           OR
-        </Typography>
+        </Typography> */}
       </Divider>
     </>
   );
