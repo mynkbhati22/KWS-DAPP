@@ -75,7 +75,7 @@ const tokenValues = [
   },
 ];
 const ContentStyle = styled('div')(({ theme }) => ({
-  maxWidth: 500,
+  width: '80%',
   margin: 'auto',
   display: 'flex',
   justifyContent: 'center',
@@ -174,7 +174,10 @@ export default function User() {
 
   return (
     <Page title="User">
-      <Container maxWidth="sm">
+      <Container maxWidth="xl">
+      <Typography variant='h2' sx={{textAlign:"center", marginBottom:"10px"}}>
+        Create Token
+      </Typography>
         <ContentStyle>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField

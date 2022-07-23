@@ -11,16 +11,14 @@ const POST_TITLES = [
   'NFT Marketpolace on BSC Testnet',
   'PCS Swap Fork for FOMOBABY',
   'Private Sale Launchpad for $BBT',
-  'Private Sale for $BFYC',
   'BetSwamp Token',
   'Betting DAPP',
   'FomoBaby token’s official website',
-  'CMS',
   'Ankurams',
   '$BBT TrapSheet/Whitepaper',
   'Elite Butlers',
   'Travel Blog',
-  'Backend for $BBT Platform',
+  'Memeforce Launchpad',
 ];
 const POST_DESCRIBE = [
   'Customized website for MetFx Project to be launched on ETH.',
@@ -31,16 +29,13 @@ const POST_DESCRIBE = [
   'NFT Marketplace with ability to mint NFTs, offer NFTs for purchase, withdraw funds collected from sale of NFTs.',
   'Swap forked from PancakeSwap',
   'Crowdfunding DAPP to help raise funds in BNBs. Funds directly sent to owner’s wallet and investors able to claim their tokens at launch. Token distributioin vested over three weeks for investors.',
-  'LCrowdfunding DAPP to help raise funds in BNBs. Funds directly sent to owner’s wallet and investors able to claim 100% of their tokens at launch.',
   'Custom coded website in react for $BETS token on BSC.',
   'Betting DAPP for BetSwamp project with ability to create events, place bets and claim winnings.',
   'Custom coded website in React for FomoBaby token on BSC.',
-  'Content Management System (CMS) for BetSwamp to help control content on their website and create blogs.',
   'Ecommerce solution for board game built using WordPress & Woo-Commerce',
   'Whitepaper designed for $BBT token using Google slides.',
   'Business website for Elite Butlers built using WordPress.',
   'Travel blog with JAMStack using Ghost as headless CMS.',
-  'Backend built on Sanity Studio to control off-chain data for BoobyTrap Platform',
 ];
 const POST_LINK = [
   'https://www.metfx.io/',
@@ -51,19 +46,16 @@ const POST_LINK = [
   'https://marketplace.fomobaby.app/',
   'https://swap.fomobaby.app/#/swap',
   'https://privatesale.boobytrap.live/',
-  'https://private.boredflokiyachtclub.com/',
   'https://betswamp.com/',
   'https://betswamp.com/app',
   'https://fomobaby.app/',
-  'https://kesaviwebsolutions.com/portfolio#',
   'https://ankurams.com/',
   'https://boobytrap.live/static/media/trapSheet-v2.a1a3a25e554327da092d.pdf',
   'https://elitebutlers.co.in/',
   'https://ontraveldiary.com/',
-  'https://kesaviwebsolutions.com/portfolio#',
 ];
 
-const posts = [...Array(17)].map((_, index) => ({
+const posts = [...Array(15)].map((_, index) => ({
   id: faker.datatype.uuid(),
   cover: `/static/mock-images/portfolioImages/portimg_${index + 1}.png`,
   title: POST_TITLES[index + 1],

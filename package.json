@@ -53,6 +53,8 @@
     "@mui/lab": "^5.0.0-alpha.88",
     "@mui/material": "^5.8.6",
     "@mui/styles": "^5.9.0",
+    "@mui/x-license-pro": "^5.14.0",
+    "@sanity/client": "^3.3.2",
     "@testing-library/jest-dom": "^5.16.4",
     "apexcharts": "^3.35.3",
     "change-case": "^4.1.2",
