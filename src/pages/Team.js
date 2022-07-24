@@ -28,6 +28,7 @@ export default function EcommerceShop() {
       `*[_type == "team"]{
         title,
         designation,
+        description,
         mainImage{
           asset ->{
             _id,
@@ -42,7 +43,7 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS: Team">
       <Container maxWidth="xl">
-        <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '50px' }}>
+        <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team &&
             team.map((team, index) => (
               <Grid item xs={12} sm={4} md={4} key={index}>
@@ -50,7 +51,7 @@ export default function EcommerceShop() {
                   sx={{
                     maxWidth: 280,
                     height: 350,
-                    marginBottom: '50px',
+                    marginBottom: '20px',
                     boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)',
                   }}
                 >
@@ -72,6 +73,7 @@ export default function EcommerceShop() {
                         {team.designation}
                       </Label>
                     </Typography>
+                    <Typography color="text.secondary" sx={{fontSize:"0.75rem", textAlign:"start", marginTop:"7px", width:"100%"}}>{team.description}</Typography>
                   </CardContent>
                 </Card>
               </Grid>

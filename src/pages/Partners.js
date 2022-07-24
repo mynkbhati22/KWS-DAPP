@@ -54,11 +54,11 @@ export default function EcommerceShop() {
                       <Label
                         gutterBottom
                         component="div"
-                        sx={{ marginTop: '10px', background: '#F58632', color: '#fff', fontSize:"15px" }}
+                        sx={{ marginTop: '7px',marginBottom:"7px", background: '#F58632', color: '#fff', fontSize:"15px" }}
                       >
                         {partners.title}
                       </Label>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" align='left'>
                         {partners.description}
                       </Typography>
                     </CardContent>

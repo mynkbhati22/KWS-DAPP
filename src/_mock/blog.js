@@ -15,10 +15,11 @@ const POST_TITLES = [
   'Betting DAPP',
   'FomoBaby token’s official website',
   'Ankurams',
-  '$BBT TrapSheet/Whitepaper',
+  'USDM Stablecoin',
   'Elite Butlers',
   'Travel Blog',
   'Memeforce Launchpad',
+  'Trippyfrens'
 ];
 const POST_DESCRIBE = [
   'Customized website for MetFx Project to be launched on ETH.',
@@ -33,13 +34,15 @@ const POST_DESCRIBE = [
   'Betting DAPP for BetSwamp project with ability to create events, place bets and claim winnings.',
   'Custom coded website in React for FomoBaby token on BSC.',
   'Ecommerce solution for board game built using WordPress & Woo-Commerce',
-  'Whitepaper designed for $BBT token using Google slides.',
+  'Stablecoin pegged to GCS, the native currency of GC Centeralized exchange',
   'Business website for Elite Butlers built using WordPress.',
   'Travel blog with JAMStack using Ghost as headless CMS.',
+  'Launchpad built on BSC with crowdfunding and factory contracts.',
+  'A unique NFT collection for Trippyfrens and minting DAPP.'
 ];
 const POST_LINK = [
-  'https://www.metfx.io/',
-  'https://www.metfx.io/.',
+  'https://marketplace.metfx.io/',
+  'https://marketplace.metfx.io/.',
   'https://www.ryoshitoken.com/',
   'https://boobytrap.live/',
   'https://lotto.fomobaby.app/',
@@ -50,12 +53,14 @@ const POST_LINK = [
   'https://betswamp.com/app',
   'https://fomobaby.app/',
   'https://ankurams.com/',
-  'https://boobytrap.live/static/media/trapSheet-v2.a1a3a25e554327da092d.pdf',
+  'https://usdm-gctech.netlify.app/?',
   'https://elitebutlers.co.in/',
   'https://ontraveldiary.com/',
+  'https://memeforce.app/launchpad/0xc1De7769219d6D14549D8DDfed1093DD86B858B6/$MF',
+  'https://www.trippyfrens.com/'
 ];
 
-const posts = [...Array(15)].map((_, index) => ({
+const posts = [...Array(16)].map((_, index) => ({
   id: faker.datatype.uuid(),
   cover: `/static/mock-images/portfolioImages/portimg_${index + 1}.png`,
   title: POST_TITLES[index + 1],

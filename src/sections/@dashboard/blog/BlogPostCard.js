@@ -65,7 +65,7 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index }) {
-  const { cover, title, description,to,author} = post;
+  const { cover, title, description, to, author } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
@@ -147,7 +147,7 @@ export default function BlogPostCard({ post, index }) {
             to="/"
             color="inherit"
             variant="subtitle2"
-            underline="hover"
+            underline="none"
             component={RouterLink}
             sx={{
               ...(latestPostLarge && { typography: 'h5', height: 70 }),
@@ -160,8 +160,23 @@ export default function BlogPostCard({ post, index }) {
           </TitleStyle>
 
           <DescriptionStyle
-            to="https://www.metfx.io/"
+            to="/"
             color="inherit"
+            variant="subtitle3"
+            underline="none"
+            component={RouterLink}
+            sx={{
+              ...(latestPostLarge && { varient: 'h6', height: 70 }),
+              ...((latestPostLarge || latestPost) && {
+                color: 'common.white',
+              }),
+            }}
+          >
+            {description}
+          </DescriptionStyle>
+          <DescriptionStyle
+            to="#"
+            color="#21ABE3"
             variant="subtitle3"
             underline="hover"
             component={RouterLink}
@@ -172,7 +187,7 @@ export default function BlogPostCard({ post, index }) {
               }),
             }}
           >
-            {description}
+            {to}
           </DescriptionStyle>
 
           {/* <InfoStyle>

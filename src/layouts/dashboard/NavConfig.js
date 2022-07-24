@@ -42,22 +42,22 @@ const navConfig = [
     path: '/our-team',
     icon: <GroupAddIcon />,
   },
+  {
+    title: 'contracts',
+    path: '/coming-soon',
+    icon: getIcon('eva:file-text-fill'),
+  },
 
   {
     title: 'create token',
-    path: '/create-token',
+    path: '/coming-soon',
     icon: <TokenIcon />,
-  },
-  {
-    title: 'contracts',
-    path: '/contracts-by-us',
-    icon: getIcon('eva:file-text-fill'),
   },
 
   {
     title: 'request audit',
     path: '/coming-soon',
-    icon: <AiOutlineAudit size={22}/>,
+    icon: <AiOutlineAudit size={22} />,
   },
   {
     title: 'request KYC',
