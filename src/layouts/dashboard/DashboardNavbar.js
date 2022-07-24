@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Stack, AppBar, Toolbar, IconButton } from '@mui/material';
+import { Box, Stack, AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 // components
 import Iconify from '../../components/Iconify';
+import useStyles from './dashboardnavbarStyle';
 //
 import Searchbar from './Searchbar';
 import AccountPopover from './AccountPopover';
@@ -41,21 +42,23 @@ DashboardNavbar.propTypes = {
 };
 
 export default function DashboardNavbar({ onOpenSidebar }) {
+  const classes = useStyles();
+
   return (
     <RootStyle>
-      <ToolbarStyle>
+      <ToolbarStyle sx={{background:'#22ABE3'}}>
         <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
           <Iconify icon="eva:menu-2-fill" />
         </IconButton>
 
-        <Searchbar />
+        <Box>
+          <Typography  align="center" color="#fff" fontWeight="500" className={classes.marquee}>
+            This space is reserved for promotion of upcoming projects launching in partnership with Arrnaya (SAFU DEV) &
+            KWS with their ICO/IDO on pinksale.finance
+          </Typography>
+        </Box>
+        {/* <Searchbar /> */}
         <Box sx={{ flexGrow: 1 }} />
-
-        <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
-          <LanguagePopover />
-          <NotificationsPopover />
-          <AccountPopover />
-        </Stack>
       </ToolbarStyle>
     </RootStyle>
   );

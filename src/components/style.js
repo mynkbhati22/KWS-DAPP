@@ -133,5 +133,10 @@ export default makeStyles((theme) => {
         background: 'transparent',
       },
     },
+
+    // ANIMATION
+    marquee:{
+      color:"#fff"
+    }
   };
 });
