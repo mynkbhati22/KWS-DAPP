@@ -16,7 +16,7 @@ import {
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
-import useStyles from './serviceStyle';
+import useStyles from './partnerStyle';
 
 // mock
 
@@ -40,7 +40,7 @@ export default function EcommerceShop() {
     }`
     ).then((data) => setPartners(data));
   }, []);
-  const classes = useStyles();
+ 
   return (
     <Page title="KWS: Partners">
       <Container maxWidth="xl">
@@ -48,7 +48,7 @@ export default function EcommerceShop() {
           {partners &&
             partners.map((partners, index) => (
               <Grid item xs={12} sm={6} md={6} xl={3} key={index}>
-                <Card sx={{ maxWidth: 280, height: 350, marginBottom: '50px', boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)' }}>
+                <Card sx={{ maxWidth: 280, height: 350, display:"block",  margin: '0px auto 50px', boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)' }}>
                   <Link href={partners.link} target="_blank" sx={{textDecoration:"none"}}>
                     <CardContent>
                       <Label

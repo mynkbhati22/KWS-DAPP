@@ -25,7 +25,7 @@ export default function Bottom() {
             <Typography variant="body1" className={classes.text}>
               We at KWS build uniqe UI/UX for your website/app users to help create your brand/business identity.
             </Typography>
-            <Link to="/dashboard/blog" target="_blank" className={classes.portfolioButton}>
+            <Link to="/portfolio" target="_blank" className={classes.portfolioButton}>
               Browse Portfolio
             </Link>
           </Box>
