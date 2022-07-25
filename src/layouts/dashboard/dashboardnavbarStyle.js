@@ -4,22 +4,29 @@ export default makeStyles((theme) => {
   return {
     '@keyframes marquee': {
       '0%': {
-        marginLeft: '100%',
-        transform: 'translateX(0%)',
+        transform: 'translate(0, 0)',
       },
       '100%': {
-        marginLeft: '0',
-        transform: 'translateX(-100%)',
+        transform: 'translate(-100%, 0)',
       },
     },
     marquee: {
-      animation: '$marquee 15s linear infinite',
-      display: 'inline-block',
-      fontSize:'20px',
-      whiteSpace: 'nowrap',
+      animation: '$marquee 10s linear infinite',
+      fontSize: '18px',
       '&:hover': {
         animationPlayState: 'paused',
       },
+    },
+    marqueeJjj: {
+      paddingLeft: '0%',
+      cursor: 'default',
+    },
+    bSlider__slide: {
+      margin: ' 0 50px',
+      display: 'flex',
+      flexDirection: 'row',
+      alignContent: 'center',
+      justifyContent: 'center',
     },
   };
 });
