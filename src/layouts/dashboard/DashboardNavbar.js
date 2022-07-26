@@ -4,8 +4,8 @@ import { alpha, styled } from '@mui/material/styles';
 import { Box, AppBar, Toolbar, IconButton } from '@mui/material';
 // components
 import Iconify from '../../components/Iconify';
-import useStyles from './dashboardnavbarStyle';
 import Announcement from './Annoucement';
+import './davnavbar.css';
 
 // ----------------------------------------------------------------------
 
@@ -38,11 +38,9 @@ DashboardNavbar.propTypes = {
 };
 
 export default function DashboardNavbar({ onOpenSidebar }) {
-  const classes = useStyles();
-
   return (
     <RootStyle>
-      <ToolbarStyle sx={{ background: '#22ABE3' }}>
+      <ToolbarStyle sx={{ background: '#22ABE3', padding:"0px 0px !important" }}>
         <IconButton onClick={onOpenSidebar} sx={{ mr: 1, color: 'text.primary', display: { lg: 'none' } }}>
           <Iconify icon="eva:menu-2-fill" />
         </IconButton>
