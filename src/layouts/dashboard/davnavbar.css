@@ -1,11 +1,11 @@
-body {
+/* body {
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'proxima nova', 'open sans', 'Helvetica', sans-serif;
-}
+} */
 
 .Marquee {
   display: flex !important;

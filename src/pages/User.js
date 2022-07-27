@@ -1,25 +1,30 @@
 import { filter } from 'lodash';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // material
 import {
   Container,
-  Typography,
+  Paper,
   FormControl,
   TextField,
   MenuItem,
-  InputLabel,
-  Select,
-  Checkbox,
-  Box,
-  FormControlLabel,
-  Grid,
-  FormHelperText,
   Button,
+  Stack,
+  Modal,
+  Fade,
+  Box,
+  Backdrop,
+  Typography,
+  ImageList,
+  ImageListItem,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // components
+import Web3 from 'web3';
+import { getAccount } from '../components/Web3/Balance';
 import Page from '../components/Page';
+import meta from '../components/images/meta.png';
+import connect from '../components/images/connect.svg';
 import useStyles from '../components/style';
 // mock
 import USERLIST from '../_mock/user';
@@ -84,89 +89,50 @@ const ContentStyle = styled('div')(({ theme }) => ({
   border: '1px solid',
   borderRadius: '12px',
 }));
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  background: 'none',
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
-// CHECKBOX
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+// Modal Styling
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '1px solid #22ABE3',
+  boxShadow: 24,
+  p: 4,
+};
+
+// for web3
+const web3 = new Web3(window.ethereum);
+console.log(web3);
 
 export default function User() {
+  const [open, setOpen] = useState(false);
+  const [account, setAccount] = useState('');
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   // CLASSES
   const classes = useStyles();
 
-  const [page, setPage] = useState(0);
-  const [order, setOrder] = useState('asc');
-  const [selected, setSelected] = useState([]);
-  const [orderBy, setOrderBy] = useState('name');
-  const [filterName, setFilterName] = useState('');
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  // CHECKBOX
-  const [checked, setChecked] = useState([true, false]);
   // TOKENS
   const [tokens, setTokens] = useState('Basic Token');
   // ROUTERS
-  const [age, setAge] = useState('Pancakeswap');
+
   // BABY TOKEN
   const [babyToken, setBabyToken] = useState(false);
 
-  const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
-    setOrderBy(property);
-  };
-
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n) => n.name);
-      setSelected(newSelecteds);
-      return;
-    }
-    setSelected([]);
-  };
-
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1));
-    }
-    setSelected(newSelected);
-  };
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-
-  const handleFilterByName = (event) => {
-    setFilterName(event.target.value);
-  };
-
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
-
-  const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
-
-  const isUserNotFound = filteredUsers.length === 0;
-
   const handleChange = (e) => {
     setTokens(e.target.value);
-    setAge(e.target.value);
-  };
-
-  const handleChange2 = (e) => {
-    setChecked([checked[0], e.target.checked]);
-  };
-
-  const handleChange3 = (e) => {
-    setChecked([e.target.checked, checked[1]]);
   };
   // TOKEN VALUES
   const ShowValues = () => {
@@ -174,14 +140,93 @@ export default function User() {
     console.log('changed');
   };
 
+  // connect metamask
+
+  const connectMetamask = async () => {
+    if (window.ethereum) {
+      const add = await window.ethereum.enable();
+      setAccount(add[0]);
+      window.location.reload();
+      console.log(window.ethereum);
+    }
+  };
+
+  useEffect(() => {
+    async function check() {
+      const account = await getAccount();
+      web3.eth.getBalance(account);
+      setAccount(account);
+    }
+    check();
+  }, []);
+
   return (
     <Page title="KWS:Create Token">
-      <Container maxWidth="xl">
-        <Typography variant="h2" sx={{ textAlign: 'center', marginBottom: '10px' }}>
-          Create Token
-        </Typography>
+      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
+        <Stack direction="row" justifyContent="space-around" mb={2}>
+          <Item
+            sx={{
+              marginTop: '7px',
+              fontWeight: '900',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '25px',
+              color: '#27ADE3',
+            }}
+          >
+            Create Token
+          </Item>
+          <Button onClick={handleOpen}>
+            <Item
+              sx={{
+                marginTop: '5px',
+                fontWeight: '900',
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '20px',
+                color: '#F79A3F',
+              }}
+            >
+              {account ? account.slice(0, 4) + account.slice(38) : 'Connect Wallet'}
+            </Item>
+          </Button>
+        </Stack>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <Box sx={style}>
+              <Typography
+                id="transition-modal-title"
+                variant="h4"
+                component="h2"
+                sx={{ textAlign: 'center', marginTop: '-20px', color: '#22ABE3' }}
+              >
+                Connect Your Wallet
+              </Typography>
+
+              <ImageList
+                id="transition-modal-description"
+                sx={{ margin: '20px auto', width: '60%', cursor: 'pointer' }}
+              >
+                <ImageListItem onClick={connectMetamask}>
+                  <img src={meta} alt="" />
+                </ImageListItem>
+                <ImageListItem sx={{ paddingLeft: '20px' }}>
+                  <img src={connect} alt="" />
+                </ImageListItem>
+              </ImageList>
+            </Box>
+          </Fade>
+        </Modal>
         <ContentStyle>
-          <FormControl sx={{ m: 1, minWidth: 120}}>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField
               id="outlined-select-currency"
               select
@@ -203,130 +248,8 @@ export default function User() {
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="outlined-search" label="Symbol" type="text" />
           </FormControl>
-          {babyToken ? (
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <TextField
-                id="outlined-search"
-                label="Decimal"
-                defaultValue="18"
-                InputProps={{
-                  readOnly: true,
-                }}
-              />
-            </FormControl>
-          ) : (
-            ''
-          )}
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="filled-number" label="Total Supply" type="number" />
-          </FormControl>
-          {babyToken ? (
-            <>
-              {' '}
-              <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <TextField
-                  id="outlined-search"
-                  label="Reward Token Address (that cannot be BNB or WBNB )"
-                  type="text"
-                />
-              </FormControl>
-              <FormControl>
-                <TextField id="filled-number" label="Minimum Token Balance Needed for Rewards" type="number" />
-              </FormControl>
-            </>
-          ) : (
-            ''
-          )}
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-label">Router</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={age}
-              label="Age"
-              onChange={handleChange}
-            >
-              <MenuItem value="Pancakeswap">Pancakeswap</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <Typography>Wallet to Wallet transfer without fee</Typography>
-            <Box>
-              <FormControlLabel
-                label="Yes"
-                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
-              />
-              <FormControlLabel
-                label="No"
-                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
-              />
-            </Box>
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <Typography>Max Transaction Limit Available</Typography>
-            <Box>
-              <FormControlLabel
-                label="Yes"
-                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
-              />
-              <FormControlLabel
-                label="No"
-                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
-              />
-            </Box>
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <Typography>Max Wallet Limit Available</Typography>
-            <Box>
-              <FormControlLabel
-                label="Yes"
-                control={<Checkbox checked={checked[1]} onChange={handleChange2} className={classes.checkbox} />}
-              />
-              <FormControlLabel
-                label="No"
-                control={<Checkbox checked={checked[0]} onChange={handleChange3} className={classes.checkbox} />}
-              />
-            </Box>
-          </FormControl>
-          <Grid container spacing={1}>
-            <Grid item xs={12} sm={6} md={6}>
-              <FormControl>
-                <TextField id="filled-number" label="Total Buy Fees" type="number" />
-              </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6}>
-              <FormControl>
-                <TextField id="filled-number" label="Total Sell Fees (<=25)" type="number" />
-              </FormControl>
-            </Grid>
-          </Grid>
-          <Typography variant="h4" fontWeight="900" fontFamily="Poppins, sans-serif">
-            Fees Share
-          </Typography>
-          <FormHelperText sx={{ color: '#F68734', fontSize: '15px' }}>Shares Should be up to 100 </FormHelperText>
-          <Grid container spacing={1} sx={{ marginTop: '10px' }}>
-            <Grid item xs={12} sm={6} md={6}>
-              <FormControl>
-                <TextField id="filled-number" label="Liquidity Share" type="number" />
-              </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6}>
-              <FormControl>
-                <TextField id="filled-number" label="Marketing Share" type="number" />
-              </FormControl>
-            </Grid>
-            {babyToken ? (
-              <Grid item xs={12} sm={6} md={4}>
-                <FormControl>
-                  <TextField id="filled-number" label="Reward Share" type="number" />
-                </FormControl>
-              </Grid>
-            ) : (
-              ''
-            )}
-          </Grid>
-          <FormControl sx={{ marginTop: '10px' }}>
-            <TextField id="outlined-search" label="Marketing Wallet" type="text" />
           </FormControl>
           <Button sx={{ border: '1px solid', display: 'block', margin: '20px auto', width: '100%' }}>
             Create Token

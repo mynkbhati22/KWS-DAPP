@@ -43,22 +43,21 @@ export default function EcommerceShop() {
  
   return (
     <Page title="KWS: Partners">
-      <Container maxWidth="xl">
-        <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '50px' }}>
+      <Container maxWidth="xl" sx={{marginTop:"50px"}}>
+        <Grid container spacing={2} textAlign="center">
           {partners &&
             partners.map((partners, index) => (
-              <Grid item xs={12} sm={6} md={6} xl={3} key={index}>
+              <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
                 <Card sx={{ maxWidth: 280, height: 350, display:"block",  margin: '0px auto 50px', boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)' }}>
                   <Link href={partners.link} target="_blank" sx={{textDecoration:"none"}}>
                     <CardContent>
                       <Label
                         gutterBottom
-                        component="div"
                         sx={{ marginTop: '7px',marginBottom:"7px", background: '#F58632', color: '#fff', fontSize:"15px" }}
                       >
                         {partners.title}
                       </Label>
-                      <Typography variant="body2" color="text.secondary" align='left'>
+                      <Typography variant="body2" color="secondary" align='left'>
                         {partners.description}
                       </Typography>
                     </CardContent>

@@ -13,6 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 // components
+
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
@@ -42,7 +43,7 @@ export default function EcommerceShop() {
 
   return (
     <Page title="KWS: Team">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team &&
             team.map((team, index) => (
@@ -66,17 +67,20 @@ export default function EcommerceShop() {
                     )}
                   </CardMedia>
                   <CardContent>
-                    <Label  gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
+                    <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
                       {team.title}
                     </Label>
-                    <Typography>
-                      <Label variant="body2" color="text.secondary">
-                        {team.designation}
-                      </Label>
+                    <Typography sx={{ color: '#6C7989' }}>
+                      <Label>{team.designation}</Label>
                     </Typography>
                     <Typography
-                      color="text.secondary"
-                      sx={{ fontSize: '0.75rem', textAlign: 'start', marginTop: '7px', width: '100%' }}
+                      sx={{
+                        fontSize: '0.75rem',
+                        textAlign: 'start',
+                        marginTop: '7px',
+                        width: '100%',
+                        color: '#6C7989',
+                      }}
                     >
                       {team.description}
                     </Typography>

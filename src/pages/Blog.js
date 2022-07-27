@@ -23,7 +23,7 @@ const SORT_OPTIONS = [
 export default function Blog() {
   return (
     <Page title="KWS: Portfolio">
-      <Container>
+      <Container sx={{marginTop:"50px"}}>
         {/* <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             Blog
@@ -33,10 +33,10 @@ export default function Blog() {
           </Button>
         </Stack> */}
 
-        <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
+        {/* <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
           <BlogPostsSearch posts={POSTS} />
           <BlogPostsSort options={SORT_OPTIONS} />
-        </Stack>
+        </Stack> */}
 
         <Grid container spacing={3}>
           {POSTS.map((post, index) => (

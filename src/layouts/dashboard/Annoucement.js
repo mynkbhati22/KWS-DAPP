@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container, ImageList, ImageListItem, Link, Typography } from '@mui/material';
 import Client from '../../Client';
+import fifa from '../../components/images/fifa inu.png';
 import metfx from '../../components/images/metfx (2).png';
 import smartath from '../../components/images/smartath.png';
 
 export default function Annoucement() {
   const annoucementInfo = [
     {
-      Logo: [metfx],
-      Name: 'METFX',
-      Link: 'https://poocoin.app/tokens/0x6266a18f1605da94e8317232ffa634c74646ac40',
-    },
-    {
-      Logo: [smartath],
-      Name: 'SMARTATH',
-      Link: 'https://www.pinksale.finance/launchpad/0xE0B0c9c7164eef8A27584f0d35cC5e655a9970ba?chain=BSC',
+      Logo: [fifa],
+      Name: 'FIFA INU',
+      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
     },
     {
       Logo: [metfx],
@@ -27,6 +23,11 @@ export default function Annoucement() {
       Link: 'https://www.pinksale.finance/launchpad/0xE0B0c9c7164eef8A27584f0d35cC5e655a9970ba?chain=BSC',
     },
     {
+      Logo: [fifa],
+      Name: 'FIFA INU',
+      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+    },
+    {
       Logo: [metfx],
       Name: 'METFX',
       Link: 'https://poocoin.app/tokens/0x6266a18f1605da94e8317232ffa634c74646ac40',
@@ -35,6 +36,26 @@ export default function Annoucement() {
       Logo: [smartath],
       Name: 'SMARTATH',
       Link: 'https://www.pinksale.finance/launchpad/0xE0B0c9c7164eef8A27584f0d35cC5e655a9970ba?chain=BSC',
+    },
+    {
+      Logo: [fifa],
+      Name: 'FIFA INU',
+      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+    },
+    {
+      Logo: [metfx],
+      Name: 'METFX',
+      Link: 'https://poocoin.app/tokens/0x6266a18f1605da94e8317232ffa634c74646ac40',
+    },
+    {
+      Logo: [smartath],
+      Name: 'SMARTATH',
+      Link: 'https://www.pinksale.finance/launchpad/0xE0B0c9c7164eef8A27584f0d35cC5e655a9970ba?chain=BSC',
+    },
+    {
+      Logo: [fifa],
+      Name: 'FIFA INU',
+      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
     },
     {
       Logo: [metfx],
