@@ -16,17 +16,24 @@ const SimpleBarStyle = styled(SimpleBarReact)(({ theme }) => ({
   maxHeight: '100%',
   '& .simplebar-scrollbar': {
     '&:before': {
-      backgroundColor: alpha(theme.palette.grey[600], 0.48),
+      backgroundColor: '#22ABE3',
+      // backgroundColor: alpha(theme.palette.grey[600], 0.48),
     },
     '&.simplebar-visible:before': {
       opacity: 1,
+    },
+    [theme.breakpoints.up('sm')]: {
+      '&:before': {
+        backgroundColor: '#22ABE3',
+        // backgroundColor: alpha(theme.palette.grey[600], 0.48),
+      },
     },
   },
   '& .simplebar-track.simplebar-vertical': {
     width: 10,
   },
   '& .simplebar-track.simplebar-horizontal .simplebar-scrollbar': {
-    height: 6,
+    height: 0,
   },
   '& .simplebar-mask': {
     zIndex: 'inherit',
@@ -47,7 +54,7 @@ export default function Scrollbar({ children, sx, ...other }) {
 
   if (isMobile) {
     return (
-      <Box sx={{ overflowX: 'auto', ...sx }} {...other}>
+      <Box sx={{ overflowX: 'hidden', ...sx }} {...other}>
         {children}
       </Box>
     );
