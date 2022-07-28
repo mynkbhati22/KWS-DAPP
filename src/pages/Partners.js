@@ -47,7 +47,7 @@ export default function EcommerceShop() {
         <Grid container spacing={2} textAlign="center">
           {partners &&
             partners.map((partners, index) => (
-              <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
+              <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={index}>
                 <Card sx={{ maxWidth: 280, height: 350, display:"block",  margin: '0px auto 50px', boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)' }}>
                   <Link href={partners.link} target="_blank" sx={{textDecoration:"none"}}>
                     <CardContent>

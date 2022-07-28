@@ -133,11 +133,40 @@ export default makeStyles((theme) => {
         background: 'transparent',
       },
     },
-  
 
     // ANIMATION
-    marquee:{
-      color:"#fff"
-    }
+    marquee: {
+      color: '#fff',
+    },
+
+    // SAFU REPORTS
+    buttonSafu: {
+      backgroundColor: '#22abe3',
+      color: '#fff',
+      transition: '0.5s',
+      '&:hover': {
+        background: '#F68733',
+        color: '#000',
+      },
+      [theme.breakpoints.down('lg')]: {
+        width: '100%',
+        fontSize: '25px',
+      },
+      [theme.breakpoints.down('md')]: {
+        width: '100%',
+        fontSize: '16px',
+      },
+    },
+
+    safureports: {
+      [theme.breakpoints.down('md')]: {
+        width: '300px',
+        height: '300px',
+      },
+    },
+    safu: {
+      textAlign: 'center',
+      alignItems: 'center',
+    },
   };
 });

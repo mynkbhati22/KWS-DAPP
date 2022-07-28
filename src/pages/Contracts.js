@@ -95,13 +95,13 @@ export default function DenseTable() {
             color: '#27ADE3',
           }}
         >
-          Contracts By Us
+          Contracts by KWS
         </Typography>
         <TableContainer component={Paper} sx={{ border: '1px solid' }}>
           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontSize: '22px' }}>Sno</TableCell>
+                {/* <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell> */}
                 <TableCell align="center" sx={{ fontSize: '22px' }}>
                   Project Name
                 </TableCell>
@@ -120,7 +120,7 @@ export default function DenseTable() {
               {contracts &&
                 contracts.map((contracts, index) => (
                   <TableRow key={index}>
-                    <TableCell>{contracts.sno}</TableCell>
+                    {/* <TableCell>{contracts.sno}</TableCell> */}
                     <TableCell align="center">{contracts.projectname}</TableCell>
                     <TableCell align="center">{contracts.smartcontracttype}</TableCell>
                     <TableCell align="center">{contracts.chain}</TableCell>

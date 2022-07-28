@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink as RouterLink, matchPath, useLocation } from 'react-router-dom';
 // material
 import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, List, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
+import { Box, List, Collapse, ListItemText, ListItemIcon, ListItemButton, Link } from '@mui/material';
 //
 import Iconify from './Iconify';
 
@@ -39,7 +39,7 @@ function NavItem({ item, active }) {
 
   const isActiveRoot = active(item.path);
 
-  const { title, path, icon, info, children } = item;
+  const { title, path, link, icon, info, children } = item;
 
   const [open, setOpen] = useState(isActiveRoot);
 
@@ -81,14 +81,14 @@ function NavItem({ item, active }) {
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {children.map((item) => {
-              const { title, path } = item;
-              const isActiveSub = active(path);
+              const { title, path, link } = item;
+              const isActiveSub = active(path || link);
 
               return (
                 <ListItemStyle
                   key={title}
                   component={RouterLink}
-                  to={path}
+                  to={path || link}
                   sx={{
                     ...(isActiveSub && activeSubStyle),
                   }}
@@ -125,7 +125,7 @@ function NavItem({ item, active }) {
   return (
     <ListItemStyle
       component={RouterLink}
-      to={path}
+      to={path || link}
       sx={{
         ...(isActiveRoot && activeRootStyle),
       }}

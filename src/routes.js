@@ -11,6 +11,7 @@ import Contracts from './pages/Contracts';
 import NotFound from './pages/Page404';
 import ComingSoon from './pages/ComingSoon';
 import Contact from './pages/Contact';
+import SafuReports from './pages/SafuReports';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 
@@ -28,6 +29,7 @@ export default function Router() {
         { path: 'services', element: <Services /> },
         { path: 'our-team', element: <Team /> },
         { path: 'contracts-by-us', element: <Contracts /> },
+        { path: 'safu-reports', element: <SafuReports /> },
         { path: 'portfolio', element: <Blog /> },
       ],
     },
