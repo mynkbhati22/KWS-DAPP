@@ -44,13 +44,13 @@ const navConfig = [
   },
   {
     title: 'contracts',
-    path: '/contracts-by-us',
+    path: '/coming-soon',
     icon: getIcon('eva:file-text-fill'),
   },
 
   {
     title: 'create token',
-    path: '/create-token',
+    path: '/coming-soon',
     icon: <TokenIcon />,
   },
 
