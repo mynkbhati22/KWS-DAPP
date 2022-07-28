@@ -52,7 +52,7 @@ export default function DenseTable() {
   //     Chain: '3',
   //     ExplorerLink: '#',
   //   },
-  //   {
+  //
   //     Sno: '4',
   //     ProjectName: 'Contract 4',
   //     SmartContractType: 'SCT',

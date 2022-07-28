@@ -40,24 +40,54 @@ export default function EcommerceShop() {
     }`
     ).then((data) => setPartners(data));
   }, []);
- 
+
   return (
     <Page title="KWS: Partners">
-      <Container maxWidth="xl" sx={{marginTop:"50px"}}>
+      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
+        <Typography
+          variant="h3"
+          sx={{
+            marginBottom: '5px',
+            fontWeight: '900',
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '20px',
+            textAlign: 'center',
+            color: '#27ADE3',
+          }}
+        >
+          PARTNERS
+        </Typography>
+        <Typography variant="body1" textAlign="center" marginBottom="25px">
+          Expanding Boundaries Every Day
+        </Typography>
         <Grid container spacing={2} textAlign="center">
           {partners &&
             partners.map((partners, index) => (
               <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={index}>
-                <Card sx={{ maxWidth: 280, height: 350, display:"block",  margin: '0px auto 50px', boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)' }}>
-                  <Link href={partners.link} target="_blank" sx={{textDecoration:"none"}}>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 350,
+                    display: 'block',
+                    margin: '0px auto 50px',
+                    boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)',
+                  }}
+                >
+                  <Link href={partners.link} target="_blank" sx={{ textDecoration: 'none' }}>
                     <CardContent>
                       <Label
                         gutterBottom
-                        sx={{ marginTop: '7px',marginBottom:"7px", background: '#F58632', color: '#fff', fontSize:"15px" }}
+                        sx={{
+                          marginTop: '7px',
+                          marginBottom: '7px',
+                          background: '#F58632',
+                          color: '#fff',
+                          fontSize: '15px',
+                        }}
                       >
                         {partners.title}
                       </Label>
-                      <Typography variant="body2" color="secondary" align='left'>
+                      <Typography variant="body2" color="secondary" align="left">
                         {partners.description}
                       </Typography>
                     </CardContent>

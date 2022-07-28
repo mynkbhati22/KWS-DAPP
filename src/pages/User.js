@@ -17,15 +17,23 @@ import {
   Typography,
   ImageList,
   ImageListItem,
+  InputLabel,
+  Select,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // components
 import Web3 from 'web3';
+import { ToastContainer, toast } from 'react-toastify';
 import { getAccount } from '../components/Web3/Balance';
 import Page from '../components/Page';
 import meta from '../components/images/meta.png';
 import connect from '../components/images/connect.svg';
 import useStyles from '../components/style';
+import 'react-toastify/dist/ReactToastify.css';
 // mock
 import USERLIST from '../_mock/user';
 
@@ -118,22 +126,24 @@ console.log(web3);
 export default function User() {
   const [open, setOpen] = useState(false);
   const [account, setAccount] = useState('');
+  const [pancakeswap, setPancakeswap] = useState('Pancakeswap');
+  const [value, setValue] = useState('no');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [tokens, setTokens] = useState('Basic Token');
+  const [babyToken, setBabyToken] = useState(false);
 
   // CLASSES
   const classes = useStyles();
 
-  // TOKENS
-  const [tokens, setTokens] = useState('Basic Token');
   // ROUTERS
-
-  // BABY TOKEN
-  const [babyToken, setBabyToken] = useState(false);
 
   const handleChange = (e) => {
     setTokens(e.target.value);
+    setPancakeswap(e.target.value);
+    setValue(e.target.value);
   };
+
   // TOKEN VALUES
   const ShowValues = () => {
     setBabyToken(!babyToken);
@@ -159,6 +169,9 @@ export default function User() {
     }
     check();
   }, []);
+
+  // TOAST WARNING
+  const notify = () => toast('Connect Your Wallet First');
 
   return (
     <Page title="KWS:Create Token">
@@ -249,11 +262,12 @@ export default function User() {
             <TextField id="outlined-search" label="Symbol" type="text" />
           </FormControl>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <TextField id="filled-number" label="Total Supply" type="number" />
+            <TextField id="outlined-search" label="Total Supply" type="number" />
           </FormControl>
-          <Button sx={{ border: '1px solid', display: 'block', margin: '20px auto', width: '100%' }}>
+          <Button sx={{ border: '1px solid', display: 'block', margin: '20px auto', width: '100%' }} onClick={notify}>
             Create Token
           </Button>
+          <ToastContainer />
         </ContentStyle>
       </Container>
     </Page>

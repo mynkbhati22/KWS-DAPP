@@ -55,7 +55,7 @@ const navConfig = [
 
   {
     title: 'create token',
-    path: '/coming-soon',
+    path: '/create-token',
     icon: <TokenIcon />,
   },
 
