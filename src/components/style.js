@@ -143,6 +143,8 @@ export default makeStyles((theme) => {
     buttonSafu: {
       backgroundColor: '#22abe3',
       color: '#fff',
+      fontSize:"22px",
+      width:"70%",
       transition: '0.5s',
       '&:hover': {
         background: '#F68733',

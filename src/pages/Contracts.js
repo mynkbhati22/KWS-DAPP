@@ -97,7 +97,7 @@ export default function DenseTable() {
         >
           Contracts by KWS
         </Typography>
-        <TableContainer component={Paper} sx={{ border: '1px solid' }}>
+        <TableContainer component={Paper} sx={{ border: '1px solid', padding:"20px 0px" }}>
           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
