@@ -10,7 +10,7 @@ export default function Annoucement() {
     {
       Logo: [fifa],
       Name: 'FIFA INU',
-      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+      Link: 'https://poocoin.app/tokens/0x4182a8fa344a59b7bf813e29954e4ca07701571c',
     },
     {
       Logo: [metfx],
@@ -25,7 +25,7 @@ export default function Annoucement() {
     {
       Logo: [fifa],
       Name: 'FIFA INU',
-      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+      Link: 'https://poocoin.app/tokens/0x4182a8fa344a59b7bf813e29954e4ca07701571c',
     },
     {
       Logo: [metfx],
@@ -40,7 +40,7 @@ export default function Annoucement() {
     {
       Logo: [fifa],
       Name: 'FIFA INU',
-      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+      Link: 'https://poocoin.app/tokens/0x4182a8fa344a59b7bf813e29954e4ca07701571c',
     },
     {
       Logo: [metfx],
@@ -55,7 +55,7 @@ export default function Annoucement() {
     {
       Logo: [fifa],
       Name: 'FIFA INU',
-      Link: 'https://www.pinksale.finance/launchpad/0xCdA61D1Bfc1Db47035d01BaAfeEf9aDDAB1C5D1F?chain=BSC',
+      Link: 'https://poocoin.app/tokens/0x4182a8fa344a59b7bf813e29954e4ca07701571c',
     },
     {
       Logo: [metfx],
