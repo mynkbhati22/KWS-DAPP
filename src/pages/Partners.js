@@ -45,7 +45,6 @@ export default function EcommerceShop() {
     <Page title="KWS: Partners">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Typography
-          variant="h3"
           sx={{
             marginBottom: '5px',
             fontWeight: '900',
@@ -57,7 +56,7 @@ export default function EcommerceShop() {
         >
           PARTNERS
         </Typography>
-        <Typography variant="body1" textAlign="center" marginBottom="25px">
+        <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign:"center" }}>
           Expanding Boundaries Every Day
         </Typography>
         <Grid container spacing={2} textAlign="center">

@@ -22,8 +22,8 @@ const POST_TITLES = [
   'Trippyfrens'
 ];
 const POST_DESCRIBE = [
-  'Customized website for MetFx Project to be launched on ETH.',
-  'Customized website for MetFx Project to be launched on ETH.',
+  'Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.',
+  'Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.',
   'Custom coded website in react for Ryoshi Token deployed on both BSC & ETH.',
   'Website and DAPP for $BBT token on BSC.',
   'Lottery DAPP to hold lotteries on blockchain. Ability to create pots of different values, allow participants to buy lotteries, set max lottery entries per wallet, declare winner. Everything transparent on BSC.',
