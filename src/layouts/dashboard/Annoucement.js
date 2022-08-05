@@ -26,7 +26,7 @@ export default function Annoucement() {
     {
       Logo: [CustodyW],
       Name: 'CUSTODIY',
-      Link: 'https://www.custodiy.com/',
+      Link: 'https://poocoin.app/tokens/0x188173379ac8963048afe01c5d3d5998fee67254',
     },
     {
       Logo: [fifa],
@@ -46,7 +46,7 @@ export default function Annoucement() {
     {
       Logo: [CustodyW],
       Name: 'CUSTODIY',
-      Link: 'https://www.custodiy.com/',
+      Link: 'https://poocoin.app/tokens/0x188173379ac8963048afe01c5d3d5998fee67254',
     },
     {
       Logo: [fifa],
@@ -66,7 +66,7 @@ export default function Annoucement() {
     {
       Logo: [CustodyW],
       Name: 'CUSTODIY',
-      Link: 'https://www.custodiy.com/',
+      Link: 'https://poocoin.app/tokens/0x188173379ac8963048afe01c5d3d5998fee67254',
     },
     {
       Logo: [fifa],
@@ -86,7 +86,7 @@ export default function Annoucement() {
     {
       Logo: [CustodyW],
       Name: 'CUSTODIY',
-      Link: 'https://www.custodiy.com/',
+      Link: 'https://poocoin.app/tokens/0x188173379ac8963048afe01c5d3d5998fee67254',
     },
   ];
 
