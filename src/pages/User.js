@@ -131,15 +131,16 @@ export default function User() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [active, setActive] = useState(false);
-  const [refelect, setRefelect] = useState(false);
   const [account, setAccount] = useState('');
   const [babyToken, setBabyToken] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   const [tokens, setTokens] = useState('Basic Token');
+  const [reflectionToken, setReflectionToken] = useState('hello');
   const [selectedValue, setSelectedValue] = useState('no');
   const [selectedValue2, setSelectedValue2] = useState('no');
   const [selectedValue3, setSelectedValue3] = useState('no');
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   // CLASSES
   const classes = useStyles();
@@ -180,9 +181,10 @@ export default function User() {
 
   const ShowNextTokenName = () => {
     setBabyToken(!babyToken);
-    setRefelect(!refelect);
     console.log('next token name is showing');
   };
+
+
 
   useEffect(() => {
     async function check() {
@@ -269,7 +271,9 @@ export default function User() {
               label="Select Token"
               value={tokens}
               onChange={handleChange}
-              onClick={() => ShowNextTokenName()}
+              onClick={() => {
+                ShowNextTokenName();
+              }}
             >
               {tokenValues.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
