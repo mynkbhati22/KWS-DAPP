@@ -1,4 +1,7 @@
-import { filter } from 'lodash';
+/* eslint-disable consistent-return */
+/* eslint-disable react/prop-types */
+/* eslint-disable prefer-template */
+import { drop, filter } from 'lodash';
 import React, { useEffect, useState } from 'react';
 
 // material
@@ -26,12 +29,15 @@ import {
   Checkbox,
   FormGroup,
   FormHelperText,
+  Grid,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // components
 import Web3 from 'web3';
 import { ToastContainer, toast } from 'react-toastify';
+import DiscountIcon from '@mui/icons-material/Discount';
 import { getAccount } from '../components/Web3/Balance';
+import { DisconnectWallet } from '../components/Web3/Disconnect';
 import Page from '../components/Page';
 import meta from '../components/images/meta.png';
 import connect from '../components/images/connect.svg';
@@ -39,6 +45,7 @@ import useStyles from '../components/style';
 import 'react-toastify/dist/ReactToastify.css';
 // mock
 import USERLIST from '../_mock/user';
+import TransitionAlerts from '../components/Alert';
 
 // ----------------------------------------------------------------------
 
@@ -78,17 +85,17 @@ const tokenValues = [
     label: 'Basic Token',
   },
   {
-    value: 'Baby Token',
-    label: 'Baby Token',
+    value: 'Reward Token',
+    label: 'Reward Token',
   },
-  {
-    value: 'Reflection Token',
-    label: 'Reflection Token',
-  },
-  {
-    value: 'Apy Token',
-    label: 'Apy Token',
-  },
+  // {
+  //   value: 'Reflection Token',
+  //   label: 'Reflection Token',
+  // },
+  // {
+  //   value: 'Apy Token',
+  //   label: 'Apy Token',
+  // },
 ];
 const ContentStyle = styled('div')(({ theme }) => ({
   width: '80%',
@@ -132,12 +139,12 @@ export default function User() {
   const [show2, setShow2] = useState(false);
   const [active, setActive] = useState(false);
   const [account, setAccount] = useState('');
-  const [babyToken, setBabyToken] = useState(false);
+  const [rewardToken, setRewardToken] = useState(false);
   const [tokens, setTokens] = useState('Basic Token');
-  const [reflectionToken, setReflectionToken] = useState('hello');
   const [selectedValue, setSelectedValue] = useState('no');
   const [selectedValue2, setSelectedValue2] = useState('no');
   const [selectedValue3, setSelectedValue3] = useState('no');
+  const [dropdown, setDropDown] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -165,9 +172,19 @@ export default function User() {
     if (window.ethereum) {
       const add = await window.ethereum.enable();
       setAccount(add[0]);
-      window.location.reload();
       console.log(window.ethereum);
+      window.localStorage.setItem('wallet', 'metamask');
     }
+  };
+
+  const Disconnect = async () => {
+    if (!account) {
+      return true;
+    }
+    await DisconnectWallet();
+    setAccount(undefined);
+    window.user = undefined;
+    window.localStorage.removeItem('wallet');
   };
 
   const ShowInputs = () => {
@@ -180,11 +197,13 @@ export default function User() {
   };
 
   const ShowNextTokenName = () => {
-    setBabyToken(!babyToken);
+    setRewardToken(!rewardToken);
     console.log('next token name is showing');
   };
 
-
+  const ShowDropDown = () => {
+    setDropDown(!dropdown);
+  };
 
   useEffect(() => {
     async function check() {
@@ -201,32 +220,61 @@ export default function User() {
   return (
     <Page title="KWS:Create Token">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
-        <Stack direction="row" justifyContent="space-around" mb={2}>
-          <Item
-            sx={{
-              marginTop: '7px',
-              fontWeight: '900',
-              fontFamily: 'Poppins, sans-serif',
-              fontSize: '25px',
-              color: '#27ADE3',
-            }}
-          >
-            Create Token
-          </Item>
-          <Button onClick={handleOpen}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={6} xl={6}>
             <Item
               sx={{
-                marginTop: '5px',
+                marginTop: '7px',
                 fontWeight: '900',
                 fontFamily: 'Poppins, sans-serif',
-                fontSize: '20px',
-                color: '#F79A3F',
+                fontSize: '25px',
+                color: '#27ADE3',
               }}
             >
-              {account ? account.slice(0, 4) + account.slice(38) : 'Connect Wallet'}
+              Create Token
             </Item>
-          </Button>
-        </Stack>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} xl={6}>
+            {!account ? (
+              <Button onClick={handleOpen} sx={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}>
+                <Item
+                  sx={{
+                    marginTop: '5px',
+                    fontWeight: '900',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '20px',
+                    color: '#F79A3F',
+                    '&:hover': {
+                      background: 'none',
+                    },
+                  }}
+                >
+                  Connect Wallet
+                  {/* {account ? account.slice(0, 4) + "..." + account.slice(38) : 'Connect Wallet'} */}
+                </Item>
+              </Button>
+            ) : (
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Button
+                  sx={{
+                    marginTop: '5px',
+                    fontWeight: '900',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '20px',
+                    color: '#F79A3F',
+                    '&:hover': {
+                      background: 'none',
+                    },
+                  }}
+                >
+                  {account.slice(0, 4) + '...' + account.slice(38)}{' '}
+                </Button>
+                <DiscountIcon sx={{ cursor: 'pointer', color: '#22ABE3' }} onClick={() => Disconnect()} />
+              </Box>
+            )}
+          </Grid>
+        </Grid>
+
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -263,23 +311,34 @@ export default function User() {
             </Box>
           </Fade>
         </Modal>
+        <TransitionAlerts />
         <ContentStyle>
+          <Box>
+            <Typography paragraph sx={{ textAlign: 'center', color: '#F58632' }} variant="h5">
+              Price: 7 BNB (with Light Audit by KWS)
+            </Typography>
+            <Typography paragraph sx={{ textAlign: 'center', color: '#F58632' }} variant="h5">
+              <Typography component="span" variant="h5" sx={{ color: '#22ABE3' }}>
+                ★
+              </Typography>{' '}
+              SAFU Badge
+            </Typography>
+          </Box>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <TextField
-              id="outlined-select-currency"
-              select
-              label="Select Token"
-              value={tokens}
-              onChange={handleChange}
-              onClick={() => {
-                ShowNextTokenName();
-              }}
-            >
+            <TextField id="outlined-select-currency" select label="Select Token" value={tokens} onChange={handleChange}>
               {tokenValues.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
+                <MenuItem
+                  key={option.value}
+                  value={option.value}
+                  onClick={() => {
+                    ShowNextTokenName();
+                  }}
+                >
                   {option.label}
                 </MenuItem>
               ))}
+              <MenuItem value="Reflection Token">Reflection Token</MenuItem>
+              <MenuItem value="Apy Token">Apy Token</MenuItem>
             </TextField>
           </FormControl>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -288,7 +347,7 @@ export default function User() {
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="outlined-search" label="Symbol" type="text" />
           </FormControl>
-          {babyToken ? (
+          {rewardToken ? (
             <FormControl sx={{ m: 1, minWidth: 120 }}>
               <TextField
                 id="outlined-read-only-input"
@@ -306,7 +365,7 @@ export default function User() {
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="outlined-search" label="Total Supply" type="number" />
           </FormControl>
-          {babyToken ? (
+          {rewardToken ? (
             <>
               <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <TextField
@@ -375,7 +434,7 @@ export default function User() {
               />
             </RadioGroup>
           </FormControl>
-          {show && !babyToken ? (
+          {show && !rewardToken ? (
             <>
               <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <TextField id="outlined-search" label="Max Transaction Limit Percentage For Buy (>=1)" type="number" />
@@ -387,7 +446,7 @@ export default function User() {
           ) : (
             ''
           )}
-          {show2 && babyToken ? (
+          {show2 && rewardToken ? (
             <>
               <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <TextField
@@ -461,7 +520,7 @@ export default function User() {
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <TextField id="outlined-basic" label="Marketing Share" variant="outlined" type="number" />
           </FormControl>
-          {babyToken ? (
+          {rewardToken ? (
             <FormControl sx={{ m: 1, minWidth: 120 }}>
               <TextField id="outlined-basic" label="Reward Share" variant="outlined" type="number" />
             </FormControl>

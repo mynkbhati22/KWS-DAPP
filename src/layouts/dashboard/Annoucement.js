@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import React, { useState, useEffect } from 'react';
 import { Box, Container, ImageList, ImageListItem, Link, Typography } from '@mui/material';
 import Client from '../../Client';
@@ -6,8 +7,9 @@ import metfx from '../../components/images/metfx (2).png';
 import CustodyW from '../../components/images/Custody.png';
 import smartath from '../../components/images/smartath.png';
 
-export default function Annoucement() {
 
+
+export default function Annoucement() {
   const [annoucement, setAnnouncement] = useState();
   useEffect(() => {
     Client.fetch(
@@ -26,8 +28,6 @@ export default function Annoucement() {
       .then((data) => setAnnouncement(data))
       .catch(console.error);
   }, []);
-
-
 
   return (
     <Container maxWidth="xl" sx={{ overflow: 'hidden' }}>
