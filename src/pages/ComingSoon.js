@@ -26,10 +26,10 @@ export default function Page404() {
       <Container>
         <ContentStyle sx={{ textAlign: 'center', alignItems: 'center' }}>
           <Typography variant="h2" paragraph>
-            We Are Coming Soon
+            Coming Soon
           </Typography>
 
-          <Typography sx={{ color: 'text.secondary' }}>We are launchng something new</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>We are launching something new</Typography>
 
           <Box component="img" src={comingsoon} sx={{ height: 260, mx: 'auto', my: { xs: 5, sm: 10 }, width:"100%"}} />
 

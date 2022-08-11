@@ -66,7 +66,7 @@ export default function Register() {
         </HeaderStyle>
         {mdUp && (
           <SectionStyle>
-            <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
+            <Typography variant="h3" sx={{ px: 5, mt: 17, mb: 5 }}>
                 Get tailor made solutions to perfectly fit your project development requirements.
             </Typography>
             <img alt="register" src="/static/illustrations/illustration_register.png" />
