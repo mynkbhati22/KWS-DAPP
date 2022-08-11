@@ -6,7 +6,7 @@ body {
   justify-content: center;
   font-family: 'proxima nova', 'open sans', 'Helvetica', sans-serif;
 }
-*/ .Marquee {
+ .Marquee {
   display: flex !important;
   flex-direction: row !important;
   width: 100%;
