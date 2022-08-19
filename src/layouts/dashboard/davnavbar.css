@@ -6,7 +6,7 @@ body {
   justify-content: center;
   font-family: 'proxima nova', 'open sans', 'Helvetica', sans-serif;
 }
- .Marquee {
+/* .Marquee {
   display: flex !important;
   flex-direction: row !important;
   width: 100%;
@@ -39,7 +39,7 @@ body {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
   cursor: pointer;
-}
+} */
 
 @keyframes marquee {
   0% {
@@ -50,75 +50,70 @@ body {
     transform: translate(-100%);
   }
 }
-/* body {
-  font-family: sans-serif;
-  font-weight: 700;
-  height: 600vh;
-  margin: 0;
-}
-.marquee-js {
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  overflow-x: hidden;
-  height: auto;
-  background-color: #d62e27;
-  padding: 14px 0;
-  margin-top: 120px;
 }
-.marquee-js .marquee-inner {
-  position: relative;
-  width: auto;
-  width: 100%;
-  display: flex;
-  color: #000;
-  position: relative;
-  background: #ffcb1f;
-}
-.marquee-content {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  background: #ffcb1f;
-  border: none;
-}
-.marquee-text {
-  white-space: nowrap;
-  position: relative;
-  padding: 0;
-  font-family: 'national 2 compressed';
-  font-weight: 700;
-  font-size: 72px;
-  line-height: 72px;
-  margin-right: 48px;
+.Marquee-container:hover {
+  animation-play-state: paused !important;
 }
 
-.marquee-text:after {
-  content: '';
-  position: absolute;
-  top: 30px;
-  right: -30px;
-  height: 12px;
-  width: 12px;
-  z-index: 3;
-  background-color: #000;
-  border-radius: 100%;
+.marquee {
+  --play: running !important;
+  --direction: normal !important;
+  --duration: 15s !important;
+  --delay: 0s !important;
+  --iteration-count: infinite !important;
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  -webkit-animation-play-state: var(--play);
+  animation-play-state: var(--play);
+  -webkit-animation-delay: var(--delay);
+  animation-delay: var(--delay);
+  -webkit-animation-direction: var(--direction);
+  animation-direction: var(--direction);
 }
-@media only screen and (max-width: 768px) {
-  .marquee-js {
-    padding: 6px 0;
-    margin-top: 46px;
+.Marquee-tag {
+  width: 175px;
+  margin: 20px 0px 20px;
+  padding: 20px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.Marquee-tag:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
   }
-  .marquee-text {
-    font-size: 30px;
-    line-height: 41px;
-    margin-right: 16px;
+  100% {
+    transform: translateX(-100%);
   }
-  .marquee-text:after {
-    top: 18px;
-    right: -12px;
-    height: 6.69px;
-    width: 6.69px;
-  }
-} */
+}
+.css-1stc1k {
+  background-color: rgb(33, 43, 54);
+  color: rgb(255, 255, 255);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 8px;
+  box-shadow: none;
+  background-image: none;
+  margin-left: 16px;
+  margin-right: 16px;
+}
