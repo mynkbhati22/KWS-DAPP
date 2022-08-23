@@ -38,7 +38,12 @@ const POST_DESCRIBE = [
   'Business website for Elite Butlers built using WordPress.',
   'Travel blog with JAMStack using Ghost as headless CMS.',
   'Launchpad built on BSC with crowdfunding and factory contracts.',
-  'A unique NFT collection for Trippyfrens and minting DAPP.'
+  'A unique NFT collection for Trippyfrens and minting DAPP.',
+  'A unique NFT collection for moonratz.',
+  'NFT Staking and SWAP platform',
+  'A Staking platform for secure-pay',
+  'SWAP platform for gctech',
+  'Staking platform for MetaWebPad3'
 ];
 const POST_LINK = [
   'https://marketplace.metfx.io/',
@@ -57,10 +62,15 @@ const POST_LINK = [
   'https://elitebutlers.co.in/',
   'https://ontraveldiary.com/',
   'https://memeforce.app/launchpad/0xc1De7769219d6D14549D8DDfed1093DD86B858B6/$MF',
-  'https://www.trippyfrens.com/'
+  'https://www.trippyfrens.com/',
+  'https://moonratz.com/',
+  'https://platform.moonratz.com/',
+  'https://pay-staking.netlify.app/',
+  'https://platform-gctech.netlify.app/',
+  'https://metaweb3pad-staking.netlify.app/'
 ];
 
-const posts = [...Array(16)].map((_, index) => ({
+const posts = [...Array(21)].map((_, index) => ({
   id: faker.datatype.uuid(),
   cover: `/static/mock-images/portfolioImages/portimg_${index + 1}.png`,
   title: POST_TITLES[index + 1],

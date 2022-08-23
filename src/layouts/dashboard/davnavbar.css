@@ -57,7 +57,7 @@ body {
   position: relative;
   width: 100%;
 }
-.Marquee-container:hover {
+.marquee-container:hover {
   animation-play-state: paused !important;
 }
 
@@ -97,6 +97,9 @@ body {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
   cursor: pointer;
+}
+input[type='image'] {
+  width: 100%;
 }
 
 @keyframes scroll {

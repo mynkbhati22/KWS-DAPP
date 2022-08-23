@@ -126,7 +126,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
               <Iconify icon="logos:whatsapp-icon" color="#DF3E30" width={22} height={22} />
             </Link>
 
-            <Link fullwidth="true" size="large" color="inherit" variant="outlined" href="https://t.me/ARRN4YA"  target="_blank">
+            <Link
+              fullwidth="true"
+              size="large"
+              color="inherit"
+              variant="outlined"
+              href="https://t.me/ARRN4YA"
+              target="_blank"
+            >
               <Iconify icon="logos:telegram" color="#1877F2" width={22} height={22} />
             </Link>
 
@@ -147,9 +154,28 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           </Button>
           <ImageList sx={{ display: 'block', margin: '20px auto' }}>
             <ImageListItem>
-              <Link href="https://www.coinpayments.net/index.php" target="_blank">
+              <form action="https://www.coinpayments.net/index.php" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_pay" />
+                <input type="hidden" name="reset" value="1" />
+                <input type="hidden" name="merchant" value="6289093dd6302654016630f702efe7d3" />
+                <input type="hidden" name="item_name" value="Smart Contract Development" />
+                <input type="hidden" name="currency" value="USD" />
+                <input type="hidden" name="amountf" value="3000.00000000" />
+                <input type="hidden" name="quantity" value="1" />
+                <input type="hidden" name="allow_quantity" value="1" />
+                <input type="hidden" name="want_shipping" value="0" />
+                <input type="hidden" name="success_url" value="https://kesaviwebsolutions.com/successful-payment" />
+                <input type="hidden" name="cancel_url" value="https://kesaviwebsolutions.com/cancelled-payment" />
+                <input type="hidden" name="allow_extra" value="1" />
+                <input
+                  type="image"
+                  src="https://www.coinpayments.net/images/pub/buynow-blue2.png"
+                  alt="Buy Now with CoinPayments.net"
+                />
+              </form>
+              {/* <Link href="https://www.coinpayments.net/index.php" target="_blank">
                 <img src="https://www.coinpayments.net/images/pub/buynow-blue2.png" alt="" />
-              </Link>
+              </Link> */}
             </ImageListItem>
           </ImageList>
         </Stack>

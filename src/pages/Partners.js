@@ -86,7 +86,7 @@ export default function EcommerceShop() {
                       >
                         {partners.title}
                       </Label>
-                      <Typography variant="body2" color="secondary" align="left">
+                      <Typography variant="body2" color="text.secondary" align="left">
                         {partners.description}
                       </Typography>
                     </CardContent>
