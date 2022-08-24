@@ -47,11 +47,11 @@ const navConfig = [
     path: '/contracts-by-us',
     icon: getIcon('eva:file-text-fill'),
   },
-  {
-    title: 'safu report',
-    path: '/safu-reports',
-    icon: getIcon('eva:file-text-fill'),
-  },
+  // {
+  //   title: 'safu report',
+  //   path: '/safu-reports',
+  //   icon: getIcon('eva:file-text-fill'),
+  // },
 
   {
     title: 'create token',

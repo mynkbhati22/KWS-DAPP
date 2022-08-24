@@ -29,7 +29,7 @@ export default function Router() {
         { path: 'services', element: <Services /> },
         { path: 'our-team', element: <Team /> },
         { path: 'contracts-by-us', element: <Contracts /> },
-        { path: 'safu-reports', element: <SafuReports /> },
+        // { path: 'safu-reports', element: <SafuReports /> },
         { path: 'portfolio', element: <Blog /> },
       ],
     },
