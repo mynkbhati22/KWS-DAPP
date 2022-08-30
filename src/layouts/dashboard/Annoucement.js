@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Box, Container, ImageList, ImageListItem, Link, Typography } from '@mui/material';
 import $ from 'jquery';
 import Client from '../../Client';
-import fifa from '../../components/images/fifa inu.png';
-import metfx from '../../components/images/metfx (2).png';
-import CustodyW from '../../components/images/Custody.png';
-import smartath from '../../components/images/smartath.png';
 
 export default function Annoucement() {
   const [annoucement, setAnnouncement] = useState();

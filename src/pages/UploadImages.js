@@ -1,28 +1,56 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import { Box, Button, ImageList, ImageListItem, Typography } from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import CloseIcon from '@mui/icons-material/Close';
-import { Container } from '@mui/system';
-import React from 'react';
-import avatar from '../components/images/avatar_1.jpg';
+import React, { useState } from 'react';
+import ImageUploading from 'react-images-uploading';
 import './upload.css';
 
 export default function UploadImages() {
+  const [images, setImages] = useState([]);
+  const maxNumber = 69;
+
+  const onChange = (imageList, addUpdateIndex) => {
+    // data for submit
+    console.log(imageList, addUpdateIndex);
+    setImages(imageList);
+  };
+
   return (
-    <>
-      <Container maxWidth="lg">
-        <div className="container">
-          <div className="avatar-upload">
-            <div className="avatar-edit">
-              <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
-              <label hmtlFor="imageUpload" />
+    <div className="upload-image">
+      <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
+        {({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
+          // write your building UI
+          <>
+            <div className="upload__image-wrapper">
+              <button style={isDragging ? { color: 'red' } : undefined} onClick={onImageUpload} {...dragProps}>
+                Click or Drop here
+              </button>
+              &nbsp;
+              <button onClick={onImageRemoveAll}>Remove all images</button>
+              {imageList.map((image, index) => (
+                <div key={index} className="image-item">
+                  <img src={image.data_url} alt="" width="100" />
+                  <div className="image-item__btn-wrapper">
+                    <button onClick={() => onImageUpdate(index)}>Update</button>
+                    <button onClick={() => onImageRemove(index)}>Remove</button>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="avatar-preview">
-              <div id="imagePreview" style={{ backgroundImage: "url('');" }} />
+            <div {...dragProps}>
+              {isDragging ? 'Drop here please' : 'Upload space'}
+              {imageList.map((image, index) => (
+                <img key={index} src={image.data_url} alt="" />
+              ))}
             </div>
+          </>
+        )}
+        {/* {({ imageList, dragProps, isDragging }) => (
+          <div {...dragProps}>
+            {isDragging ? 'Drop here please' : 'Upload space'}
+            {imageList.map((image, index) => (
+              <img key={index} src={image.data_url} alt="" />
+            ))}
           </div>
-        </div>
-      </Container>
-    </>
+        )} */}
+      </ImageUploading>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ import Contracts from './pages/Contracts';
 import NotFound from './pages/Page404';
 import ComingSoon from './pages/ComingSoon';
 import Contact from './pages/Contact';
-import SafuReports from './pages/SafuReports';
+// import SafuReports from './pages/SafuReports';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import UploadImages from './pages/UploadImages';
