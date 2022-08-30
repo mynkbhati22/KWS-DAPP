@@ -1,3 +1,60 @@
-.upload-image {
+/* .upload-image {
   margin-top: 100px;
+} */
+
+
+
+.innerbox {
+  line-height: 5em;
+  text-align: center;
+  border-radius: 7px;
+  color: #0f3c4b;
+  background-color: #e5edf1;
+  outline: 1px dashed gray;
+  outline-offset: -6px;
+  box-shadow: 0 4px 10px 4px rgb(19 35 47 / 30%);
+  padding: 25px 0 ;
+  width: 100%;
 }
+.button{
+  width: 60%;
+  margin: 4%;
+}
+.outerbox{
+  width: 70%;
+  margin: 0px auto;
+  background-color: #E9EBEE;
+
+  border-radius:20px;
+  padding:2rem;
+
+}
+.innerbox{
+  width: 50%;
+  margin:2rem auto;
+  background-color:#E5EDF1 ;
+}
+@media screen and (max-width:700px) {
+  .button{
+    width: 80%;
+    margin: 2%
+  }
+  .outerbox{
+    width: 95%;
+    margin: 0px auto;
+    background-color: #E9EBEE;
+  
+    border-radius:20px;
+    padding:0.5rem;
+  
+  }
+  .innerbox{
+    width: 95%;
+    margin:1rem auto;
+    background-color:#E5EDF1 ;
+  }
+}
+
+
+
+
