@@ -19,7 +19,7 @@ const POST_TITLES = [
   'Elite Butlers',
   'Travel Blog',
   'Memeforce Launchpad',
-  'Trippyfrens'
+  'Trippyfrens',
 ];
 const POST_DESCRIBE = [
   'Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.',
@@ -43,7 +43,8 @@ const POST_DESCRIBE = [
   'NFT Staking and SWAP platform',
   'A Staking platform for secure-pay',
   'SWAP platform for gctech',
-  'Staking platform for MetaWebPad3'
+  'Staking platform for MetaWebPad3',
+  'Horse Racing Launchpad',
 ];
 const POST_LINK = [
   'https://marketplace.metfx.io/',
@@ -67,10 +68,11 @@ const POST_LINK = [
   'https://platform.moonratz.com/',
   'https://pay-staking.netlify.app/',
   'https://platform-gctech.netlify.app/',
-  'https://metaweb3pad-staking.netlify.app/'
+  'https://metaweb3pad-staking.netlify.app/',
+  'https://horseracinglaunchpad.netlify.app/',
 ];
 
-const posts = [...Array(21)].map((_, index) => ({
+const posts = [...Array(22)].map((_, index) => ({
   id: faker.datatype.uuid(),
   cover: `/static/mock-images/portfolioImages/portimg_${index + 1}.png`,
   title: POST_TITLES[index + 1],
