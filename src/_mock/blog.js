@@ -45,6 +45,9 @@ const POST_DESCRIBE = [
   'SWAP platform for gctech',
   'Staking platform for MetaWebPad3',
   'Horse Racing Launchpad',
+  'Eternity  Staking platform',
+  'Genesis Staking platform',
+  'BRAVO! – ESPORTS FANTASY PLATFORM',
 ];
 const POST_LINK = [
   'https://marketplace.metfx.io/',
@@ -70,9 +73,12 @@ const POST_LINK = [
   'https://platform-gctech.netlify.app/',
   'https://metaweb3pad-staking.netlify.app/',
   'https://horseracinglaunchpad.netlify.app/',
+  'https://eternity-p.netlify.app/',
+  'https://gensisfinance.netlify.app/',
+  'https://bravo-games.netlify.app/',
 ];
 
-const posts = [...Array(22)].map((_, index) => ({
+const posts = [...Array(25)].map((_, index) => ({
   id: faker.datatype.uuid(),
   cover: `/static/mock-images/portfolioImages/portimg_${index + 1}.png`,
   title: POST_TITLES[index + 1],
