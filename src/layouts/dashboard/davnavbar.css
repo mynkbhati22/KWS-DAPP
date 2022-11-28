@@ -68,7 +68,7 @@ body {
   --delay: 0s !important;
   --iteration-count: infinite !important;
   flex: 0 0 auto;
-  min-width: 100%;
+  /* min-width: 0%; */
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -92,6 +92,15 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+}
+.css-hmz4fg-MuiButtonBase-root-MuiListItemButton-root {
+  background: none !important;
+  color: #637381 !important;
+  font-weight: 400 !important;
+}
+a.MuiListItemButton-root.MuiButtonBase-root.css-hmz4fg-MuiButtonBase-root-MuiListItemButton-root.active {
+  background-color: rgb(245 134 50 / 16%) !important;
+  color: #f58937 !important;
 }
 .Marquee-tag:hover {
   background: rgba(255, 255, 255, 0.4);

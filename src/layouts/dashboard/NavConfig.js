@@ -1,4 +1,4 @@
-import { AiOutlineAudit } from 'react-icons/ai';
+import { BiBot } from 'react-icons/bi';
 // @mui
 import HomeIcon from '@mui/icons-material/Home';
 import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
@@ -47,11 +47,11 @@ const navConfig = [
     path: '/contracts-by-us',
     icon: getIcon('eva:file-text-fill'),
   },
-  {
-    title: 'upload image',
-    path: '/upload-images',
-    icon: getIcon('eva:file-text-fill'),
-  },
+  // {
+  //   title: 'upload image',
+  //   path: '/upload-images',
+  //   icon: getIcon('eva:file-text-fill'),
+  // },
   // {
   //   title: 'safu report',
   //   path: '/safu-reports',
@@ -65,15 +65,15 @@ const navConfig = [
   },
 
   {
-    title: 'request audit',
+    title: 'request bot',
     path: '/coming-soon',
-    icon: <AiOutlineAudit size={22} />,
+    icon: <BiBot size={22} />,
   },
-  {
-    title: 'request KYC',
-    path: '/coming-soon',
-    icon: <GppGoodIcon />,
-  },
+  // {
+  //   title: 'request KYC',
+  //   path: '/coming-soon',
+  //   icon: <GppGoodIcon />,
+  // },
 
   {
     title: 'contact us',

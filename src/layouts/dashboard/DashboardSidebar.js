@@ -152,7 +152,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           <Button href="https://t.me/ARRN4YA" target="_blank" className={classes.button}>
             Get Instant Quote
           </Button>
-          <ImageList sx={{ display: 'block', margin: '20px auto' }}>
+          {/* <ImageList sx={{ display: 'block', margin: '20px auto' }}>
             <ImageListItem>
               <form action="https://www.coinpayments.net/index.php" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_pay" />
@@ -173,11 +173,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
                   alt="Buy Now with CoinPayments.net"
                 />
               </form>
-              {/* <Link href="https://www.coinpayments.net/index.php" target="_blank">
+              <Link href="https://www.coinpayments.net/index.php" target="_blank">
                 <img src="https://www.coinpayments.net/images/pub/buynow-blue2.png" alt="" />
-              </Link> */}
+              </Link>
             </ImageListItem>
-          </ImageList>
+          </ImageList> */}
         </Stack>
       </Box>
     </Scrollbar>
