@@ -12,23 +12,37 @@ import {
   Typography,
   Link,
 } from '@mui/material';
-
+import axios from 'axios';
 import Client from '../Client';
 import Page from '../components/Page';
 
+const URL = 'http://localhost:7777';
+
 export default function DenseTable() {
   const [contracts, setContracts] = useState();
+
   useEffect(() => {
-    Client.fetch(
-      `*[_type=="contracts"] {
-        sno,
-        projectname,
-        smartcontracttype,
-        chain,
-        explorerlink,
-      }`
-    ).then((data) => setContracts(data));
+    const portfolioInterval = setInterval(() => {
+      axios.get(`${URL}/api/gettingcontracts`).then((res) => {
+        console.log('gettingcontracts', res.data);
+        setContracts(res.data);
+      });
+    }, 1100);
+    return () => {
+      clearInterval(portfolioInterval);
+    };
   }, []);
+  // useEffect(() => {
+  //   Client.fetch(
+  //     `*[_type=="contracts"] {
+  //       sno,
+  //       projectname,
+  //       smartcontracttype,
+  //       chain,
+  //       explorerlink,
+  //     }`
+  //   ).then((data) => setContracts(data));
+  // }, []);
 
   // const contractTableInfo = [
   //   {
@@ -97,11 +111,11 @@ export default function DenseTable() {
         >
           Contracts by KWS
         </Typography>
-        <TableContainer component={Paper} sx={{ border: '1px solid', padding:"20px 0px" }}>
+        <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }}>
           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                {/* <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell> */}
+                <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell>
                 <TableCell align="center" sx={{ fontSize: '22px' }}>
                   Project Name
                 </TableCell>
@@ -118,15 +132,15 @@ export default function DenseTable() {
             </TableHead>
             <TableBody>
               {contracts &&
-                contracts.map((contracts, index) => (
+                contracts.map((res, index) => (
                   <TableRow key={index}>
-                    {/* <TableCell>{contracts.sno}</TableCell> */}
-                    <TableCell align="center">{contracts.projectname}</TableCell>
-                    <TableCell align="center">{contracts.smartcontracttype}</TableCell>
-                    <TableCell align="center">{contracts.chain}</TableCell>
+                    <TableCell>{contracts.indexOf(res) + 1}.</TableCell>
+                    <TableCell align="center">{res.projectname}</TableCell>
+                    <TableCell align="center">{res.smartcontracttype}</TableCell>
+                    <TableCell align="center">{res.chainnetwork}</TableCell>
                     <TableCell>
-                      <Link target="_blank" href={contracts.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
-                        {contracts.explorerlink}{' '}
+                      <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.explorerlink}{' '}
                       </Link>
                     </TableCell>
                   </TableRow>

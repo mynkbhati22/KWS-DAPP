@@ -62,6 +62,7 @@
     "antd": "^4.22.8",
     "apexcharts": "^3.35.3",
     "assert": "^2.0.0",
+    "axios": "^1.2.1",
     "change-case": "^4.1.2",
     "classnames": "^2.3.1",
     "crypto": "^1.0.1",

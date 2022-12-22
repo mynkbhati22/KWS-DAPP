@@ -2,8 +2,6 @@
   margin-top: 100px;
 } */
 
-
-
 .innerbox {
   line-height: 5em;
   text-align: center;
@@ -13,28 +11,35 @@
   outline: 1px dashed gray;
   outline-offset: -6px;
   box-shadow: 0 4px 10px 4px rgb(19 35 47 / 30%);
-  padding: 25px 0 ;
+  padding: 25px 0;
   width: 100%;
 }
-.button{
+.button {
   width: 60%;
   margin: 4%;
 }
-.outerbox{
+.background {
+  background-color: #000;
+}
+.text {
+  color: #fff;
+}
+
+.outerbox {
   width: 70%;
   margin: 0px auto;
-  background-color: #E9EBEE;
+  background-color: #e9ebee;
 
-  border-radius:20px;
-  padding:2rem;
-
+  border-radius: 20px;
+  padding: 2rem;
 }
-.innerbox{
+.innerbox {
   width: 50%;
-  margin:2rem auto;
-  background-color:#E5EDF1 ;
+  margin: 2rem auto;
+  background-color: #e5edf1;
 }
-.portfolio-card-title,.portfolio-card-heading {
+.portfolio-card-title,
+.portfolio-card-heading {
   margin: 2rem 0rem;
 }
 /* .portfolio-image-box::before{
@@ -49,20 +54,20 @@ height: 100%;
 z-index: -1;
 } */
 
-.portfolio-card-heading{
+.portfolio-card-heading {
   font-weight: 900;
   font-size: 1.5rem;
 }
-.portfolio-box{
+.portfolio-box {
   margin-top: 5rem;
   color: rgb(255, 255, 255);
 }
-.avtar-portfolio{
+.avtar-portfolio {
   width: 2.5rem;
 }
-.portfolio-image-box{
+.portfolio-image-box {
   border-radius: 20px;
-  padding:2rem 1rem;
+  padding: 2rem 1rem;
   position: relative;
   /* background-color: rgba(34, 34, 34, 0.8); */
   margin: 0.5rem;
@@ -75,10 +80,8 @@ img.portfolio-background-image {
   height: 100%;
   z-index: -2;
   border-radius: 20px;
-
 }
 .portfolio-image-box::after {
-
   content: '';
   top: 0;
   left: 0;
@@ -89,53 +92,45 @@ img.portfolio-background-image {
   border-radius: 20px;
   z-index: -1;
 }
-.container-portfolio{
+.container-portfolio {
   width: 85%;
   margin: auto;
 }
-@media screen and (max-width:1200px) {
-  .container-portfolio{
+@media screen and (max-width: 1200px) {
+  .container-portfolio {
     width: 90%;
     margin: auto;
   }
 }
-@media screen and (max-width:900px) {
-  .container-portfolio{
+@media screen and (max-width: 900px) {
+  .container-portfolio {
     width: 95%;
     margin: auto;
   }
 }
-@media screen and (max-width:600px) {
-  .container-portfolio{
+@media screen and (max-width: 600px) {
+  .container-portfolio {
     width: 98%;
     margin: auto;
   }
 }
 
-
-
-
-@media screen and (max-width:700px) {
-  .button{
+@media screen and (max-width: 700px) {
+  .button {
     width: 80%;
-    margin: 2%
+    margin: 2%;
   }
-  .outerbox{
+  .outerbox {
     width: 95%;
     margin: 0px auto;
-    background-color: #E9EBEE;
-  
-    border-radius:20px;
-    padding:0.5rem;
-  
+    background-color: #e9ebee;
+
+    border-radius: 20px;
+    padding: 0.5rem;
   }
-  .innerbox{
+  .innerbox {
     width: 95%;
-    margin:1rem auto;
-    background-color:#E5EDF1 ;
+    margin: 1rem auto;
+    background-color: #e5edf1;
   }
 }
-
-
-
-
