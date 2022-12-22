@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import UploadImages from './pages/UploadImages';
+import Adminpage from './pages/Adminpage';
 
 // ----------------------------------------------------------------------
 
@@ -29,10 +30,11 @@ export default function Router() {
         { path: 'partners', element: <Products /> },
         { path: 'services', element: <Services /> },
         { path: 'our-team', element: <Team /> },
-      { path: 'portfolios', element: <UploadImages /> },
+      { path: 'port-folio', element: <UploadImages /> },
         { path: 'contracts-by-us', element: <Contracts /> },
         // { path: 'safu-reports', element: <SafuReports /> },
         { path: 'portfolio', element: <Blog /> },
+        { path: 'admin-page', element: <Adminpage /> },
       ],
     },
     {

@@ -37,17 +37,17 @@
 .portfolio-card-title,.portfolio-card-heading {
   margin: 2rem 0rem;
 }
-.portfolio-image-box::before{
+/* .portfolio-image-box::before{
 content: '';
 background: url("../components/images/comingsoonbg.jpg") no-repeat 50%/cover;
 position: absolute;
 top: 0;
 left: 0;
-border-radius: 10px;
+border-radius: 20px;
 width: 100%;
 height: 100%;
 z-index: -1;
-}
+} */
 
 .portfolio-card-heading{
   font-weight: 900;
@@ -61,33 +61,53 @@ z-index: -1;
   width: 2.5rem;
 }
 .portfolio-image-box{
-  border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   padding:2rem 1rem;
   position: relative;
-  background-color: rgba(34, 34, 34, 0.8);
+  /* background-color: rgba(34, 34, 34, 0.8); */
   margin: 0.5rem;
 }
+img.portfolio-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  border-radius: 20px;
 
+}
+.portfolio-image-box::after {
+
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(48 53 60 / 30%);
+  border-radius: 20px;
+  z-index: -1;
+}
 .container-portfolio{
   width: 85%;
   margin: auto;
 }
 @media screen and (max-width:1200px) {
   .container-portfolio{
-    width: 85%;
+    width: 90%;
     margin: auto;
   }
 }
 @media screen and (max-width:900px) {
   .container-portfolio{
-    width: 90%;
+    width: 95%;
     margin: auto;
   }
 }
 @media screen and (max-width:600px) {
   .container-portfolio{
-    width: 95%;
+    width: 98%;
     margin: auto;
   }
 }

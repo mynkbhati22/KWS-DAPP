@@ -49,7 +49,7 @@ const navConfig = [
   },
   {
     title: 'Port-folio',
-    path: '/portfolios',
+    path: '/port-folio',
     icon: getIcon('eva:file-text-fill'),
   },
   // {
