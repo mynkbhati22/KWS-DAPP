@@ -34,6 +34,67 @@
   margin:2rem auto;
   background-color:#E5EDF1 ;
 }
+.portfolio-card-title,.portfolio-card-heading {
+  margin: 2rem 0rem;
+}
+.portfolio-image-box::before{
+content: '';
+background: url("../components/images/comingsoonbg.jpg") no-repeat 50%/cover;
+position: absolute;
+top: 0;
+left: 0;
+border-radius: 10px;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+.portfolio-card-heading{
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.portfolio-box{
+  margin-top: 5rem;
+  color: rgb(255, 255, 255);
+}
+.avtar-portfolio{
+  width: 2.5rem;
+}
+.portfolio-image-box{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding:2rem 1rem;
+  position: relative;
+  background-color: rgba(34, 34, 34, 0.8);
+  margin: 0.5rem;
+}
+
+.container-portfolio{
+  width: 85%;
+  margin: auto;
+}
+@media screen and (max-width:1200px) {
+  .container-portfolio{
+    width: 85%;
+    margin: auto;
+  }
+}
+@media screen and (max-width:900px) {
+  .container-portfolio{
+    width: 90%;
+    margin: auto;
+  }
+}
+@media screen and (max-width:600px) {
+  .container-portfolio{
+    width: 95%;
+    margin: auto;
+  }
+}
+
+
+
+
 @media screen and (max-width:700px) {
   .button{
     width: 80%;

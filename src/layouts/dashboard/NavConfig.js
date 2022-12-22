@@ -47,11 +47,11 @@ const navConfig = [
     path: '/contracts-by-us',
     icon: getIcon('eva:file-text-fill'),
   },
-  // {
-  //   title: 'upload image',
-  //   path: '/upload-images',
-  //   icon: getIcon('eva:file-text-fill'),
-  // },
+  {
+    title: 'Port-folio',
+    path: '/portfolios',
+    icon: getIcon('eva:file-text-fill'),
+  },
   // {
   //   title: 'safu report',
   //   path: '/safu-reports',

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
+import { Grid, Box , Container } from '@mui/material';
 import './upload.css';
+import avtarportfolio from '../components/images/amm.png';
+
+
 
 export default function UploadImages() {
   const [images, setImages] = useState([]);
@@ -14,72 +18,21 @@ export default function UploadImages() {
 
   return (
     <>
-      <div className="outerbox" style={{ marginTop: '5rem' }}>
-        <div className="innerbox">
-          {' '}
-          <div className="upload-image">
-            <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
-              {({
-                imageList,
-                onImageUpload,
-                onImageRemoveAll,
-                onImageUpdate,
-                onImageRemove,
-                isDragging,
-                dragProps,
-              }) => (
-                // write your building UI
-                <>
-                  <div className="upload__image-wrapper">
-                    <button
-                      style={isDragging ? { color: 'red' } : undefined}
-                      onClick={onImageUpload}
-                      {...dragProps}
-                      className="button"
-                    >
-                      Click or Drop here
-                    </button>
-                    &nbsp;
-                    <button onClick={onImageRemoveAll} className="button">
-                      Remove all images
-                    </button>
-                    {imageList.map((image, index) => (
-                      <div key={index} className="image-item">
-                        <img src={image.data_url} alt="" width="100" style={{ margin: '1rem auto' }} />
-                        <div className="image-item__btn-wrapper">
-                          <button onClick={() => onImageUpdate(index)} className="button">
-                            Update
-                          </button>
-                          <button className="button" onClick={() => onImageRemove(index)}>
-                            Remove
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  {/* <div {...dragProps}>
-                    {isDragging ? 'Drop here please' : 'Upload space'}
-                    {imageList.map((image, index) => (
-                      <img key={index} src={image.data_url} alt="" />
-                    ))}
-                  </div> */}
-                </>
-              )}
-              {/* {({ imageList, dragProps, isDragging }) => (
-          <div {...dragProps}>
-            {isDragging ? 'Drop here please' : 'Upload space'}
-            {imageList.map((image, index) => (
-              <img key={index} src={image.data_url} alt="" />
-            ))}
-          </div>
-        )} */}
-            </ImageUploading>
-          </div>
-        </div>
-        {/* <div className="" style={{margin:"1rem auto"}}>
-    <button className='' style={{margin:"1rem auto"}}>UPLOAD</button>
-        </div> */}
-      </div>
+    <Box className='container-portfolio'>
+      <Grid container spacing={1} className="portfolio-box">
+        <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} >
+          <Box className="portfolio-image-box">
+            <img src={avtarportfolio} alt="" className="avtar-portfolio" />
+            <div className="portfolio-card-heading">Metfx</div>
+            <div className="portfolio-card-title">
+              Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.
+            </div>
+            <div className="portfolio-card-link">https://abc.com</div>
+          </Box>
+        </Grid>
+
+      </Grid>
+      </Box>
     </>
   );
 }
