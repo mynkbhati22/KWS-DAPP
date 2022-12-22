@@ -63,104 +63,91 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-
-
-
 function Adminpage() {
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  
-    const handleChangePage = (event, newPage) => {
-      setPage(newPage);
-    };
-  
-    const handleChangeRowsPerPage = (event) => {
-      setRowsPerPage(+event.target.value);
-      setPage(0);
-    };
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
   return (
     <>
-      <Grid container className="container-portfolio">
+      <Grid className="container-portfolio">
         <div className="admin-page">
-        <Stack>
-          <div className="portfolio-admin">
-            <h2 className="portfolio-admin-heading">Portfolio Admin</h2>
-            <form>
-              <p className="form-para">Card Title</p>
-              <TextField id="outlined-basic" label="Card Title" variant="outlined" />
-              <p className="form-para">Card Description</p>
-              <TextField id="outlined-basic" label="Card Description" variant="outlined" />
-              <p className="form-para">Card Link</p>
-              <TextField id="outlined-basic" label="Card Link" variant="outlined" />
-              <p className="form-para">Upload Avatar Image </p>
-              <Button variant="contained" component="label">
-                Upload
-                <input hidden accept="image/*" multiple type="file" />
-              </Button>
-              <p className="form-para">Upload Card Background Image </p>
-              <Button variant="contained" component="label">
-                Upload
-                <input hidden accept="image/*" multiple type="file" />
-              </Button>
+          <Stack>
+            <div className="portfolio-admin">
+              <h2 className="portfolio-admin-heading">Portfolio Admin</h2>
+              <form>
+                <p className="form-para">Card Title</p>
+                <TextField id="outlined-basic" label="Card Title" variant="outlined" className="text-field-card" />
+                <p className="form-para">Card Description</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Card Description"
+                  variant="outlined"
+                  className="text-field-card"
+                />
+                <p className="form-para">Card Link</p>
+                <TextField id="outlined-basic" label="Card Link" variant="outlined" className="text-field-card" />
+                <p className="form-para">Avatar Image Link </p>
+                <TextField
+                id="outlined-basic"
+                label="Avatar Image Link"
+                variant="outlined"
+                className="text-field-card"
+              />
+                <p className="form-para">Card Background Image Link </p>
+                <TextField
+                id="outlined-basic"
+                label="Card Background Image Link "
+                variant="outlined"
+                className="text-field-card"
+              />
 
-              <p className="form-para">
-                <Button variant="contained">Submit</Button>
-              </p>
-            </form>
+                <p className="form-para">
+                  <Button variant="contained">Submit</Button>
+                </p>
+              </form>
 
+              {/* ---------------------------------------table---------------------------------------- */}
 
-{/* ---------------------------------------table---------------------------------------- */}
-
-
-<Paper sx={{ width: '100%', overflow: 'hidden' }}>
-<TableContainer sx={{ maxHeight: 440 }}>
-  <Table stickyHeader aria-label="sticky table">
-    <TableHead>
-      <TableRow>
-        {columns.map((column) => (
-          <TableCell
-            key={column.id}
-            align={column.align}
-            style={{ minWidth: column.minWidth }}
-          >
-            {column.label}
-          </TableCell>
-        ))}
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      {rows
-        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-        .map((row) => {
-          return (
-            <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-              {columns.map((column) => {
-                const value = row[column.id];
-                return (
-                  <TableCell key={column.id} align={column.align}>
-                    {column.format && typeof value === 'number'
-                      ? column.format(value)
-                      : value}
-                  </TableCell>
-                );
-              })}
-            </TableRow>
-          );
-        })}
-    </TableBody>
-  </Table>
-</TableContainer>
-<TablePagination
-  rowsPerPageOptions={[10, 25, 100]}
-  component="div"
-  count={rows.length}
-  rowsPerPage={rowsPerPage}
-  page={page}
-  onPageChange={handleChangePage}
-  onRowsPerPageChange={handleChangeRowsPerPage}
-/>
-</Paper>
-          </div>
+              <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                <TableContainer sx={{ maxHeight: 440 }}>
+                  <Table stickyHeader aria-label="sticky table">
+                    <TableHead>
+                      <TableRow>
+                        {columns.map((column) => (
+                          <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+                            {column.label}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                        return (
+                          <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                            {columns.map((column) => {
+                              const value = row[column.id];
+                              return (
+                                <TableCell key={column.id} align={column.align}>
+                                  {column.format && typeof value === 'number' ? column.format(value) : value}
+                                </TableCell>
+                              );
+                            })}
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Paper>
+            </div>
           </Stack>
         </div>
       </Grid>
