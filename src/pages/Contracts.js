@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 import Client from '../Client';
 import Page from '../components/Page';
+import "./Contracts.css";
 
 const URL = 'http://localhost:7777';
 
@@ -111,8 +112,8 @@ export default function DenseTable() {
         >
           Contracts by KWS
         </Typography>
-        <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }}>
-          <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
+        <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
+          <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table" >
             <TableHead>
               <TableRow>
                 <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell>
