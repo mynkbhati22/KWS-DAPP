@@ -21,8 +21,13 @@ const navConfig = [
     icon: <HomeIcon />,
   },
 
+  // {
+  //   title: 'portfolio',
+  //   path: '/portfolio',
+  //   icon: getIcon('eva:file-text-fill'),
+  // },
   {
-    title: 'portfolio',
+    title: 'Portfolio',
     path: '/portfolio',
     icon: getIcon('eva:file-text-fill'),
   },
@@ -47,11 +52,7 @@ const navConfig = [
     path: '/contracts-by-us',
     icon: getIcon('eva:file-text-fill'),
   },
-  {
-    title: 'Port-folio',
-    path: '/port-folio',
-    icon: getIcon('eva:file-text-fill'),
-  },
+
   // {
   //   title: 'safu report',
   //   path: '/safu-reports',

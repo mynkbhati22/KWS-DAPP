@@ -24,7 +24,7 @@ import useStyles from './partnerStyle';
 
 // ----------------------------------------------------------------------
 
-const URL = 'http://localhost:7777';
+const URL = 'https://7903-2402-4cc0-2502-39e-5d4a-f759-71b6-9a79.in.ngrok.io';
 
 export default function EcommerceShop() {
   const [partners, setPartners] = useState();
