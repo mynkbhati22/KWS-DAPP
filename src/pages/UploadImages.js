@@ -36,21 +36,40 @@ export default function UploadImages() {
     setImages(imageList);
   };
 
+  function createdata(title, desc, link) {
+    return { title, desc, link };
+  }
+  const rows = [
+    createdata(
+      'metfx',
+      'Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.',
+      'https://google.com',
+    ),
+    createdata(
+      'metfx',
+      'Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.',
+      'https://google.com',
+    ),
+  ];
+
   return (
     <>
       <Box className="container-portfolio">
         <Grid container spacing={1} className="portfolio-box">
-          <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12}>
-            <Box className="portfolio-image-box">
-              <img src={portfolioimg} alt="" className="portfolio-background-image" />
-              <img src={avtarportfolio} alt="" className="avtar-portfolio" />
-              <div className="portfolio-card-heading">Metfx</div>
-              <div className="portfolio-card-title">
-                Customised marketplace for Watch-2-Earn Membership NFTs for MetFx Project on BSC.
-              </div>
-              <div className="portfolio-card-link">https://abc.com</div>
-            </Box>
-          </Grid>
+          {rows &&
+            rows.map((row, index) => (
+              <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12}>
+                <Box className="portfolio-image-box">
+                  <img src={portfolioimg} alt="" className="portfolio-background-image" />
+                  <img src={avtarportfolio} alt="" className="avtar-portfolio" />
+                  <div className="portfolio-card-heading">{row.title}</div>
+                  <div className="portfolio-card-title">{row.desc}</div>
+                  <div className="portfolio-card-link">
+                    <a href="#">{row.link}</a>
+                  </div>
+                </Box>
+              </Grid>
+            ))}
         </Grid>
       </Box>
     </>

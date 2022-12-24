@@ -92,13 +92,17 @@ img.portfolio-background-image {
   border-radius: 20px;
   z-index: -1;
 }
+a , a:hover{
+  color: inherit;
+}
 .container-portfolio {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
+
 @media screen and (max-width: 1200px) {
   .container-portfolio {
-    width: 90%;
+    width: 92.5%;
     margin: auto;
   }
 }
@@ -110,7 +114,7 @@ img.portfolio-background-image {
 }
 @media screen and (max-width: 600px) {
   .container-portfolio {
-    width: 98%;
+    width: 97.5%;
     margin: auto;
   }
 }
@@ -124,7 +128,6 @@ img.portfolio-background-image {
     width: 95%;
     margin: 0px auto;
     background-color: #e9ebee;
-
     border-radius: 20px;
     padding: 0.5rem;
   }
