@@ -133,3 +133,11 @@ input[type='image'] {
   margin-left: 16px;
   margin-right: 16px;
 }
+a.active {
+  color: rgb(245, 137, 55) !important;
+  background-color: rgba(245, 134, 50, 0.16) !important;
+}
+.css-1intjze {
+  background-color: transparent !important;
+  color: rgb(99, 115, 129) !important;
+}
