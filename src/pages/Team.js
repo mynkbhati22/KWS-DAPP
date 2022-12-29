@@ -89,7 +89,7 @@ export default function EcommerceShop() {
                       {res.teammemberdescription}
                     </Typography>
                     <a href={res.teammembersociallink} target="_blank" rel="noreferrer" className="sociallinkteam">
-                      <AiFillLinkedin size={32} color="red" className="text-left" />
+                      <AiFillLinkedin size={32} color="#0B66C3" />
                     </a>
                   </CardContent>
                 </Card>

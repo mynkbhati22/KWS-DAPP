@@ -1,4 +1,8 @@
-#table-contract{
-    height: 70vh;
-    overflow-y:scroll;
+#table-contract {
+  height: 70vh;
+  overflow-y: scroll;
 }
+
+/* .css-18mhetb {
+  padding: 10px !important;
+} */
