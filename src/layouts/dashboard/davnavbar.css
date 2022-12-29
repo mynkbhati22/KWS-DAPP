@@ -64,7 +64,7 @@ body {
 .marquee {
   --play: running !important;
   --direction: normal !important;
-  --duration: 15s !important;
+  --duration: 30s !important;
   --delay: 0s !important;
   --iteration-count: infinite !important;
   flex: 0 0 auto;
@@ -82,8 +82,18 @@ body {
   -webkit-animation-direction: var(--direction);
   animation-direction: var(--direction);
 }
+img.announcementimage {
+  width: 50px !important;
+  height: 50px !important;
+  margin-top: 15px !important;
+}
+.text-center {
+  text-align: center !important;
+  padding-left: 20px;
+}
+
 .Marquee-tag {
-  width: 175px;
+  min-width: 260px !important;
   margin: 20px 0px 20px;
   padding: 20px 10px;
   background: rgba(255, 255, 255, 0.2);
@@ -92,6 +102,9 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+}
+.Marquee-tag:hover {
+  animation-play-state: paused !important;
 }
 .css-hmz4fg-MuiButtonBase-root-MuiListItemButton-root {
   background-color: rgb(245 134 50 / 16%) !important;
