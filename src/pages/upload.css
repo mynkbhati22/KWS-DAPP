@@ -81,6 +81,9 @@ img.portfolio-background-image {
   z-index: -2;
   border-radius: 20px;
 }
+.css-18mhetb {
+  padding: 14px !important;
+}
 .portfolio-image-box::after {
   content: '';
   top: 0;
@@ -92,7 +95,8 @@ img.portfolio-background-image {
   border-radius: 20px;
   z-index: -1;
 }
-a , a:hover{
+a,
+a:hover {
   color: inherit;
 }
 .container-portfolio {

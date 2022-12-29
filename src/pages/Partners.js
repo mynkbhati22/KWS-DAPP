@@ -24,21 +24,23 @@ import useStyles from './partnerStyle';
 
 // ----------------------------------------------------------------------
 
-const URL = 'https://7903-2402-4cc0-2502-39e-5d4a-f759-71b6-9a79.in.ngrok.io';
-
 export default function EcommerceShop() {
-  const [partners, setPartners] = useState();
+  const [partners, setPartners] = useState([]);
 
   useEffect(() => {
-    const portfolioInterval = setInterval(() => {
-      axios.get(`${URL}/api/gettingpartners`).then((res) => {
-        console.log('gettingpartners', res.data);
-        setPartners(res.data);
-      });
-    }, 1100);
-    return () => {
-      clearInterval(portfolioInterval);
-    };
+    axios.get(`${window.URL}/api/gettingpartners`).then((res) => {
+      console.log('gettingpartners', res.data);
+      setPartners(res.data);
+    });
+    // const portfolioInterval = setInterval(() => {
+    //   axios.get(`${window.URL}/api/gettingpartners`).then((res) => {
+    //     console.log('gettingpartners', res.data);
+    //     setPartners(res.data);
+    //   });
+    // }, 11000);
+    // return () => {
+    //   clearInterval(portfolioInterval);
+    // };
   }, []);
 
   // useEffect(() => {

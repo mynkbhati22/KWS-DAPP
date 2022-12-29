@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 // material
-import {
-  Grid,
-  Container,
-  Link,
-  ImageList,
-  ImageListItem,
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import { Grid, Container, ImageList, ImageListItem, Card, CardMedia, CardContent, Typography } from '@mui/material';
 // components
 
+import axios from 'axios';
+
+import { AiFillLinkedin } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
@@ -23,30 +17,42 @@ import Page from '../components/Page';
 // ----------------------------------------------------------------------
 
 export default function EcommerceShop() {
-  const [team, setTeam] = useState();
+  const [team, setTeam] = useState([]);
+
   useEffect(() => {
-    Client.fetch(
-      `*[_type == "team"]{
-        title,
-        designation,
-        description,
-        mainImage{
-          asset ->{
-            _id,
-            url
-          },
-          alt, 
-         },
-    }`
-    ).then((data) => setTeam(data));
+    const portfolioInterval = setInterval(() => {
+      axios.get(`${window.URL}/api/gettingteammembers`).then((res) => {
+        setTeam(res.data);
+        // console.log('gettingportfoliodata', res.data);
+      });
+    }, 1100);
+    return () => {
+      clearInterval(portfolioInterval);
+    };
   }, []);
+  // useEffect(() => {
+  //   Client.fetch(
+  //     `*[_type == "team"]{
+  //       title,
+  //       designation,
+  //       description,
+  //       mainImage{
+  //         asset ->{
+  //           _id,
+  //           url
+  //         },
+  //         alt,
+  //        },
+  //   }`
+  //   ).then((data) => setTeam(data));
+  // }, []);
 
   return (
     <Page title="KWS: Team">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team &&
-            team.map((team, index) => (
+            team.map((res, index) => (
               <Grid item xs={12} sm={4} md={4} key={index}>
                 <Card
                   sx={{
@@ -58,20 +64,18 @@ export default function EcommerceShop() {
                   }}
                 >
                   <CardMedia sx={{ height: '180px' }}>
-                    {team.mainImage && team.mainImage.asset && (
-                      <ImageList sx={{ maxWidth: '100%', margin: '0px auto 0px', display: 'block' }}>
-                        <ImageListItem>
-                          <img src={team.mainImage.asset.url} alt="" />
-                        </ImageListItem>
-                      </ImageList>
-                    )}
+                    <ImageList sx={{ maxWidth: '100%', margin: '0px auto 0px', display: 'block' }}>
+                      <ImageListItem>
+                        <img src={res.teammemberimage} alt="" />
+                      </ImageListItem>
+                    </ImageList>
                   </CardMedia>
                   <CardContent>
                     <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
-                      {team.title}
+                      {res.teammembername}
                     </Label>
                     <Typography sx={{ color: '#6C7989' }}>
-                      <Label>{team.designation}</Label>
+                      <Label>{res.teammemberdesignation}</Label>
                     </Typography>
                     <Typography
                       sx={{
@@ -82,8 +86,11 @@ export default function EcommerceShop() {
                         color: '#6C7989',
                       }}
                     >
-                      {team.description}
+                      {res.teammemberdescription}
                     </Typography>
+                    <a href={res.teammembersociallink} target="_blank" rel="noreferrer" className="sociallinkteam">
+                      <AiFillLinkedin size={32} color="red" className="text-left" />
+                    </a>
                   </CardContent>
                 </Card>
               </Grid>

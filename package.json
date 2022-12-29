@@ -2,6 +2,7 @@
   "name": "@minimal/material-kit-react",
   "author": "minimals.cc",
   "licence": "MIT",
+  "proxy": "https://9f3a-2402-4cc0-2502-39e-5d4a-f759-71b6-9a79.in.ngrok.io",
   "version": "1.5.0",
   "private": false,
   "scripts": {

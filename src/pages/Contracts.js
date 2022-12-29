@@ -17,14 +17,12 @@ import Client from '../Client';
 import Page from '../components/Page';
 import './Contracts.css';
 
-const URL = 'https://7903-2402-4cc0-2502-39e-5d4a-f759-71b6-9a79.in.ngrok.io';
-
 export default function DenseTable() {
-  const [contracts, setContracts] = useState();
+  const [contracts, setContracts] = useState([]);
 
   useEffect(() => {
     const portfolioInterval = setInterval(() => {
-      axios.get(`${URL}/api/gettingcontracts`).then((res) => {
+      axios.get(`${window.URL}/api/gettingcontracts`).then((res) => {
         console.log('gettingcontracts', res.data);
         setContracts(res.data);
       });
@@ -33,67 +31,6 @@ export default function DenseTable() {
       clearInterval(portfolioInterval);
     };
   }, []);
-  // useEffect(() => {
-  //   Client.fetch(
-  //     `*[_type=="contracts"] {
-  //       sno,
-  //       projectname,
-  //       smartcontracttype,
-  //       chain,
-  //       explorerlink,
-  //     }`
-  //   ).then((data) => setContracts(data));
-  // }, []);
-
-  // const contractTableInfo = [
-  //   {
-  //     Sno: '1',
-  //     ProjectName: 'Contract 1',
-  //     SmartContractType: 'SCT',
-  //     Chain: '1',
-  //     ExplorerLink: '#',
-  //   },
-  //   {
-  //     Sno: '2',
-  //     ProjectName: 'Contract 2',
-  //     SmartContractType: 'SCT',
-  //     Chain: '2',
-  //     ExplorerLink: '#',
-  //   },
-  //   {
-  //     Sno: '3',
-  //     ProjectName: 'Contract 3',
-  //     SmartContractType: 'SCT',
-  //     Chain: '3',
-  //     ExplorerLink: '#',
-  //   },
-  //
-  //     Sno: '4',
-  //     ProjectName: 'Contract 4',
-  //     SmartContractType: 'SCT',
-  //     Chain: '4',
-  //     ExplorerLink: '#',
-  //   },
-  //   {
-  //     Sno: '5',
-  //     ProjectName: 'Contract 5',
-  //     SmartContractType: 'SCT',
-  //     Chain: '5',
-  //     ExplorerLink: '#',
-  //   },
-  // ];
-
-  // const renderContractsDetails = (contractTableInfo, index) => {
-  //   return (
-  //     <TableRow key={index}>
-  //       <TableCell>{contractTableInfo.Sno}</TableCell>
-  //       <TableCell align="center">{contractTableInfo.ProjectName}</TableCell>
-  //       <TableCell align="center">{contractTableInfo.SmartContractType}</TableCell>
-  //       <TableCell align="center">{contractTableInfo.Chain}</TableCell>
-  //       <TableCell align="center">{contractTableInfo.ExplorerLink}</TableCell>
-  //     </TableRow>
-  //   );
-  // };
 
   return (
     <Page title="KWS: Contracts">
