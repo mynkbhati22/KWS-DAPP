@@ -96,6 +96,9 @@ z-index: -1;
   margin: 0px auto 50px;
   box-shadow: rgb(34 171 227 / 30%) 0px 0px 7px 1px;
 }
+svg.iconsocial {
+  margin-top: 13px !important;
+}
 
 /* .css-xptj6l-MuiPaper-root-MuiCard-root {
   background-color: #fff;
