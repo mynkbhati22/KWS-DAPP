@@ -91,7 +91,7 @@ z-index: -1;
   position: relative;
   z-index: 0;
   max-width: 280px;
-  height: 380px !important;
+  height: 385px !important;
   display: block;
   margin: 0px auto 50px;
   box-shadow: rgb(34 171 227 / 30%) 0px 0px 7px 1px;
@@ -159,6 +159,21 @@ a:hover {
   margin: auto;
 }
 
+.css-7dngom {
+  background-color: #fff;
+  background-image: none;
+  border-radius: 16px;
+  box-shadow: 0 0 7px 1px rgb(34 171 227 / 30%);
+  color: #212b36;
+  display: block;
+  min-height: 380px !important;
+  margin: 0 auto 50px;
+  max-width: 280px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
 @media screen and (max-width: 1200px) {
   .container-portfolio {
     width: 92.5%;
@@ -178,6 +193,30 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 640px) {
+  .css-1n7fmr5 {
+    color: #6c7989;
+    font-family: Public Sans, sans-serif;
+    font-size: 0.5rem !important;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 7px 0 0;
+    text-align: center !important;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .css-1n7fmr5 {
+    color: #6c7989;
+    font-family: Public Sans, sans-serif;
+    font-size: 0.67rem !important;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 7px 0 0;
+    text-align: center !important;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 700px) {
   .button {
     width: 80%;
@@ -194,5 +233,18 @@ a:hover {
     width: 95%;
     margin: 1rem auto;
     background-color: #e5edf1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .css-1n7fmr5 {
+    color: #6c7989;
+    font-family: Public Sans, sans-serif;
+    font-size: 0.6rem !important;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 7px 0 0;
+    text-align: center !important;
+    width: 100%;
   }
 }
