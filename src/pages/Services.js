@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 // material
 import { Grid, Container, Typography, ImageList, ImageListItem, Box } from '@mui/material';
 // components
+import axios from 'axios';
 import Client from '../Client';
 import Page from '../components/Page';
 import useStyles from './serviceStyle';
@@ -13,22 +14,35 @@ import useStyles from './serviceStyle';
 
 export default function EcommerceShop() {
   const [services, setServices] = useState();
+
   useEffect(() => {
-    Client.fetch(
-      `*[_type == "services"]{
-       title,
-       description,
-       mainImage{
-         asset ->{
-           _id,
-           url
-         },
-         alt, 
-        },
-    }`
-    ).then((data) => setServices(data));
+    const portfolioInterval = setInterval(() => {
+      axios.get(`${window.URL}/api/gettingservices`).then((res) => {
+        setServices(res.data);
+        // console.log('gettign', res.data);
+      });
+    }, 1100);
+    return () => {
+      clearInterval(portfolioInterval);
+    };
   }, []);
+  // useEffect(() => {
+  //   Client.fetch(
+  //     `*[_type == "services"]{
+  //      title,
+  //      description,
+  //      mainImage{
+  //        asset ->{
+  //          _id,
+  //          url
+  //        },
+  //        alt,
+  //       },
+  //   }`
+  //   ).then((data) => setServices(data));
+  // }, []);
   const classes = useStyles();
+
   return (
     <Page title="KWS: Services">
       <Container maxWidth="xl">
@@ -60,22 +74,25 @@ export default function EcommerceShop() {
           </Grid>
         </Grid>
         <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '50px' }}>
-          {services &&
-            services.map((services, index) => (
+          {services && services.length > 0 ? (
+            services.map((res, index) => (
               <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
-                {services.mainImage && services.mainImage.asset && (
-                  <ImageList sx={{ maxWidth: '60px', margin: '50px auto 0px', display: 'block' }}>
-                    <ImageListItem>
-                      <img src={services.mainImage.asset.url} alt="" />
-                    </ImageListItem>
-                  </ImageList>
-                )}
-                <Typography variant="h4">{services.title}</Typography>
-                <Typography variant="body1" sx={{ padding: '0px 25px', color:"#6C7989" }}>
-                  {services.description}
+                <ImageList sx={{ maxWidth: '60px', margin: '50px auto 0px', display: 'block' }}>
+                  <ImageListItem>
+                    <img src={res.serviceimage} alt="" />
+                  </ImageListItem>
+                </ImageList>
+                <Typography variant="h4">{res.serviceheading}</Typography>
+                <Typography variant="body1" sx={{ padding: '0px 25px', color: '#6C7989' }}>
+                  {res.servicedescriptions}
                 </Typography>
               </Grid>
-            ))}
+            ))
+          ) : (
+            <div className="nodata">
+              <p className="data">NO DATA TO SHOW</p>
+            </div>
+          )}
         </Grid>
       </Container>
     </Page>
