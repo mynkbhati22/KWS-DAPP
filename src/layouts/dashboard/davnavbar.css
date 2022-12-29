@@ -64,7 +64,7 @@ body {
 .marquee {
   --play: running !important;
   --direction: normal !important;
-  --duration: 20s !important;
+  --duration: 25s !important;
   --delay: 0s !important;
   --iteration-count: infinite !important;
   flex: 0 0 auto;
