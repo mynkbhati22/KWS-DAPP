@@ -69,7 +69,7 @@ export default function DenseTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {contracts &&
+              {contracts && contracts.length > 0 ? (
                 contracts.map((res, index) => (
                   <TableRow key={index}>
                     <TableCell>{contracts.indexOf(res) + 1}.</TableCell>
@@ -82,7 +82,12 @@ export default function DenseTable() {
                       </Link>
                     </TableCell>
                   </TableRow>
-                ))}
+                ))
+              ) : (
+                <div className="nodata">
+                  <p className="data">NO DATA TO SHOW</p>
+                </div>
+              )}
               {/* {contractTableInfo.map(renderContractsDetails)}
               {console.log(contractTableInfo.map(renderContractsDetails))} */}
             </TableBody>

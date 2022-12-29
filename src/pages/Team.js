@@ -50,10 +50,25 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS: Team">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
+        <Typography
+          sx={{
+            marginBottom: '5px',
+            fontWeight: '900',
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '20px',
+            textAlign: 'center',
+            color: '#27ADE3',
+          }}
+        >
+          OUR TEAM
+        </Typography>
+        <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
+          We are the team of young and dynamic leaders!
+        </Typography>
         <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '20px' }}>
-          {team &&
+          {team && team.length > 0 ? (
             team.map((res, index) => (
-              <Grid item xs={12} sm={4} md={4} key={index}>
+              <Grid item xs={12} sm={4} md={4} key={index} style={{ position: 'relative' }}>
                 <Card
                   sx={{
                     maxWidth: 280,
@@ -94,7 +109,12 @@ export default function EcommerceShop() {
                   </CardContent>
                 </Card>
               </Grid>
-            ))}
+            ))
+          ) : (
+            <div className="nodata">
+              <p className="data">NO DATA TO SHOW</p>
+            </div>
+          )}
         </Grid>
       </Container>
     </Page>

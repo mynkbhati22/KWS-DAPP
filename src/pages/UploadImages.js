@@ -57,7 +57,7 @@ export default function UploadImages() {
     <>
       <Box className="container-portfolio">
         <Grid container spacing={1} className="portfolio-box">
-          {portfolio &&
+          {portfolio && portfolio.length > 0 ? (
             portfolio.map((res, index) => (
               <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
                 <Box className="portfolio-image-box">
@@ -70,7 +70,12 @@ export default function UploadImages() {
                   </div>
                 </Box>
               </Grid>
-            ))}
+            ))
+          ) : (
+            <div className="nodata">
+              <p className="data">NO DATA TO SHOW</p>
+            </div>
+          )}
         </Grid>
       </Box>
     </>
