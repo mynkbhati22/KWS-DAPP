@@ -85,7 +85,7 @@ export default function EcommerceShop() {
                       </ImageListItem>
                     </ImageList>
                   </CardMedia>
-                  <CardContent>
+                  <CardContent className="position-relative">
                     <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
                       {res.teammembername}
                     </Label>
