@@ -66,9 +66,6 @@ export default function Annoucement() {
             )}
           </Box>
           <Box className="marquee">
-            <div>
-              <p className="text-center">NO ANNOUNCEMENT TO SHOW</p>
-            </div>
             {annoucement && annoucement.length > 0 ? (
               annoucement.map((res, index) => (
                 <Link
