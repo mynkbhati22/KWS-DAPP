@@ -50,28 +50,21 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS: Team">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
-        <p
+        <Typography
           sx={{
-            marginBottom: '5px !important',
-            fontWeight: '900 !important',
-            fontFamily: 'Poppins, sans-serif !important',
-            fontSize: '20px !important',
+            marginBottom: '5px',
+            fontWeight: '900',
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '20px',
             textAlign: 'center !important',
-            color: '#27ADE3 !important',
+            color: '#27ADE3',
           }}
         >
           OUR TEAM
-        </p>
-        <p
-          variant="h3"
-          sx={{
-            marginBottom: '15px !important',
-            fontFamily: 'Poppins, sans-serif !important',
-            textAlign: 'center !important',
-          }}
-        >
+        </Typography>
+        <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           We are the team of young and dynamic leaders!
-        </p>
+        </Typography>
         <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (
