@@ -44,7 +44,7 @@ export default function EcommerceShop() {
   const classes = useStyles();
 
   return (
-    <Page title="KWS: Services">
+    <Page title="KWS || Services">
       <Container maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>

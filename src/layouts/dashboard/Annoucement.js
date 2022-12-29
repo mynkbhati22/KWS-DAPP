@@ -11,7 +11,7 @@ export default function Annoucement() {
     const portfolioInterval = setInterval(() => {
       axios.get(`${window.URL}/api/gettingportfolios`).then((res) => {
         setAnnouncement(res.data);
-        console.log('gettingportfoliodata', res.data);
+        // console.log('gettingportfoliodata', res.data);
       });
     }, 1000);
     return () => {

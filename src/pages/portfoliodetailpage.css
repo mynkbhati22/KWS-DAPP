@@ -1,0 +1,59 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+span.detail {
+  color: #6d7c8a;
+  font-family: Public Sans, sans-serif;
+}
+
+@media screen and (max-width: 1920px) {
+  img.portimage {
+    display: block;
+    margin: 4rem auto 0rem;
+    min-height: 57vh;
+  }
+  p.portdescription {
+    margin-top: 4rem;
+    text-align: justify;
+    color: #6d7c8a;
+    font-family: Public Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .project-detail {
+    padding-top: 0rem;
+  }
+  /* .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-12.MuiGrid-grid-md-6.MuiGrid-grid-lg-6.MuiGrid-grid-xl-6.positon-relative.css-1fyyp8j-MuiGrid-root {
+    position: relative;
+  }
+  .project-detail {
+    position: absolute;
+    bottom: 0%;
+  } */
+}
+h6.details {
+  font-size: 0.9rem;
+  font-family: Public Sans, sans-serif;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+  img.portimage {
+    display: block;
+    margin: 2rem auto 0rem;
+  }
+  .portdescription {
+    margin-top: 1rem;
+    text-align: justify;
+    color: #6d7c8a;
+    font-family: Public Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .project-detail {
+    padding-top: 4rem;
+  }
+}

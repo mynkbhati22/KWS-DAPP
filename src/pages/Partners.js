@@ -29,7 +29,7 @@ export default function EcommerceShop() {
 
   useEffect(() => {
     axios.get(`${window.URL}/api/gettingpartners`).then((res) => {
-      console.log('gettingpartners', res.data);
+      // console.log('gettingpartners', res.data);
       setPartners(res.data);
     });
     // const portfolioInterval = setInterval(() => {
@@ -61,7 +61,7 @@ export default function EcommerceShop() {
   // }, []);
 
   return (
-    <Page title="KWS: Partners">
+    <Page title="KWS || Partners">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Typography
           sx={{

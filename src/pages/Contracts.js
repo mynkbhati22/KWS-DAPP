@@ -33,7 +33,7 @@ export default function DenseTable() {
   }, []);
 
   return (
-    <Page title="KWS: Contracts">
+    <Page title="KWS || Contracts">
       <Container maxWidth="xl">
         <Typography
           variant="h3"
