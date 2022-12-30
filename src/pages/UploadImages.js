@@ -56,29 +56,31 @@ export default function UploadImages() {
   return (
     <>
       <Page title="KWS || Portfolios">
-        <Box className="container-portfolio">
-          <Grid container spacing={1} className="portfolio-box">
-            {portfolio && portfolio.length > 0 ? (
-              portfolio.map((res, index) => (
-                <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
-                  <Link to="/portfolio-detail-page" rel="noreferrer">
-                    <Box className="portfolio-image-box">
-                      <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
-                      <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
-                      <div className="portfolio-card-heading">{res.portfoliotitle}</div>
-                      <div className="portfolio-card-title">{res.portfoliodescription}</div>
-                      <div className="portfolio-card-link">Look IN</div>
-                    </Box>
-                  </Link>
-                </Grid>
-              ))
-            ) : (
-              <div className="nodata">
-                <p className="data">NO DATA TO SHOW</p>
-              </div>
-            )}
-          </Grid>
-        </Box>
+        <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
+          <Box className="container-portfolio">
+            <Grid container spacing={1} className="portfolio-box">
+              {portfolio && portfolio.length > 0 ? (
+                portfolio.map((res, index) => (
+                  <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
+                    <Link to="/portfolio-detail-page" rel="noreferrer">
+                      <Box className="portfolio-image-box">
+                        <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
+                        <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
+                        <div className="portfolio-card-heading">{res.portfoliotitle}</div>
+                        <div className="portfolio-card-title">{res.portfoliodescription}</div>
+                        <div className="portfolio-card-link">Look IN</div>
+                      </Box>
+                    </Link>
+                  </Grid>
+                ))
+              ) : (
+                <div className="nodata">
+                  <p className="data">NO DATA TO SHOW</p>
+                </div>
+              )}
+            </Grid>
+          </Box>
+        </Container>
       </Page>
     </>
   );

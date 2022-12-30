@@ -34,7 +34,7 @@ export default function DenseTable() {
 
   return (
     <Page title="KWS || Contracts">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
         <Typography
           variant="h3"
           align="center"

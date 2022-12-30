@@ -62,7 +62,7 @@ export default function EcommerceShop() {
 
   return (
     <Page title="KWS || Partners">
-      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
+      <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
         <Typography
           sx={{
             marginBottom: '5px',

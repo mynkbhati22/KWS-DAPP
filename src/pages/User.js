@@ -218,7 +218,7 @@ export default function User() {
   const notify = () => toast('Connect Your Wallet First');
 
   return (
-    <Page title="KWS:Create Token">
+    <Page title="KWS ||  Create Token">
       <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={6} xl={6}>

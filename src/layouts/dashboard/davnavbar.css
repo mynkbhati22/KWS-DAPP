@@ -64,7 +64,7 @@ body {
 .marquee {
   --play: running !important;
   --direction: normal !important;
-  --duration: 40 !important;
+  --duration: 40s !important;
   --delay: 0s !important;
   --iteration-count: infinite !important;
   flex: 0 0 auto;
@@ -83,9 +83,9 @@ body {
   animation-direction: var(--direction);
 }
 img.announcementimage {
-  width: 50px !important;
-  height: 50px !important;
-  margin-top: 15px !important;
+  width: 12rem !important;
+  height: 40% !important;
+  margin: 15px !important;
 }
 .text-center {
   text-align: center !important;
@@ -94,9 +94,9 @@ img.announcementimage {
 
 .Marquee-tag {
   min-width: 245px !important;
-  margin: 20px 0px 20px;
-  padding: 20px 10px;
-  background: rgba(255, 255, 255, 0.2);
+  margin: 0px 0px 0px;
+  padding: 0px 10px;
+  /* background: rgba(255, 255, 255, 0.2); */
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
@@ -119,11 +119,11 @@ a.MuiListItemButton-root.MuiButtonBase-root.css-hmz4fg-MuiButtonBase-root-MuiLis
   background-color: rgb(245 134 50 / 16%) !important;
   color: #f58937 !important;
 } */
-.Marquee-tag:hover {
+/* .Marquee-tag:hover {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
   cursor: pointer;
-}
+} */
 input[type='image'] {
   width: 100%;
 }

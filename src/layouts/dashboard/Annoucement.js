@@ -5,7 +5,7 @@ import axios from 'axios';
 import Client from '../../Client';
 
 export default function Annoucement() {
-  const [annoucement, setAnnouncement] = useState();
+  const [annoucement, setAnnouncement] = useState([]);
 
   useEffect(() => {
     const portfolioInterval = setInterval(() => {
@@ -55,7 +55,7 @@ export default function Annoucement() {
                         <img src={res.portfolioimage} alt="" className="announcementimage" />
                       </ImageListItem>
                     </ImageList>
-                    <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography>
+                    {/* <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography> */}
                   </Box>
                 </Link>
               ))
@@ -80,7 +80,7 @@ export default function Annoucement() {
                         <img src={res.portfolioimage} alt="" className="announcementimage" />
                       </ImageListItem>
                     </ImageList>
-                    <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography>
+                    {/* <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography> */}
                   </Box>
                 </Link>
               ))

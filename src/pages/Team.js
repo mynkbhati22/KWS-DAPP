@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import { AiFillLinkedin } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import kwsbird from '../components/images/kwsbird.png';
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
@@ -49,7 +50,8 @@ export default function EcommerceShop() {
 
   return (
     <Page title="KWS || Team">
-      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
+      <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
+        {/* <img src={kwsbird} alt="/" /> */}
         <Typography
           sx={{
             marginBottom: '5px',
