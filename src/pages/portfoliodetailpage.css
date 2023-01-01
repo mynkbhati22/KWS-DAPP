@@ -7,10 +7,11 @@ span.detail {
 }
 
 .jss7 {
-  color: #fff;
-  transition: 0.5s;
   background-color: #22abe3;
-  min-width: 250px;
+  color: #fff;
+  min-width: 260px;
+  transition: 0.5s;
+  margin-left: -1.5rem;
 }
 
 @media screen and (max-width: 1920px) {
