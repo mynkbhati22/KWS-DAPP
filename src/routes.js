@@ -33,7 +33,7 @@ export default function Router() {
         { path: 'our-team', element: <Team /> },
         { path: 'portfolio', element: <UploadImages /> },
         { path: 'contracts-by-us', element: <Contracts /> },
-        { path: '/portfolio-detail-page', element: <PortfolioDetailpage /> },
+        { path: '/portfolio-detail/:generateslug/:id', element: <PortfolioDetailpage /> },
         // { path: 'safu-reports', element: <SafuReports /> },
         // { path: 'portfolio', element: <Blog /> },
         { path: 'admin-page', element: <Adminpage /> },

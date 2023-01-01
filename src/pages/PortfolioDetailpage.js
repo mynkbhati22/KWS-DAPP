@@ -1,10 +1,42 @@
 import { Container, Grid, ImageListItem, Typography } from '@mui/material';
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Page from '../components/Page';
 import './portfoliodetailpage.css';
 import PortfolioSlider from './PortfolioSlider';
 
 export default function PortfolioDetailpage() {
+  const [portcatogery, setPortCatogery] = useState();
+  const [porttile, setPorttile] = useState();
+  const [portdescription, setPortDescription] = useState();
+  const [portImage, setPortImage] = useState();
+  const [portdeliver, setPortDeliver] = useState();
+  const [portrequirements, setPortRequirements] = useState();
+  const [portsolution, setPortSolution] = useState();
+  const [portteaminvolved, setTeamInvolved] = useState();
+
+  const { generateslug } = useParams();
+  console.log('showingslug', generateslug);
+
+  useEffect(() => {
+    getPortfolioDeatils();
+  }, []);
+
+  const getPortfolioDeatils = () => {
+    axios.post(`${window.URL}/api/detail`, { generateslug }).then((res) => {
+      console.log('responsingPortfolioDetail', res);
+      setPortCatogery(res.data.portfoliocatogery);
+      setPorttile(res.data.portfoliotitle);
+      setPortDescription(res.data.portfoliodetail);
+      setPortImage(res.data.portfolioimage);
+      setPortDeliver(res.data.portfoliodeveleron);
+      setPortRequirements(res.data.portfoliorequirements);
+      setPortSolution(res.data.portfoliosolutionprovider);
+      setTeamInvolved(res.data.portfoliteaminvolved);
+    });
+  };
+
   return (
     <div>
       <Page title="KWS || Portfolio Detail Page">
@@ -19,60 +51,38 @@ export default function PortfolioDetailpage() {
               color: '#27ADE3',
             }}
           >
-            Gaming Platform
+            {portcatogery}
           </Typography>
           <Typography
             variant="h3"
             sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}
           >
-            BRAVO! – ESPORT
+            {porttile}
           </Typography>
 
           <Grid container spacing={2}>
             <Grid item xl={6} lg={6} md={12} sm={12} xs={12} className="positon-relative">
               <div className="portfolio-description">
-                <p className="portdescription">
-                  Appropriately enable error-free growth strategies through economically sound intellectual capital.
-                  Quickly monetize granular communities after prospective testing procedures. Holisticly transition
-                  corporate materials and diverse partnerships. Completely revolutionize standards compliant imperatives
-                  for technically sound partnerships. Synergistically maintain cooperative web services without scalable
-                  experiences. Intrinsicly monetize corporate collaboration and idea-sharing through standards compliant
-                  solutions. Professionally architect team driven schemas and interoperable content. Proactively
-                  revolutionize professional meta-services whereas intuitive information. Competently synergize
-                  functional web services whereas tactical meta-services. Rapidiously scale prospective intellectual
-                  capital whereas flexible initiatives. Intrinsicly transform error-free opportunities whereas equity
-                  invested niches.
-                </p>
+                <p className="portdescription">{portdescription}</p>
               </div>
               <div className="project-detail">
                 <h6 className="details">
-                  Published On : <span className="detail">2022-11-30</span>
+                  Published On : <span className="detail">{portdeliver}</span>
                 </h6>
                 <h6 className="details">
-                  Requirements :{' '}
-                  <span className="detail">
-                    Solidity, React Js, Node Js , Javascript, Html , Css , Bootstrap and MUI.
-                  </span>
+                  Requirements : <span className="detail">{portrequirements}</span>
                 </h6>
                 <h6 className="details">
-                  Solutions Provided :{' '}
-                  <span className="detail">
-                    Appropriately enable error-free growth strategies through economically sound intellectual capital.
-                    Quickly monetize granular communities after prospective testing procedures.
-                  </span>
+                  Solutions Provided : <span className="detail">{portsolution}</span>
                 </h6>
                 <h6 className="details">
-                  Team Involved : <span className="detail">Nikhil Rana , Saurabh , Mayank Bhati.</span>
+                  Team Involved : <span className="detail">{portteaminvolved}</span>
                 </h6>
               </div>
             </Grid>
             <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
               <div className="protfolioimage">
-                <img
-                  src="https://app.bravoarena.gg/static/media/bravo-home1.56f961c412bc0cd2822b.jpeg"
-                  alt=""
-                  className="portimage"
-                />
+                <img src={portImage} alt="" className="portimage" />
               </div>
             </Grid>
           </Grid>

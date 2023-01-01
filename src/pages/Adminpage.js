@@ -15,8 +15,8 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 ,     align: 'center', },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100,    align: 'center', },
+  { id: 'name', label: 'Name', minWidth: 170, align: 'center' },
+  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100, align: 'center' },
   {
     id: 'population',
     label: 'Population',
@@ -114,9 +114,7 @@ function Adminpage() {
                 </p>
               </form>
 
-              {/* ---------------------------------------table---------------------------------------- */}
-
-              <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+              {/* <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                 <TableContainer sx={{ maxHeight: 440 }}>
                   <Table stickyHeader aria-label="sticky table">
                     <TableHead>
@@ -146,17 +144,15 @@ function Adminpage() {
                     </TableBody>
                   </Table>
                 </TableContainer>
-              </Paper>
+              </Paper> */}
             </div>
           </Stack>
 
           {/* ---------------------------contract-------------------------- */}
 
-          <Stack className="section-kws">
+          {/* <Stack className="section-kws">
             <div className="portfolio-admin">
               <h2 className="portfolio-admin-heading">Contract Table</h2>
-
-              {/* ---------------------------------------table---------------------------------------- */}
 
               <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                 <TableContainer sx={{ maxHeight: 440 }}>
@@ -200,7 +196,7 @@ function Adminpage() {
                 </TableContainer>
               </Paper>
             </div>
-          </Stack>
+          </Stack> */}
         </div>
       </Grid>
     </>

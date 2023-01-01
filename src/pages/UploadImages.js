@@ -62,7 +62,7 @@ export default function UploadImages() {
               {portfolio && portfolio.length > 0 ? (
                 portfolio.map((res, index) => (
                   <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
-                    <Link to="/portfolio-detail-page" rel="noreferrer">
+                    <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
                       <Box className="portfolio-image-box">
                         <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
                         <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
