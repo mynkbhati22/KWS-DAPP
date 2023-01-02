@@ -72,7 +72,7 @@ export default function EcommerceShop() {
         <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (
-              <Grid item xs={12} sm={4} md={4} key={index} style={{ position: 'relative' }}>
+              <Grid items xxl={3} xl={4} lg={4} md={6} sm={6} xs={12} key={index} style={{ position: 'relative' }}>
                 <Card
                   sx={{
                     maxWidth: 280,
