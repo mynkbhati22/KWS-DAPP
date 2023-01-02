@@ -85,7 +85,7 @@ export default function DenseTable() {
                 ))
               ) : (
                 <div className="nodata">
-                  <p className="data">NO DATA TO SHOW</p>
+                  <p className="data">Loading...</p>
                 </div>
               )}
               {/* {contractTableInfo.map(renderContractsDetails)}

@@ -113,6 +113,20 @@ img.portfolio-background-image {
   z-index: -2;
   border-radius: 20px;
 }
+.card0 {
+  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg')
+    center center no-repeat;
+  background-size: 300px;
+}
+.css-j3tqlp-MuiTypography-root {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: Public Sans, sans-serif;
+  font-weight: 400;
+  color: #6c7989;
+  text-align: center;
+}
 .css-1n7fmr5 {
   margin: 7px 0px 0px;
   line-height: 1.5;

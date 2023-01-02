@@ -13,13 +13,23 @@ span.detail {
   transition: 0.5s;
   margin-left: -1.5rem;
 }
-
+.protfolioimage {
+  position: relative !important;
+  background-size: cover !important;
+  overflow: hidden !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.css-66dmcr {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 @media screen and (max-width: 1920px) {
-  img.portimage {
+  /* img.portimage {
     display: block;
     margin: 4rem auto 0rem;
     min-height: 57vh;
-  }
+  } */
   p.portdescription {
     margin-top: 4rem;
     text-align: justify;
@@ -46,10 +56,6 @@ h6.details {
 }
 
 @media screen and (max-width: 480px) {
-  img.portimage {
-    display: block;
-    margin: 2rem auto 0rem;
-  }
   .portdescription {
     margin-top: 1rem;
     text-align: justify;

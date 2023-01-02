@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ImageUploading from 'react-images-uploading';
-import { Grid, Box, Container, Card, CardMediaStyle } from '@mui/material';
+import { Grid, Box, Container, Card, CardMediaStyle, CardMedia, CardContent, Typography } from '@mui/material';
 import './upload.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AiFillLinkedin } from 'react-icons/ai';
 import Page from '../components/Page';
 import avtarportfolio from '../components/images/amm.png';
 import portfolioimg from '../components/images/portfolioimg.png';
+import Label from '../components/Label';
 
 const URL = 'http://localhost:7777';
 
@@ -61,8 +63,43 @@ export default function UploadImages() {
             <Grid container spacing={1} className="portfolio-box">
               {portfolio && portfolio.length > 0 ? (
                 portfolio.map((res, index) => (
-                  <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
-                    <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
+                  <Grid items xxl={3} xl={4} lg={4} md={6} sm={6} xs={12} key={index}>
+                    <Card
+                      sx={{
+                        maxWidth: 280,
+                        height: 350,
+                        display: 'block',
+                        margin: '0px auto 50px',
+                        boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)',
+                        position: 'relative',
+                      }}
+                    >
+                      <CardMedia sx={{ height: '180px' }}>
+                        <div className="card0">
+                          <img src={res.portfolioimage} alt="" className="teamimage" />
+                        </div>
+                      </CardMedia>
+                      <CardContent>
+                        {/* <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
+                          {res.portfoliocatogery}
+                        </Label> */}
+                        <Typography sx={{ color: '#6C7989' }}>
+                          <Label>{res.portfoliotitle}</Label>
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontSize: '0.75rem',
+                            textAlign: 'start',
+                            marginTop: '7px',
+                            width: '100%',
+                            color: '#6C7989',
+                          }}
+                        >
+                          {res.portfoliodetail.slice(700)}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    {/* <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
                       <Box className="portfolio-image-box">
                         <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
                         <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
@@ -70,12 +107,12 @@ export default function UploadImages() {
                         <div className="portfolio-card-title">{res.portfoliodescription}</div>
                         <div className="portfolio-card-link">Look IN</div>
                       </Box>
-                    </Link>
+                    </Link> */}
                   </Grid>
                 ))
               ) : (
                 <div className="nodata">
-                  <p className="data">NO DATA TO SHOW</p>
+                  <p className="data">Loading...</p>
                 </div>
               )}
             </Grid>

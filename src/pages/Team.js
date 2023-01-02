@@ -12,6 +12,7 @@ import kwsbird from '../components/images/kwsbird.png';
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
+import DetailCards from './detailCards';
 
 // mock
 
@@ -67,6 +68,7 @@ export default function EcommerceShop() {
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           We are the team of young and dynamic leaders!
         </Typography>
+        {/* <DetailCards /> */}
         <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (
@@ -82,11 +84,9 @@ export default function EcommerceShop() {
                   }}
                 >
                   <CardMedia sx={{ height: '180px' }}>
-                    <ImageList sx={{ maxWidth: '100%', margin: '0px auto 0px', display: 'block' }}>
-                      <ImageListItem>
-                        <img src={res.teammemberimage} alt="" />
-                      </ImageListItem>
-                    </ImageList>
+                    <div className="card0">
+                      <img src={res.teammemberimage} alt="" className="teamimage" />
+                    </div>
                   </CardMedia>
                   <CardContent>
                     <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
@@ -115,7 +115,7 @@ export default function EcommerceShop() {
             ))
           ) : (
             <div className="nodata">
-              <p className="data">NO DATA TO SHOW</p>
+              <p className="data">Loading...</p>
             </div>
           )}
         </Grid>
