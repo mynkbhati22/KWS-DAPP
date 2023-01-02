@@ -19,6 +19,7 @@ span.detail {
   overflow: hidden !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  height: 100vh;
 }
 .css-66dmcr {
   padding-left: 0px !important;
