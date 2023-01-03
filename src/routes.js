@@ -15,8 +15,9 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import UploadImages from './pages/UploadImages';
-import Adminpage from './pages/Adminpage';
+import Adminpage from './pages/Admin/Adminpage';
 import PortfolioDetailpage from './pages/PortfolioDetailpage';
+import Portfolioupdate from './pages/Admin/Portfolioupdate';
 
 // ----------------------------------------------------------------------
 
@@ -37,6 +38,7 @@ export default function Router() {
         // { path: 'safu-reports', element: <SafuReports /> },
         // { path: 'portfolio', element: <Blog /> },
         { path: 'admin-page', element: <Adminpage /> },
+        { path: '/update/:id', element: <Portfolioupdate /> },
       ],
     },
     {

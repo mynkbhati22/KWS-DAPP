@@ -13,6 +13,7 @@ import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
 import DetailCards from './detailCards';
+import Teamdetailimages from './Teamdetailimages';
 
 // mock
 
@@ -68,7 +69,7 @@ export default function EcommerceShop() {
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           We are the team of young and dynamic leaders!
         </Typography>
-        {/* <DetailCards /> */}
+        {/* <Teamdetailimages /> */}
         <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (

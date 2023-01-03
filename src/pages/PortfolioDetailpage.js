@@ -2,17 +2,11 @@ import { Container, Grid, ImageListItem, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import $ from 'jquery';
 import Page from '../components/Page';
 import DetailCards from './detailCards';
 import './portfoliodetailpage.css';
 
 // import PortfolioSlider from './PortfolioSlider';
-
-$('.option').click(function () {
-  $('.option').removeClass('active');
-  $(this).addClass('active');
-});
 
 export default function PortfolioDetailpage() {
   const [portcatogery, setPortCatogery] = useState();
@@ -54,11 +48,9 @@ export default function PortfolioDetailpage() {
               <div
                 className="protfolioimage"
                 style={{
-                  background: 'url(https://kesaviwebsolutions.com/static/mock-images/portfolioImages/portimg_25.png)',
+                  background: 'url(' + portImage + ')',
                 }}
-              >
-                {/* <img src={portImage} alt="" className="portimage" /> */}
-              </div>
+              ></div>
             </Grid>
             <Grid item xl={5} lg={5} md={12} sm={12} xs={12} className="positon-relative">
               <div>
@@ -107,6 +99,7 @@ export default function PortfolioDetailpage() {
           </Typography>
 
           <DetailCards />
+
           {/* <PortfolioSlider /> */}
         </Container>
       </Page>
