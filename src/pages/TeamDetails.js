@@ -11,7 +11,10 @@ export default function TeamDetails() {
             <div class="border">
               <h2>ARRNAYA</h2>
               <p className="designation">Founder & CEO</p> <br />
-              <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              <a href="https://www.linkedin.com/in/arrnaya/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
@@ -26,7 +29,10 @@ export default function TeamDetails() {
             <div class="border">
               <h2>NIKHIL RANA</h2>
               <p className="designation">Sr. Web3 Developer</p> <br />
-              <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              <a href="https://www.linkedin.com/in/nikhil-rana-a18317217/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
@@ -43,7 +49,10 @@ export default function TeamDetails() {
               <h2>MAYANK BHATI</h2>
               <p className="designation">Full Stack Developer</p>
               <br />
-              <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              <a href="https://www.linkedin.com/in/mayank-rajput-412383209/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
@@ -58,7 +67,10 @@ export default function TeamDetails() {
               <h2>SAURABH</h2>
               <p className="designation">Full Stack Developer</p>
               <br />
-              <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              <a href="https://www.linkedin.com/in/saurabh-yadav-626004168/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
