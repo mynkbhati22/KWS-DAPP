@@ -10,13 +10,7 @@ export default function Portfolioupdate() {
         </Typography>
         <form>
           <p className="form-para">Card Title</p>
-          <TextField
-            id="outlined-basic"
-            label="Card Description"
-            variant="outlined"
-            className="text-field-card"
-            required
-          />
+          <TextField id="outlined-basic" label="Card Title" variant="outlined" className="text-field-card" required />
           <p className="form-para">Card Description</p>
           <TextField
             id="outlined-basic"
@@ -26,13 +20,7 @@ export default function Portfolioupdate() {
             required
           />
           <p className="form-para">Card Link</p>
-          <TextField
-            id="outlined-basic"
-            label="Card Description"
-            variant="outlined"
-            className="text-field-card"
-            required
-          />
+          <TextField id="outlined-basic" label="Card Link" variant="outlined" className="text-field-card" required />
           <p className="form-para">Avatar Image Link </p>
           <TextField
             id="outlined-basic"
