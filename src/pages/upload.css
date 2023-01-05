@@ -24,7 +24,15 @@
 .text {
   color: #fff;
 }
-
+.css-5d71qc-MuiCardMedia-root {
+  display: block;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center;
+  height: auto !important;
+}
 .outerbox {
   width: 70%;
   margin: 0px auto;
@@ -113,11 +121,11 @@ img.portfolio-background-image {
   z-index: -2;
   border-radius: 20px;
 }
-.card0 {
+/* .card0 {
   background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg')
     center center no-repeat;
   background-size: 300px;
-}
+} */
 .css-j3tqlp-MuiTypography-root {
   margin: 0;
   line-height: 1.5;

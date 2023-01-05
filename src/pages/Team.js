@@ -12,6 +12,7 @@ import kwsbird from '../components/images/kwsbird.png';
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
+import TeamDetails from './TeamDetails';
 
 // mock
 
@@ -50,7 +51,7 @@ export default function EcommerceShop() {
 
   return (
     <Page title="KWS || Team">
-      <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
+      <Container maxWidth="lg" sx={{ marginTop: '100px' }}>
         <Typography
           sx={{
             marginBottom: '5px',
@@ -66,14 +67,16 @@ export default function EcommerceShop() {
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           We are the team of young and dynamic leaders!
         </Typography>
-        <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
+
+        <TeamDetails />
+        {/* <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (
-              <Grid items xxl={3} xl={4} lg={4} md={6} sm={6} xs={12} key={index} style={{ position: 'relative' }}>
+              <Grid items xxl={3} xl={4} lg={6} md={6} sm={6} xs={12} key={index} style={{ position: 'relative' }}>
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 350,
+                    maxWidth: 450,
+                    height: 480,
                     display: 'block',
                     margin: '0px auto 50px',
                     boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)',
@@ -115,7 +118,7 @@ export default function EcommerceShop() {
               <p className="data">Loading...</p>
             </div>
           )}
-        </Grid>
+        </Grid> */}
       </Container>
     </Page>
   );

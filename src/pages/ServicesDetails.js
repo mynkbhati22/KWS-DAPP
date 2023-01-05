@@ -24,11 +24,11 @@ export default function ServicesDetails() {
             {services && services.length > 0 ? (
               services.map((res, index) => {
                 return (
-                  <Grid item xs={12} sm={6} md={6} lg={6} xl={4} key={index}>
+                  <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={index}>
                     <div class="card">
                       <div class="face face1">
                         <div class="content">
-                          <img src={res.serviceimage} alt="" />
+                          {/* <img src={res.serviceimage} alt="" /> */}
                           <h3>{res.serviceheading}</h3>
                         </div>
                       </div>
