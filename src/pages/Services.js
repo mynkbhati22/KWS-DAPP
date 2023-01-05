@@ -7,6 +7,7 @@ import axios from 'axios';
 import Client from '../Client';
 import Page from '../components/Page';
 import useStyles from './serviceStyle';
+import ServicesDetails from './ServicesDetails';
 
 // mock
 
@@ -45,7 +46,7 @@ export default function EcommerceShop() {
 
   return (
     <Page title="KWS || Services">
-      <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
+      <Container maxWidth="xl" sx={{ marginTop: '50px' }}>
         <Grid container spacing={3}>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
             <Box sx={{ marginBottom: '5px' }}>
@@ -73,7 +74,9 @@ export default function EcommerceShop() {
             </Box>
           </Grid>
         </Grid>
-        <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '50px' }}>
+
+        <ServicesDetails />
+        {/* <Grid container spacing={2} textAlign="center" sx={{ paddingTop: '50px' }}>
           {services && services.length > 0 ? (
             services.map((res, index) => (
               <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
@@ -93,7 +96,7 @@ export default function EcommerceShop() {
               <p className="data">Loading...</p>
             </div>
           )}
-        </Grid>
+        </Grid> */}
       </Container>
     </Page>
   );

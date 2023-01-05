@@ -1,94 +1,213 @@
-.border {
-  height: 369px;
-  width: 290px;
-  background: transparent;
-  border-radius: 10px;
-  transition: border 1s;
+.container {
+  width: 1000px;
   position: relative;
-}
-.border:hover {
-  border: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
 }
 .card {
-  height: 379px;
-  width: 300px;
-  background: #808080;
-  border-radius: 10px;
-  transition: background 0.8s;
-  overflow: hidden;
-  background: #000;
-  box-shadow: 0 70px 63px -60px #000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: transparent !important;
+  background-clip: border-box;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0.5rem;
+}
+
+.container .card {
+  position: relative;
+  cursor: pointer;
+}
+
+.container .card .face {
+  /* width: 300px; */
+  height: 200px;
+  transition: 0.5s;
+}
+
+.container .card .face.face1 {
+  position: relative;
+  background: #333;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1 {
+  background: #f58733;
+  transform: translateY(0);
+  color: #ffff;
+}
+
+.container .card .face.face1 .content {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+.container .card .face.face1 .content img {
+  max-width: 100px;
+  display: block;
+  margin: auto;
+}
+
+.container .card .face.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.container .card .face.face2 {
   position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-100px);
 }
-/* .card0 {
-  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg')
-    center center no-repeat;
-  background-size: 300px;
+
+.container .card:hover .face.face2 {
+  transform: translateY(0);
 }
-.card0:hover {
-  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg')
-    left center no-repeat;
-  background-size: 600px;
-} */
-.card0:hover h2 {
-  opacity: 1;
+
+.container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
 }
-.card0:hover .fa {
-  opacity: 1;
+
+.container .card .face.face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
 }
-.card1 {
-  background: url('https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg') center center
-    no-repeat;
-  background-size: 300px;
-}
-.card1:hover {
-  background: url('https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg') left center no-repeat;
-  background-size: 600px;
-}
-.card1:hover h2 {
-  opacity: 1;
-}
-.card1:hover .fa {
-  opacity: 1;
-}
-.card2 {
-  background: url('https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg') center center
-    no-repeat;
-  background-size: 300px;
-}
-.card2:hover {
-  background: url('https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg') left center no-repeat;
-  background-size: 600px;
-}
-.card2:hover h2 {
-  opacity: 1;
-}
-.card2:hover .fa {
-  opacity: 1;
-}
-h2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+.container .card .face.face2 .content a:hover {
+  background: #333;
   color: #fff;
-  margin: 20px;
-  opacity: 0;
-  transition: opacity 1s;
 }
-.fa {
-  opacity: 0;
-  transition: opacity 1s;
+
+/* .container {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
-.icons {
-  position: absolute;
-  fill: #fff;
+
+.container .card {
+  position: relative;
+  cursor: pointer;
+}
+
+.container .card .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.container .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1 {
+  background: #22ace2;
+  transform: translateY(0);
+}
+
+.container .card .face.face1 .content {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+img.team-image {
+  max-width: 300px;
+  margin-top: 2.4rem;
+}
+
+.container .card .face.face1 .content img {
+  max-width: 100px;
+}
+
+.container .card .face.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
   color: #fff;
-  height: 130px;
-  top: 226px;
-  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.container .card .face.face2 {
+  position: relative;
+  background: #22ace2;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 3px #22ace2;
+  transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2 {
+  transform: translateY(0);
+}
+
+.container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+}
+
+.container .card .face.face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
+}
+
+.container .card .face.face2 .content a:hover {
+  background: #333;
+  color: #fff;
+}
+
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: transparent !important;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  border: 0;
+  box-shadow: none !important;
+} */

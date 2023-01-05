@@ -12,8 +12,6 @@ import kwsbird from '../components/images/kwsbird.png';
 import Label from '../components/Label';
 import Client from '../Client';
 import Page from '../components/Page';
-import DetailCards from './detailCards';
-import Teamdetailimages from './Teamdetailimages';
 
 // mock
 
@@ -53,7 +51,6 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS || Team">
       <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
-        {/* <img src={kwsbird} alt="/" /> */}
         <Typography
           sx={{
             marginBottom: '5px',
@@ -69,7 +66,6 @@ export default function EcommerceShop() {
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           We are the team of young and dynamic leaders!
         </Typography>
-        {/* <Teamdetailimages /> */}
         <Grid container spacing={1} textAlign="center" sx={{ paddingTop: '20px' }}>
           {team && team.length > 0 ? (
             team.map((res, index) => (
