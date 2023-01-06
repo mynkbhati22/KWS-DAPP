@@ -72,93 +72,43 @@ export default function UploadImages() {
             PORTFOLIOS
           </Typography>
           <Box className="container-portfolio">
-            {/*        <Grid container spacing={4} className="portfolio-box">
+            <Grid container spacing={4}>
               {portfolio && portfolio.length > 0 ? (
-                portfolio.map((res, index) => (
-                  <Grid items xxl={3} xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
-                    <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
-                      <Card
-                        sx={{
-                          maxWidth: 280,
-                          height: 350,
-                          display: 'block',
-                          margin: '0px auto 50px',
-                          boxShadow: '0px 0px 7px 1px rgb(34, 171, 227, 0.3)',
-                          position: 'relative',
-                        }}
-                      >
-                        <CardMedia sx={{ height: '180px' }}>
-                          <div className="card0">
-                            <img src={res.portfolioimage} alt="" className="teamimage" />
-                          </div>
-                        </CardMedia>
-                        <CardContent>
-                       
-                          <div className="porrtheading">{res.portfoliotitle}</div>
-                    
-                     
-                        </CardContent>
-                      </Card>
-                    </Link>
-            
-                  </Grid>
-                ))
+                portfolio.map((res, index) => {
+                  return (
+                    <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={index}>
+                      <div className="card-portfolio">
+                        <div className="card-image">
+                          <img src={res.portfolioimage} alt="" className="image-portfolio" />
+                        </div>
+                        <div className="card-detail">
+                          <div className="portfolio-name">{res.portfoliotitle}</div>
+                          <Grid container className="portfolio-title-grid">
+                            <Grid item xs={6}>
+                              <div className="portfolio-title">
+                                <span className="title-text">Catorgey</span>
+                                <br />
+                                <span className="title-text-value">Token Address</span>
+                              </div>
+                            </Grid>
+                            <Grid item xs={6}>
+                              <div className="portfolio-title">
+                                <span className="title-text">Title</span>
+                                <br />
+                                <span className="title-text-value">abc</span>
+                              </div>
+                            </Grid>
+                          </Grid>
+                        </div>
+                      </div>
+                    </Grid>
+                  );
+                })
               ) : (
                 <div className="nodata">
                   <p className="data">Loading...</p>
                 </div>
               )}
-            </Grid> */}
-            <Grid container spacing={4} >
-              <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
-                <div className="card-portfolio">
-                  <div className="card-image">
-                    <img src={portfolioimg} alt="" className="image-portfolio" />
-                  </div>
-                  <div className="card-detail">
-                    <div className="portfolio-name">NAME</div>
-                    <Grid container className='portfolio-title-grid'>
-                    <Grid item xs={6}>
-                    <div className="portfolio-title">
-                      <span className="title-text">Title</span><br/>
-                      <span className="title-text-value">abc</span>
-                    </div>
-                    </Grid>
-                    <Grid item xs={6}>
-                    <div className="portfolio-title">
-                    <span className="title-text">Title</span><br/>
-                    <span className="title-text-value">abc</span>
-                  </div>
-                  </Grid>
-                  </Grid>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
-              <div className="card-portfolio">
-                <div className="card-image">
-                  <img src={portfolioimg} alt="" className="image-portfolio" />
-                </div>
-                <div className="card-detail">
-                  <div className="portfolio-name">NAME</div>
-                  <Grid container className='portfolio-title-grid'>
-                  <Grid item xs={6}>
-                  <div className="portfolio-title">
-                    <span className="title-text">
-                    Title</span><br/>
-                    <span className="title-text-value">abc</span>
-                  </div>
-                  </Grid>
-                  <Grid item xs={6}>
-                  <div className="portfolio-title">
-                  <span className="title-text">Title</span><br/>
-                  <span className="title-text-value">abc</span>
-                </div>
-                </Grid>
-                </Grid>
-                </div>
-              </div>
-            </Grid>
             </Grid>
           </Box>
         </Container>
@@ -166,3 +116,30 @@ export default function UploadImages() {
     </>
   );
 }
+
+// {/* <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
+//                 <div className="card-portfolio">
+//                   <div className="card-image">
+//                     <img src={portfolioimg} alt="" className="image-portfolio" />
+//                   </div>
+//                   <div className="card-detail">
+//                     <div className="portfolio-name">NAME</div>
+//                     <Grid container className="portfolio-title-grid">
+//                       <Grid item xs={6}>
+//                         <div className="portfolio-title">
+//                           <span className="title-text">Title</span>
+//                           <br />
+//                           <span className="title-text-value">abc</span>
+//                         </div>
+//                       </Grid>
+//                       <Grid item xs={6}>
+//                         <div className="portfolio-title">
+//                           <span className="title-text">Title</span>
+//                           <br />
+//                           <span className="title-text-value">abc</span>
+//                         </div>
+//                       </Grid>
+//                     </Grid>
+//                   </div>
+//                 </div>
+//               </Grid> */}
