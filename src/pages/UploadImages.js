@@ -116,17 +116,17 @@ export default function UploadImages() {
                     <img src={portfolioimg} alt="" className="image-portfolio" />
                   </div>
                   <div className="card-detail">
-                    <div className="portfolio-name">name</div>
+                    <div className="portfolio-name">NAME</div>
                     <Grid container className='portfolio-title-grid'>
                     <Grid item xs={6}>
                     <div className="portfolio-title">
-                      <span className="title-text">title</span><br/>
+                      <span className="title-text">Title</span><br/>
                       <span className="title-text-value">abc</span>
                     </div>
                     </Grid>
                     <Grid item xs={6}>
                     <div className="portfolio-title">
-                    <span className="title-text">title</span><br/>
+                    <span className="title-text">Title</span><br/>
                     <span className="title-text-value">abc</span>
                   </div>
                   </Grid>
@@ -140,17 +140,18 @@ export default function UploadImages() {
                   <img src={portfolioimg} alt="" className="image-portfolio" />
                 </div>
                 <div className="card-detail">
-                  <div className="portfolio-name">name</div>
+                  <div className="portfolio-name">NAME</div>
                   <Grid container className='portfolio-title-grid'>
                   <Grid item xs={6}>
                   <div className="portfolio-title">
-                    <span className="title-text">title</span><br/>
+                    <span className="title-text">
+                    Title</span><br/>
                     <span className="title-text-value">abc</span>
                   </div>
                   </Grid>
                   <Grid item xs={6}>
                   <div className="portfolio-title">
-                  <span className="title-text">title</span><br/>
+                  <span className="title-text">Title</span><br/>
                   <span className="title-text-value">abc</span>
                 </div>
                 </Grid>
