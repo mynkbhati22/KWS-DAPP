@@ -212,6 +212,8 @@ a:hover {
 .card-portfolio{
   border: 1px solid black;
   border-radius: 10px;
+  font-size: 0.8rem;
+  min-height: 18rem;
 }
 .image-portfolio{
   border-radius: 10px 10px 0px 0px;
@@ -221,6 +223,11 @@ a:hover {
 .portfolio-title-grid{
   margin: 1rem 0rem;
 }
+.view-button{
+  float: right;
+  border: 1px solid;
+}
+
 css-7dngom {
   background-color: #fff;
   background-image: none;

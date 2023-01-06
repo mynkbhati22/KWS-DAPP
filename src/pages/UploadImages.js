@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ImageUploading from 'react-images-uploading';
-import { Grid, Box, Container, Card, CardMediaStyle, CardMedia, CardContent, Typography } from '@mui/material';
+import { Grid, Box, Container, Card, CardMediaStyle, CardMedia, CardContent, Typography, Button } from '@mui/material';
 import './upload.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -93,9 +93,7 @@ export default function UploadImages() {
                             </Grid>
                             <Grid item xs={6}>
                               <div className="portfolio-title">
-                                <span className="title-text">Title</span>
-                                <br />
-                                <span className="title-text-value">abc</span>
+                               <Button className="view-button">View</Button>
                               </div>
                             </Grid>
                           </Grid>
