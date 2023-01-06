@@ -29,6 +29,7 @@ span.detail {
 .protfolioimage {
   height: 75vh;
   background-position: center !important;
+  background-size: cover !important;
   background-repeat: no-repeat !important;
   filter: blur(6px);
 }
@@ -38,9 +39,12 @@ span.detail {
   left: 25rem;
   z-index: 1;
 }
-img.portforntimage {
-  width: 45%;
-}
+/* img.portforntimage {
+  width: 50%;
+  display: block;
+  margin-left: 2rem;
+} */
+
 @media screen and (max-width: 1920px) {
   /* img.portimage {
     display: block;
@@ -97,7 +101,8 @@ h6.details {
   .protfolioimage {
     height: 100vh;
     background-position: center !important;
-    width: 178%;
+    width: 130%;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     filter: blur(6px);
   }
@@ -105,7 +110,6 @@ h6.details {
     background: #fff;
     position: absolute;
     right: 11px;
-    max-width: 500px;
     height: 100vh;
   }
   .frontImage {
@@ -114,7 +118,9 @@ h6.details {
     left: 25rem;
     z-index: 1;
   }
-  img.portforntimage {
-    width: 45%;
-  }
+  /* img.portforntimage {
+    width: 100%;
+    display: block;
+    margin-left: 9rem;
+  } */
 }

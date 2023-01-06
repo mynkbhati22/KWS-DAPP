@@ -195,35 +195,35 @@ a:hover {
   width: 90%;
   margin: auto;
 }
-.porrtheading{
+.porrtheading {
   font-weight: 700;
 }
 
-.card-detail{
+.card-detail {
   padding: 0rem 1rem;
 }
-.portfolio-name{
+.portfolio-name {
   font-weight: 700;
   margin: 1rem 0rem;
 }
-.title-text{
+.title-text {
   font-weight: 600;
 }
-.card-portfolio{
+.card-portfolio {
   border: 1px solid black;
   border-radius: 10px;
   font-size: 0.8rem;
   min-height: 18rem;
 }
-.image-portfolio{
+.image-portfolio {
   border-radius: 10px 10px 0px 0px;
   width: 100% !important;
   height: 10rem !important;
 }
-.portfolio-title-grid{
+.portfolio-title-grid {
   margin: 1rem 0rem;
 }
-.view-button{
+.view-button {
   float: right;
   border: 1px solid;
 }

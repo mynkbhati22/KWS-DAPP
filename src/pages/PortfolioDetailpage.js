@@ -44,7 +44,7 @@ export default function PortfolioDetailpage() {
       <Page title="KWS || Portfolio Detail Page">
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Grid container spacing={2}>
-            <Grid item xl={7} lg={7} md={12} sm={12} xs={12}>
+            <Grid item xl={7} lg={7} md={12} sm={12} xs={12} className="positon-relative">
               <div className="positon-relative">
                 <div
                   className="protfolioimage"
@@ -52,7 +52,6 @@ export default function PortfolioDetailpage() {
                     background: 'url(' + portImage + ')',
                   }}
                 ></div>
-
                 <div className="frontImage">
                   <img src={portImage} alt="" className="portforntimage" />
                 </div>
@@ -99,15 +98,15 @@ export default function PortfolioDetailpage() {
           </Grid>
         </Container>
 
-        <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
+        {/* <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
           <Typography variant="h4" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'left' }}>
             More Images of the project : -
           </Typography>
 
           <DetailCards />
 
-          {/* <PortfolioSlider /> */}
-        </Container>
+          <PortfolioSlider />
+        </Container> */}
       </Page>
     </div>
   );

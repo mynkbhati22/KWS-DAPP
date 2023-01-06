@@ -85,7 +85,7 @@ export default function TeamDetails() {
           <div class="card card3 mt-5">
             <div class="border">
               <h2>SAURABH</h2>
-              <p className="designation">Full Stack Developer</p>
+              <p className="designation">UI/UX Developer</p>
               <br />
               <a href="https://www.linkedin.com/in/saurabh-yadav-626004168/" target="_blank" rel="noreferrer">
                 {' '}

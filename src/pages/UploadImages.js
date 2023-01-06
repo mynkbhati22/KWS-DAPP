@@ -93,7 +93,12 @@ export default function UploadImages() {
                             </Grid>
                             <Grid item xs={6}>
                               <div className="portfolio-title">
-                               <Button className="view-button">View</Button>
+                                <Button
+                                  href={`/portfolio-detail/${res.generateslug}/${res._id}`}
+                                  className="view-button"
+                                >
+                                  View
+                                </Button>
                               </div>
                             </Grid>
                           </Grid>
