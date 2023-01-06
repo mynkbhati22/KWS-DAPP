@@ -195,7 +195,32 @@ a:hover {
   width: 90%;
   margin: auto;
 }
+.porrtheading{
+  font-weight: 700;
+}
 
+.card-detail{
+  padding: 0rem 1rem;
+}
+.portfolio-name{
+  font-weight: 700;
+  margin: 1rem 0rem;
+}
+.title-text{
+  font-weight: 600;
+}
+.card-portfolio{
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.image-portfolio{
+  border-radius: 10px 10px 0px 0px;
+  width: 100% !important;
+  height: 10rem !important;
+}
+.portfolio-title-grid{
+  margin: 1rem 0rem;
+}
 css-7dngom {
   background-color: #fff;
   background-image: none;

@@ -61,7 +61,7 @@ export default function UploadImages() {
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Typography
             sx={{
-              marginBottom: '5px',
+              marginBottom: '2rem',
               fontWeight: '900',
               fontFamily: 'Poppins, sans-serif',
               fontSize: '20px',
@@ -72,7 +72,7 @@ export default function UploadImages() {
             PORTFOLIOS
           </Typography>
           <Box className="container-portfolio">
-            <Grid container spacing={1} className="portfolio-box">
+            {/*        <Grid container spacing={4} className="portfolio-box">
               {portfolio && portfolio.length > 0 ? (
                 portfolio.map((res, index) => (
                   <Grid items xxl={3} xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
@@ -93,36 +93,14 @@ export default function UploadImages() {
                           </div>
                         </CardMedia>
                         <CardContent>
-                          {/* <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
-                          {res.portfoliocatogery}
-                        </Label> */}
-                          <h1 className="porrtheading">{res.portfoliotitle}</h1>
-                          {/* <Typography sx={{ color: '#6C7989' }}>
-                            <Label>{res.portfoliotitle}</Label>
-                          </Typography> */}
-                          {/* <Typography
-                            sx={{
-                              fontSize: '0.75rem',
-                              textAlign: 'start',
-                              marginTop: '7px',
-                              width: '100%',
-                              color: '#6C7989',
-                            }}
-                          >
-                            {res.portfoliodetail.slice(700)}
-                          </Typography> */}
+                       
+                          <div className="porrtheading">{res.portfoliotitle}</div>
+                    
+                     
                         </CardContent>
                       </Card>
                     </Link>
-                    {/* <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
-                      <Box className="portfolio-image-box">
-                        <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
-                        <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
-                        <div className="portfolio-card-heading">{res.portfoliotitle}</div>
-                        <div className="portfolio-card-title">{res.portfoliodescription}</div>
-                        <div className="portfolio-card-link">Look IN</div>
-                      </Box>
-                    </Link> */}
+            
                   </Grid>
                 ))
               ) : (
@@ -130,6 +108,56 @@ export default function UploadImages() {
                   <p className="data">Loading...</p>
                 </div>
               )}
+            </Grid> */}
+            <Grid container spacing={4} >
+              <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
+                <div className="card-portfolio">
+                  <div className="card-image">
+                    <img src={portfolioimg} alt="" className="image-portfolio" />
+                  </div>
+                  <div className="card-detail">
+                    <div className="portfolio-name">name</div>
+                    <Grid container className='portfolio-title-grid'>
+                    <Grid item xs={6}>
+                    <div className="portfolio-title">
+                      <span className="title-text">title</span><br/>
+                      <span className="title-text-value">abc</span>
+                    </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <div className="portfolio-title">
+                    <span className="title-text">title</span><br/>
+                    <span className="title-text-value">abc</span>
+                  </div>
+                  </Grid>
+                  </Grid>
+                  </div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
+              <div className="card-portfolio">
+                <div className="card-image">
+                  <img src={portfolioimg} alt="" className="image-portfolio" />
+                </div>
+                <div className="card-detail">
+                  <div className="portfolio-name">name</div>
+                  <Grid container className='portfolio-title-grid'>
+                  <Grid item xs={6}>
+                  <div className="portfolio-title">
+                    <span className="title-text">title</span><br/>
+                    <span className="title-text-value">abc</span>
+                  </div>
+                  </Grid>
+                  <Grid item xs={6}>
+                  <div className="portfolio-title">
+                  <span className="title-text">title</span><br/>
+                  <span className="title-text-value">abc</span>
+                </div>
+                </Grid>
+                </Grid>
+                </div>
+              </div>
+            </Grid>
             </Grid>
           </Box>
         </Container>
