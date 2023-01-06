@@ -61,6 +61,26 @@ export default function TeamDetails() {
             </div>
           </div>
         </div>
+
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+          <div class="card card4 mt-5">
+            <div class="border">
+              <h2>CHAITANYA</h2>
+              <p className="designation">PR Manager & JavaScript Intern</p>
+              <br />
+              <a href="https://www.linkedin.com/in/ritu-kanojiya-586a8a245/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
+              <i aria-hidden="true"></i>
+              <p className="description">
+                <br />
+                Manager of Arrnaya's Community and intern at KWS learning JavaScript.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
           <div class="card card3 mt-5">
             <div class="border">

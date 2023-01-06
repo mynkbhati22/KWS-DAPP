@@ -57,12 +57,12 @@
   opacity: 1;
 }
 .card1 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672918907/nikhil-dark_vo75fk.jpg') center center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003964/Nikhil_cynjbm.jpg') center center
     no-repeat;
   background-size: 300px;
 }
 .card1:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672918907/nikhil-dark_vo75fk.jpg') left center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003959/Nikhil-dark_te2rtx.jpg') left center
     no-repeat;
   background-size: 600px;
 }
@@ -79,11 +79,13 @@
   opacity: 1;
 }
 .card2 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672919795/d2_ldzqdx.jpg') center center no-repeat;
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003300/Mayank_orldnp.jpg') center center
+    no-repeat;
   background-size: 300px;
 }
 .card2:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672919795/d2_ldzqdx.jpg') left center no-repeat;
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003292/Mayank-dark_gd3neh.jpg') left center
+    no-repeat;
   background-size: 600px;
 }
 .card2:hover h2 {
@@ -99,11 +101,13 @@
   opacity: 1;
 }
 .card3 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672919804/d3_zqotz4.jpg') center center no-repeat;
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673001750/Saurav_uxbi27.jpg') center center
+    no-repeat;
   background-size: 300px;
 }
 .card3:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672919804/d3_zqotz4.jpg') left center no-repeat;
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673001750/saurav-dark_ivza4n.jpg') left center
+    no-repeat;
   background-size: 600px;
 }
 .card3:hover h2 {
@@ -116,6 +120,28 @@
   opacity: 1;
 }
 .card3:hover p.description {
+  opacity: 1;
+}
+.card4 {
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003589/Chaitanya_i4kga3.jpg') center center
+    no-repeat;
+  background-size: 300px;
+}
+.card4:hover {
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003595/Chaitanya-dark_qv1jln.jpg') left center
+    no-repeat;
+  background-size: 600px;
+}
+.card4:hover h2 {
+  opacity: 1;
+}
+.card4:hover .fa {
+  opacity: 1;
+}
+.card4:hover p.designation {
+  opacity: 1;
+}
+.card4:hover p.description {
   opacity: 1;
 }
 h2 {

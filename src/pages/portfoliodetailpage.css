@@ -13,18 +13,33 @@ span.detail {
   transition: 0.5s;
   margin-left: -1.5rem;
 }
-.protfolioimage {
+/* .protfolioimage {
   position: relative !important;
   background-size: cover !important;
   overflow: hidden !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   height: 100vh;
-}
+} */
 
 .css-66dmcr {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+.protfolioimage {
+  height: 75vh;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  filter: blur(6px);
+}
+.frontImage {
+  position: absolute;
+  top: 50%;
+  left: 25rem;
+  z-index: 1;
+}
+img.portforntimage {
+  width: 45%;
 }
 @media screen and (max-width: 1920px) {
   /* img.portimage {
@@ -33,23 +48,27 @@ span.detail {
     min-height: 57vh;
   } */
   p.portdescription {
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-align: justify;
     color: #6d7c8a;
     font-family: Public Sans, sans-serif;
     font-size: 1rem;
     font-weight: 400;
+    padding: 1.2rem;
   }
   .project-detail {
-    padding-top: 0rem;
+    padding: 1.2rem;
   }
-  /* .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-12.MuiGrid-grid-md-6.MuiGrid-grid-lg-6.MuiGrid-grid-xl-6.positon-relative.css-1fyyp8j-MuiGrid-root {
-    position: relative;
+  p.MuiTypography-root.MuiTypography-body1.css-1qvdk2m-MuiTypography-root {
+    margin-top: 2rem;
   }
-  .project-detail {
+  .portfolio-details {
+    background: #fff;
     position: absolute;
-    bottom: 0%;
-  } */
+    right: 29px;
+    max-width: 500px;
+    height: 75vh;
+  }
 }
 h6.details {
   font-size: 0.9rem;
@@ -71,5 +90,31 @@ h6.details {
 @media screen and (max-width: 1024px) {
   .project-detail {
     padding-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .protfolioimage {
+    height: 100vh;
+    background-position: center !important;
+    width: 178%;
+    background-repeat: no-repeat !important;
+    filter: blur(6px);
+  }
+  .portfolio-details {
+    background: #fff;
+    position: absolute;
+    right: 11px;
+    max-width: 500px;
+    height: 100vh;
+  }
+  .frontImage {
+    position: absolute;
+    top: 50%;
+    left: 25rem;
+    z-index: 1;
+  }
+  img.portforntimage {
+    width: 45%;
   }
 }

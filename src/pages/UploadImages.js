@@ -59,11 +59,23 @@ export default function UploadImages() {
     <>
       <Page title="KWS || Portfolios">
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
+          <Typography
+            sx={{
+              marginBottom: '5px',
+              fontWeight: '900',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '20px',
+              textAlign: 'center !important',
+              color: '#27ADE3',
+            }}
+          >
+            PORTFOLIOS
+          </Typography>
           <Box className="container-portfolio">
             <Grid container spacing={1} className="portfolio-box">
               {portfolio && portfolio.length > 0 ? (
                 portfolio.map((res, index) => (
-                  <Grid items xxl={3} xl={4} lg={4} md={6} sm={6} xs={12} key={index}>
+                  <Grid items xxl={3} xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
                     <Link to={`/portfolio-detail/${res.generateslug}/${res._id}`} rel="noreferrer">
                       <Card
                         sx={{
@@ -84,10 +96,11 @@ export default function UploadImages() {
                           {/* <Label gutterBottom sx={{ background: '#F58632', color: '#fff', fontSize: '15px' }}>
                           {res.portfoliocatogery}
                         </Label> */}
-                          <Typography sx={{ color: '#6C7989' }}>
+                          <h1 className="porrtheading">{res.portfoliotitle}</h1>
+                          {/* <Typography sx={{ color: '#6C7989' }}>
                             <Label>{res.portfoliotitle}</Label>
-                          </Typography>
-                          <Typography
+                          </Typography> */}
+                          {/* <Typography
                             sx={{
                               fontSize: '0.75rem',
                               textAlign: 'start',
@@ -97,7 +110,7 @@ export default function UploadImages() {
                             }}
                           >
                             {res.portfoliodetail.slice(700)}
-                          </Typography>
+                          </Typography> */}
                         </CardContent>
                       </Card>
                     </Link>
