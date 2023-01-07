@@ -44,20 +44,20 @@ export default function PortfolioDetailpage() {
       <Page title="KWS || Portfolio Detail Page">
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Grid container spacing={2}>
-            <Grid item xl={7} lg={7} md={12} sm={12} xs={12} className="positon-relative">
+            <Grid item xl={6} lg={12} md={12} sm={12} xs={12} className="positon-relative">
               <div className="positon-relative">
-                <div
+         {/*     <div
                   className="protfolioimage"
                   style={{
                     background: 'url(' + portImage + ')',
                   }}
-                ></div>
-                <div className="frontImage">
-                  <img src={portImage} alt="" className="portforntimage" />
-                </div>
+                ></div>  */}
+                <div className="frontImage-detail">
+                  <img src={portImage} alt="" className="portfrontimage" />
+                </div> 
               </div>
             </Grid>
-            <Grid item xl={5} lg={5} md={12} sm={12} xs={12} className="positon-relative">
+            <Grid item xl={6} lg={12} md={12} sm={12} xs={12} className="positon-relative">
               <div className="portfolio-details">
                 <Typography
                   sx={{

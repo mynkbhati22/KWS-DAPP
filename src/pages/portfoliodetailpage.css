@@ -66,18 +66,16 @@ span.detail {
   p.MuiTypography-root.MuiTypography-body1.css-1qvdk2m-MuiTypography-root {
     margin-top: 2rem;
   }
-  .portfolio-details {
-    background: #fff;
-    position: absolute;
-    right: 29px;
-    max-width: 500px;
-    height: 75vh;
-  }
+
 }
 h6.details {
   font-size: 0.9rem;
   font-family: Public Sans, sans-serif;
   font-weight: 700;
+}
+.portfrontimage{
+  width: 100%;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 480px) {
@@ -106,12 +104,7 @@ h6.details {
     background-repeat: no-repeat !important;
     filter: blur(6px);
   }
-  .portfolio-details {
-    background: #fff;
-    position: absolute;
-    right: 11px;
-    height: 100vh;
-  }
+
   .frontImage {
     position: absolute;
     top: 50%;
