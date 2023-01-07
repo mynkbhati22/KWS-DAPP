@@ -25,6 +25,7 @@
   height: 379px;
   width: 300px;
   background: #808080;
+  margin: auto;
   border-radius: 10px;
   transition: background 0.8s;
   overflow: hidden;

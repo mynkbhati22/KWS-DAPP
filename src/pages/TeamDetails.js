@@ -6,8 +6,8 @@ export default function TeamDetails() {
   return (
     <div>
       <div className="row mt-5">
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-          <div class="card card0">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card card0 mt-5">
             <div class="border">
               <h2>ARRNAYA</h2>
               <p className="designation">Founder & CEO</p> <br />
@@ -24,8 +24,8 @@ export default function TeamDetails() {
             </div>
           </div>
         </div>
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-          <div class="card card1">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card card1 mt-5">
             <div class="border">
               <h2>NIKHIL RANA</h2>
               <p className="designation">Sr. Web3 Developer</p> <br />
@@ -43,8 +43,8 @@ export default function TeamDetails() {
           </div>
         </div>
 
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-          <div class="card card2">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card card2 mt-5">
             <div class="border">
               <h2>MAYANK BHATI</h2>
               <p className="designation">Full Stack Developer</p>
@@ -62,7 +62,7 @@ export default function TeamDetails() {
           </div>
         </div>
 
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
           <div class="card card4 mt-5">
             <div class="border">
               <h2>CHAITANYA</h2>
@@ -81,7 +81,7 @@ export default function TeamDetails() {
           </div>
         </div>
 
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
           <div class="card card3 mt-5">
             <div class="border">
               <h2>SAURABH</h2>
