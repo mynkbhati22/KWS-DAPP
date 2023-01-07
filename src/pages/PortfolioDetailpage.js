@@ -30,7 +30,7 @@ export default function PortfolioDetailpage() {
       console.log('responsingPortfolioDetail', res);
       setPortCatogery(res.data.portfoliocatogery);
       setPorttile(res.data.portfoliotitle);
-      setPortDescription(res.data.portfoliodetail);
+      setPortDescription(res.data.portfoliodescription);
       setPortImage(res.data.portfolioimage);
       setPortDeliver(res.data.portfoliodeveleron);
       setPortRequirements(res.data.portfoliorequirements);
