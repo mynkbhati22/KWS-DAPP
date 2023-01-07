@@ -13,14 +13,7 @@ span.detail {
   transition: 0.5s;
   margin-left: -1.5rem;
 }
-/* .protfolioimage {
-  position: relative !important;
-  background-size: cover !important;
-  overflow: hidden !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  height: 100vh;
-} */
+
 
 .css-66dmcr {
   padding-left: 0px !important;
@@ -38,18 +31,10 @@ span.detail {
   left: 25rem;
   z-index: 1;
 }
-/* img.portforntimage {
-  width: 50%;
-  display: block;
-  margin-left: 2rem;
-} */
+
 
 @media screen and (max-width: 1920px) {
-  /* img.portimage {
-    display: block;
-    margin: 4rem auto 0rem;
-    min-height: 57vh;
-  } */
+
   p.portdescription {
     margin-top: 2rem;
     text-align: justify;
@@ -94,23 +79,7 @@ h6.details {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  /* .protfolioimage {
-    height: 100vh;
-    background-position: center !important;
-    width: 130%;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    filter: blur(6px);
-  } */
 
-
-  /* img.portforntimage {
-    width: 100%;
-    display: block;
-    margin-left: 9rem;
-  } */
-}
 
 .image-section-detail-page{
   position: relative;
