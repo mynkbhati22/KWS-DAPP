@@ -27,11 +27,10 @@ span.detail {
   padding-right: 0px !important;
 }
 .protfolioimage {
-  height: 75vh;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+ 
   filter: blur(6px);
+  border-radius: 20px;
+
 }
 .frontImage {
   position: absolute;
@@ -74,7 +73,7 @@ h6.details {
   font-weight: 700;
 }
 .portfrontimage{
-  width: 100%;
+
     border-radius: 20px;
 }
 
@@ -96,24 +95,37 @@ h6.details {
 }
 
 @media screen and (min-width: 1200px) {
-  .protfolioimage {
+  /* .protfolioimage {
     height: 100vh;
     background-position: center !important;
     width: 130%;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     filter: blur(6px);
-  }
+  } */
 
-  .frontImage {
-    position: absolute;
-    top: 50%;
-    left: 25rem;
-    z-index: 1;
-  }
+
   /* img.portforntimage {
     width: 100%;
     display: block;
     margin-left: 9rem;
   } */
+}
+
+.image-section-detail-page{
+  position: relative;
+}
+
+.back-blur-image{
+  width: 100%;
+  filter: blur(1px);
+  border-radius: 20px;
+}
+
+.upper-normal-image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
 }
