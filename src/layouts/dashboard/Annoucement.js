@@ -61,12 +61,12 @@ export default function Annoucement() {
               ))
             ) : (
               <div>
-                <p className="text-center">NO ANNOUNCEMENT TO SHOW</p>
+                <p className="text-center">Loading....</p>
               </div>
             )}
           </Box>
           <Box className="marquee">
-            {annoucement && annoucement.length > 0 ? (
+            {annoucement &&
               annoucement.map((res, index) => (
                 <Link
                   href={res.portfoliolink}
@@ -83,12 +83,7 @@ export default function Annoucement() {
                     {/* <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography> */}
                   </Box>
                 </Link>
-              ))
-            ) : (
-              <div>
-                <p>NO ANNOUNCEMENT TO SHOW</p>
-              </div>
-            )}
+              ))}
           </Box>
         </Box>
         {/* <Box className="Marquee">

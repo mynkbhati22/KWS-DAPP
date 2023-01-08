@@ -38,12 +38,11 @@ export default function DashboardApp() {
       <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={6}>
-            <Typography variant="h2" className={classes.kwsHeading}>
-              Leading{' '}
-              <Typography component={'span'} variant="h2" color="#22ABE3" className={classes.kwsHeading}>
-                Blockchain
-              </Typography>
-            </Typography>
+            <h1 className="mb-3">
+              Leading <span className="bd">Blockchain Development </span>
+              Services
+            </h1>
+
             <Typography variant="h2" gutterBottom className={classes.kwsHeading}>
               <Typography component={'span'} variant="h2" color="#22ABE3" className={classes.kwsHeading}>
                 Development{' '}

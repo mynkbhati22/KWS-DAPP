@@ -54,7 +54,7 @@ export default function PortfolioDetailpage() {
                 ></div> */}
                 <div className="image-section-detail-page">
                   <img src={portImage} alt="" className="back-blur-image" />
-                  {/* <img src={portImage} alt="" className="upper-normal-image" /> */}
+                  <img src={portImage} alt="" className="upper-normal-image" />
                 </div>
               </div>
             </Grid>

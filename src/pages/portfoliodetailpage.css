@@ -14,16 +14,13 @@ span.detail {
   margin-left: -1.5rem;
 }
 
-
 .css-66dmcr {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
 .protfolioimage {
- 
   filter: blur(6px);
   border-radius: 20px;
-
 }
 .frontImage {
   position: absolute;
@@ -31,10 +28,21 @@ span.detail {
   left: 25rem;
   z-index: 1;
 }
-
+h1.mb-3 {
+  color: #212529;
+  font-weight: 800;
+}
+span.bd {
+  color: #22abe3;
+}
+.dynamic-heading {
+  margin-top: 4rem;
+}
+b.heading {
+  font-size: 2rem;
+}
 
 @media screen and (max-width: 1920px) {
-
   p.portdescription {
     margin-top: 2rem;
     text-align: justify;
@@ -50,16 +58,14 @@ span.detail {
   p.MuiTypography-root.MuiTypography-body1.css-1qvdk2m-MuiTypography-root {
     margin-top: 2rem;
   }
-
 }
 h6.details {
   font-size: 0.9rem;
   font-family: Public Sans, sans-serif;
   font-weight: 700;
 }
-.portfrontimage{
-
-    border-radius: 20px;
+.portfrontimage {
+  border-radius: 20px;
 }
 
 @media screen and (max-width: 480px) {
@@ -79,23 +85,21 @@ h6.details {
   }
 }
 
-
-
-.image-section-detail-page{
+.image-section-detail-page {
   position: relative;
 }
 
-.back-blur-image{
+.back-blur-image {
   width: 100%;
   filter: blur(2px);
   border-radius: 20px;
 }
 
-.upper-normal-image{
+.upper-normal-image {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   width: 90%;
   height: 85%;

@@ -11,9 +11,9 @@ export default function DynamicContent() {
       <Container maxWidth="xl">
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
-            <Typography className={classes.dynamicHeading} variant="h2">
-              KWS has a dynamic team of blockchain, frontend & backend developers.
-            </Typography>
+            <div className="dynamic-heading">
+              <b className="heading">KWS has a dynamic team of blockchain, frontend & backend developers.</b>
+            </div>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Typography className={classes.dynamicPara}>
