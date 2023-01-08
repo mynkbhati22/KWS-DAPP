@@ -31,7 +31,7 @@ export default function PortfolioDetailpage() {
       setPortCatogery(res.data.portfoliocatogery);
       setPorttile(res.data.portfoliotitle);
       setPortDescription(res.data.portfoliodescription);
-      setPortImage(res.data.portfolioimage);
+      setPortImage(res.data.portbackgroundimage);
       setPortDeliver(res.data.portfoliodeveleron);
       setPortRequirements(res.data.portfoliorequirements);
       setPortSolution(res.data.portfoliosolutionprovider);
@@ -46,7 +46,7 @@ export default function PortfolioDetailpage() {
           <Grid container spacing={2}>
             <Grid item xl={6} lg={12} md={12} sm={12} xs={12} className="">
               <div className="">
-             {/*    <div
+                {/*    <div
                   className="protfolioimage"
                   style={{
                     background: 'url(' + portImage + ')',
@@ -54,7 +54,7 @@ export default function PortfolioDetailpage() {
                 ></div> */}
                 <div className="image-section-detail-page">
                   <img src={portImage} alt="" className="back-blur-image" />
-                  <img src={portImage} alt="" className="upper-normal-image" />
+                  {/* <img src={portImage} alt="" className="upper-normal-image" /> */}
                 </div>
               </div>
             </Grid>

@@ -44,7 +44,7 @@ export default function Annoucement() {
             {annoucement && annoucement.length > 0 ? (
               annoucement.map((res, index) => (
                 <Link
-                  href={res.portfoliolink}
+                  href={`/portfolio-detail/${res.generateslug}/${res._id}`}
                   target="_blank"
                   sx={{ textDecoration: 'none', color: '#fff', marginLeft: '30px' }}
                   key={index}
