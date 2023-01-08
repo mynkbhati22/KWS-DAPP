@@ -81,7 +81,7 @@ function Adminpage() {
           portfoliteaminvolved: teamInvolved,
         })
         .then((creatingPortfolio) => {
-          navigate('/portfolio');
+          navigate('/dapps-built-by-us');
         });
       console.log('createdPortfolio', creatingPortfolio);
     } catch (error) {
