@@ -1,6 +1,7 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Button, Container, Grid } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Page from '../components/Page';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
@@ -26,50 +27,87 @@ export default function PortfolioSlider() {
 
   return (
     <div>
-      <Slider
-        dots={false}
-        slidesToShow={2}
-        slidesToScroll={1}
-        infinite
-        autoplay
-        autoplaySpeed={2500}
-        responsive={[
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2,
+      <Container maxWidth="xl">
+        <Slider
+          dots={false}
+          slidesToShow={3}
+          slidesToScroll={1}
+          infinite
+          autoplay
+          autoplaySpeed={2500}
+          responsive={[
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+              },
             },
-          },
-          {
-            breakpoint: 540,
-            settings: {
-              slidesToShow: 1,
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 2,
+                initialSlide: 2,
+              },
             },
-          },
-        ]}
-      >
-        {portfolio && portfolio.length > 0 ? (
-          portfolio.map((res, index) => (
-            <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
-              <Link to="/portfolio-detail-page" rel="noreferrer">
-                <Box className="portfolio-image-box">
-                  <img src={res.portfolioimage} alt="" className="portfolio-background-image" />
-                  <img src={res.portavatarlink} alt="" className="avtar-portfolio" />
-                  <div className="portfolio-card-heading">{res.portfoliotitle}</div>
-                  <div className="portfolio-card-title">{res.portfoliodescription}</div>
-                  <div className="portfolio-card-link">Look IN</div>
-                </Box>
-              </Link>
-            </Grid>
-          ))
-        ) : (
-          <div className="nodata">
-            <p className="data">NO DATA TO SHOW</p>
-          </div>
-        )}
-      </Slider>
+            {
+              breakpoint: 540,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 2,
+                initialSlide: 2,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ]}
+        >
+          {portfolio && portfolio.length > 0 ? (
+            portfolio.map((res, index) => (
+              <Grid items xxl={4} xl={6} lg={6} md={6} sm={6} xs={12} key={index}>
+                <div className="card-portfolio" style={{ maxWidth: '300px', display: 'block', margin: 'auto' }}>
+                  <div className="card-image">
+                    <img src={res.portfolioimage} alt="" className="image-portfolio" />
+                  </div>
+                  <div className="card-detail">
+                    <div className="portfolio-name">{res.portfoliotitle}</div>
+                    <Grid container className="portfolio-title-grid">
+                      <Grid item xs={6}>
+                        <div className="portfolio-title">
+                          <span className="title-text">Catorgey</span>
+                          <br />
+                          <span className="title-text-value">Token Address</span>
+                        </div>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <div className="portfolio-title">
+                          <Button
+                            href={`/portfolio-detail/${res.generateslug}/${res._id}`}
+                            target="_blank"
+                            className="view-button"
+                          >
+                            View
+                          </Button>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </div>
+                </div>
+              </Grid>
+            ))
+          ) : (
+            <div className="nodata">
+              <p className="data">NO DATA TO SHOW</p>
+            </div>
+          )}
+        </Slider>
+      </Container>
     </div>
   );
 }

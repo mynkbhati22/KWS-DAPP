@@ -13,7 +13,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { FloatingLabel, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
   { id: 'name', label: 'SNO.', minWidth: 170, align: 'center' },
@@ -41,23 +42,52 @@ const columns = [
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
 function Adminpage() {
   const [portdeatils, setPortdeatils] = useState([]);
-
-  const { id } = useParams();
+  const [portTitle, setPortTitle] = useState();
+  const [portCatogery, setPortCatogery] = useState();
+  const [slug, setSlug] = useState();
+  const [portDescription, setPortDescription] = useState();
+  const [websiteLink, setWebsiteLink] = useState();
+  const [portImage, setPortImage] = useState();
+  const [portBackgroundImage, setPortBackgroundImage] = useState();
+  const [deliveredOn, setDeliveredOn] = useState();
+  const [requirements, setRequirements] = useState();
+  const [solutionProvided, setSolutionProvided] = useState();
+  const [teamInvolved, setTeamInvolved] = useState();
 
   useEffect(() => {
     axios.get(`${window.URL}/api/gettingportfolios`).then((res) => {
       setPortdeatils(res.data);
     });
   }, []);
+  const navigate = useNavigate();
+  const CreatePortfolio = async (e) => {
+    try {
+      e.preventDefault();
 
-  // FOR UPDATING PORTFOLIOS
+      const creatingPortfolio = await axios
+        .post(`${window.URL}/api/addingportfolios`, {
+          portfoliotitle: portTitle,
+          portfoliocatogery: portCatogery,
+          generateslug: slug,
+          portfoliodescription: portDescription,
+          portfoliolink: websiteLink,
+          portfolioimage: portImage,
+          portbackgroundimage: portBackgroundImage,
+          portfoliodeveleron: deliveredOn,
+          portfoliorequirements: requirements,
+          portfoliosolutionprovider: solutionProvided,
+          portfoliteaminvolved: teamInvolved,
+        })
+        .then((creatingPortfolio) => {
+          navigate('/portfolio');
+        });
+      console.log('createdPortfolio', creatingPortfolio);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -72,24 +102,71 @@ function Adminpage() {
                 Provide details for Portfolio
               </Typography>
 
-              <form>
+              <form onSubmit={CreatePortfolio}>
                 <p className="form-para">Card Title</p>
-                <TextField id="outlined-basic" label="Card Title" variant="outlined" className="text-field-card" />
-                <p className="form-para">Card Description</p>
                 <TextField
                   id="outlined-basic"
-                  label="Card Description"
+                  label="Card Title"
                   variant="outlined"
                   className="text-field-card"
+                  required
+                  value={portTitle}
+                  onChange={(e) => setPortTitle(e.target.value)}
                 />
-                <p className="form-para">Card Link</p>
-                <TextField id="outlined-basic" label="Card Link" variant="outlined" className="text-field-card" />
-                <p className="form-para">Avatar Image Link </p>
+
+                <p className="form-para">Generate Slug</p>
                 <TextField
                   id="outlined-basic"
-                  label="Avatar Image Link"
+                  label="Slug"
                   variant="outlined"
                   className="text-field-card"
+                  required
+                  value={slug}
+                  onChange={(e) => setSlug(e.target.value)}
+                />
+
+                <p className="form-para">Catogery</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Catogery"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={portCatogery}
+                  onChange={(e) => setPortCatogery(e.target.value)}
+                />
+                <p className="form-para">Card Description</p>
+                <FloatingLabel controlId="floatingTextarea2" label="Description" className="mt-4">
+                  <Form.Control
+                    as="textarea"
+                    placeholder="Enter Description"
+                    style={{ height: '100px' }}
+                    required
+                    value={portDescription}
+                    onChange={(e) => setPortDescription(e.target.value)}
+                  />
+                </FloatingLabel>
+
+                <p className="form-para">Card Website Link</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Website Link"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={websiteLink}
+                  onChange={(e) => setWebsiteLink(e.target.value)}
+                />
+
+                <p className="form-para">Card Image Link </p>
+                <TextField
+                  id="outlined-basic"
+                  label="Card Image Link "
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={portImage}
+                  onChange={(e) => setPortImage(e.target.value)}
                 />
                 <p className="form-para">Card Background Image Link </p>
                 <TextField
@@ -97,10 +174,55 @@ function Adminpage() {
                   label="Card Background Image Link "
                   variant="outlined"
                   className="text-field-card"
+                  required
+                  value={portBackgroundImage}
+                  onChange={(e) => setPortBackgroundImage(e.target.value)}
                 />
-
+                <p className="form-para">Delivered on</p>
+                <TextField
+                  id="outlined-basic"
+                  label="delivered on"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={deliveredOn}
+                  onChange={(e) => setDeliveredOn(e.target.value)}
+                />
+                <p className="form-para">Requirements</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Requirements"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={requirements}
+                  onChange={(e) => setRequirements(e.target.value)}
+                />
+                <p className="form-para">Soluton Provided</p>
+                <FloatingLabel controlId="floatingTextarea2" label="Soultion provided" className="mt-4">
+                  <Form.Control
+                    as="textarea"
+                    placeholder="Enter Soultion"
+                    style={{ height: '100px' }}
+                    required
+                    value={solutionProvided}
+                    onChange={(e) => setSolutionProvided(e.target.value)}
+                  />
+                </FloatingLabel>
+                <p className="form-para">Team Involved</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Team Involved"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={teamInvolved}
+                  onChange={(e) => setTeamInvolved(e.target.value)}
+                />
                 <p className="form-para">
-                  <Button variant="contained">Submit</Button>
+                  <Button variant="contained" type="submit">
+                    Create
+                  </Button>
                 </p>
               </form>
 

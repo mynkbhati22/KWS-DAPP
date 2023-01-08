@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Page from '../components/Page';
 import DetailCards from './detailCards';
 import './portfoliodetailpage.css';
+import PortfolioSlider from './PortfolioSlider';
 
 // import PortfolioSlider from './PortfolioSlider';
 
@@ -52,7 +53,7 @@ export default function PortfolioDetailpage() {
                     background: 'url(' + portImage + ')',
                   }}
                 ></div> */}
-                <div className="image-section-detail-page">
+                <div className="image-section-detail-page mt-5">
                   <img src={portImage} alt="" className="back-blur-image" />
                   <img src={portImage} alt="" className="upper-normal-image" />
                 </div>
@@ -82,7 +83,7 @@ export default function PortfolioDetailpage() {
                 </div>
                 <div className="project-detail">
                   <h6 className="details">
-                    Published On : <span className="detail">{portdeliver}</span>
+                    Delivered On : <span className="detail">{portdeliver}</span>
                   </h6>
                   <h6 className="details">
                     Requirements : <span className="detail">{portrequirements}</span>
@@ -105,9 +106,15 @@ export default function PortfolioDetailpage() {
           </Typography>
 
           <DetailCards />
-
-          <PortfolioSlider />
         </Container> */}
+
+        <Typography
+          variant="h4"
+          sx={{ marginTop: '5rem', marginBottom: '15px', fontFamily: 'Poppins, sans-serif', marginLeft: '1.7rem' }}
+        >
+          Related Project : -
+        </Typography>
+        <PortfolioSlider />
       </Page>
     </div>
   );
