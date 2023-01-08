@@ -40,7 +40,7 @@ export default function DashboardApp() {
           <Grid item xs={12} sm={6} md={6}>
             <h1 className="mb-3">
               Leading <span className="bd">Blockchain Development </span>
-              Services
+              Agency
             </h1>
 
             <Typography variant="h2" gutterBottom className={classes.kwsHeading}>

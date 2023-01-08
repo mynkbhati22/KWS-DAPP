@@ -30,7 +30,7 @@ export default function Bottom() {
             </Link>
           </Box>
           <Box>
-            <ImageList sx={{ marginTop: '50px'}} className={classes.bottomImage}>
+            <ImageList sx={{ marginTop: '50px' }} className={classes.bottomImage}>
               <ImageListItem>
                 <img src={websiteDev} alt="" />
               </ImageListItem>
