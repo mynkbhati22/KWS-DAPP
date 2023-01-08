@@ -72,7 +72,8 @@ export default function PortfolioDetailpage() {
                     color: '#27ADE3',
                   }}
                 >
-                  {portcatogery}
+                  {/* {portcatogery} */}
+                  DEFI APP
                 </Typography>
                 <Typography
                   variant="h3"
@@ -85,20 +86,20 @@ export default function PortfolioDetailpage() {
                 </div>
                 <div className="project-detail">
                   <h6 className="details">
-                    Delivered On : <span className="detail">{portdeliver}</span>
+                    DELIVERED ON : <span className="detail">{portdeliver}</span>
+                  </h6>
+                  <h6 className="details my-3">
+                    REQUIREMENTS : <span className="detail">{portrequirements}</span>
                   </h6>
                   <h6 className="details">
-                    Requirements : <span className="detail">{portrequirements}</span>
+                    SOLUTIONS PROVIDED : <span className="detail">{portsolution}</span>
                   </h6>
-                  <h6 className="details">
-                    Solutions Provided : <span className="detail">{portsolution}</span>
-                  </h6>
-                  <h6 className="details">
-                    Team Involved : <span className="detail">{portteaminvolved}</span>
+                  <h6 className="details my-3">
+                    TEAM INVOLVED : <span className="detail">{portteaminvolved}</span>
                   </h6>
                   <h6 className="details mt-5">
                     <a href={websiteLink} target="blank" className="viewprojectdetails">
-                      View Project
+                      VIEW PROJECT
                     </a>
                   </h6>
                 </div>

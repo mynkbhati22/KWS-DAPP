@@ -69,7 +69,7 @@ export default function UploadImages() {
               color: '#27ADE3',
             }}
           >
-            PORTFOLIOS
+            DAPPS BUILT BY US
           </Typography>
           <Box className="container-portfolio">
             <Grid container spacing={4}>
@@ -86,9 +86,9 @@ export default function UploadImages() {
                           <Grid container className="portfolio-title-grid">
                             <Grid item xs={6}>
                               <div className="portfolio-title">
-                                <span className="title-text">Catorgey</span>
+                                <span className="title-text">CATOGERY</span>
                                 <br />
-                                <span className="title-text-value">Token Address</span>
+                                <span className="title-text-value">DEFI APP</span>
                               </div>
                             </Grid>
                             <Grid item xs={6}>
@@ -97,7 +97,7 @@ export default function UploadImages() {
                                   href={`/portfolio-detail/${res.generateslug}/${res._id}`}
                                   className="view-button"
                                 >
-                                  View
+                                  VIEW
                                 </Button>
                               </div>
                             </Grid>
