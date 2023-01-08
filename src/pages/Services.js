@@ -50,7 +50,7 @@ export default function EcommerceShop() {
         <Grid container spacing={3}>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
             <Box sx={{ marginBottom: '5px' }}>
-              <Typography
+              {/* <Typography
                 sx={{
                   marginBottom: '5px',
                   fontWeight: '900',
@@ -61,7 +61,7 @@ export default function EcommerceShop() {
                 }}
               >
                 SERVICES
-              </Typography>
+              </Typography> */}
               <Typography variant="h3" sx={{ marginBottom: '5px', fontFamily: 'Poppins, sans-serif' }}>
                 Customized DeFi Solutions
               </Typography>

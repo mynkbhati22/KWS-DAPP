@@ -60,17 +60,12 @@ export default function UploadImages() {
       <Page title="KWS || Dapps Built By Us">
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Typography
-            sx={{
-              marginBottom: '2rem',
-              fontWeight: '900',
-              fontFamily: 'Poppins, sans-serif',
-              fontSize: '20px',
-              textAlign: 'center !important',
-              color: '#27ADE3',
-            }}
+            variant="h3"
+            sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}
           >
             DAPPS BUILT BY US
           </Typography>
+
           <Box className="container-portfolio">
             <Grid container spacing={4}>
               {portfolio && portfolio.length > 0 ? (

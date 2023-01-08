@@ -35,7 +35,7 @@ export default function DenseTable() {
   return (
     <Page title="KWS || Contracts">
       <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
-        <Typography
+        {/* <Typography
           variant="h3"
           align="center"
           sx={{
@@ -48,7 +48,7 @@ export default function DenseTable() {
           }}
         >
           Contracts by KWS
-        </Typography>
+        </Typography> */}
         <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
             <TableHead>

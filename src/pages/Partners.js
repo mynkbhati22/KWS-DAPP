@@ -63,7 +63,7 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS || Partners">
       <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
-        <Typography
+        {/* <Typography
           sx={{
             marginBottom: '5px',
             fontWeight: '900',
@@ -74,7 +74,7 @@ export default function EcommerceShop() {
           }}
         >
           PARTNERS
-        </Typography>
+        </Typography> */}
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           Expanding Boundaries Every Day
         </Typography>

@@ -52,7 +52,7 @@ export default function EcommerceShop() {
   return (
     <Page title="KWS || Team">
       <Container maxWidth="lg" sx={{ marginTop: '100px' }}>
-        <Typography
+        {/* <Typography
           sx={{
             marginBottom: '5px',
             fontWeight: '900',
@@ -63,9 +63,9 @@ export default function EcommerceShop() {
           }}
         >
           OUR TEAM
-        </Typography>
+        </Typography> */}
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
-          We are the team of young and dynamic leaders!
+          We are a team of young and dynamic leaders!
         </Typography>
 
         <TeamDetails />
