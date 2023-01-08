@@ -57,7 +57,7 @@ export default function UploadImages() {
 
   return (
     <>
-      <Page title="KWS || Portfolios">
+      <Page title="KWS || Dapps Built By Us">
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Typography
             sx={{

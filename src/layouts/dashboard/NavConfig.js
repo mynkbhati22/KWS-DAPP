@@ -27,8 +27,8 @@ const navConfig = [
   //   icon: getIcon('eva:file-text-fill'),
   // },
   {
-    title: 'Portfolio',
-    path: '/portfolio',
+    title: 'Dapps Built By Us',
+    path: '/dapps-built-by-us',
     icon: getIcon('eva:file-text-fill'),
   },
   {

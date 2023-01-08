@@ -44,7 +44,7 @@ export default function PortfolioDetailpage() {
 
   return (
     <div>
-      <Page title="KWS || Portfolio Detail Page">
+      <Page title={`KWS || ${generateslug}`}>
         <Container maxWidth="xl" sx={{ marginTop: '100px' }}>
           <Grid container spacing={2}>
             <Grid item xl={6} lg={12} md={12} sm={12} xs={12} className="">

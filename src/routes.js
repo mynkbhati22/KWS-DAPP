@@ -32,7 +32,7 @@ export default function Router() {
         { path: 'partners', element: <Products /> },
         { path: 'services', element: <Services /> },
         { path: 'our-team', element: <Team /> },
-        { path: 'portfolio', element: <UploadImages /> },
+        { path: 'dapps-built-by-us', element: <UploadImages /> },
         { path: 'contracts-by-us', element: <Contracts /> },
         { path: '/portfolio-detail/:generateslug/:id', element: <PortfolioDetailpage /> },
         // { path: 'safu-reports', element: <SafuReports /> },
