@@ -22,6 +22,20 @@ span.detail {
   filter: blur(6px);
   border-radius: 20px;
 }
+.viewprojectdetails {
+  border: 1px solid #2065d1;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #2065d1;
+  transition: 0.3s;
+}
+.viewprojectdetails:hover {
+  background-color: #e7eff9;
+  color: #2065d1;
+}
+h4.MuiTypography-root.MuiTypography-h4.css-agrfiu {
+  margin-left: 4rem;
+}
 .frontImage {
   position: absolute;
   top: 50%;

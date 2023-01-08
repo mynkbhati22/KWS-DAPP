@@ -1,4 +1,4 @@
-import { Container, Grid, ImageListItem, Typography } from '@mui/material';
+import { Button, Container, Grid, ImageListItem, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -13,6 +13,7 @@ export default function PortfolioDetailpage() {
   const [portcatogery, setPortCatogery] = useState();
   const [porttile, setPorttile] = useState();
   const [portdescription, setPortDescription] = useState();
+  const [websiteLink, setWebsiteLink] = useState();
   const [portImage, setPortImage] = useState();
   const [portdeliver, setPortDeliver] = useState();
   const [portrequirements, setPortRequirements] = useState();
@@ -30,6 +31,7 @@ export default function PortfolioDetailpage() {
     axios.post(`${window.URL}/api/detail`, { generateslug }).then((res) => {
       console.log('responsingPortfolioDetail', res);
       setPortCatogery(res.data.portfoliocatogery);
+      setWebsiteLink(res.data.portfoliolink);
       setPorttile(res.data.portfoliotitle);
       setPortDescription(res.data.portfoliodescription);
       setPortImage(res.data.portbackgroundimage);
@@ -93,6 +95,11 @@ export default function PortfolioDetailpage() {
                   </h6>
                   <h6 className="details">
                     Team Involved : <span className="detail">{portteaminvolved}</span>
+                  </h6>
+                  <h6 className="details mt-5">
+                    <a href={websiteLink} target="blank" className="viewprojectdetails">
+                      View Project
+                    </a>
                   </h6>
                 </div>
               </div>
