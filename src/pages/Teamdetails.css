@@ -37,70 +37,28 @@
   position: relative;
 } */
 .card {
-  background: #191c29;
-  /* width: var(--card-width);
-    height: var(--card-height); */
   height: 379px;
   width: 300px;
-  /* padding: 3px; */
   position: relative;
   border-radius: 10px;
-  transition: background 0.8s;
+  transition:  0.8s;
   justify-content: center;
   align-items: center;
   display: flex;
-  /* font-size: 1.5em; */
-  /* color: rgb(88 199 250 / 0%); */
   cursor: pointer;
-}
-.card::before {
-  content: '';
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(var(--rotate), #22ace3, #f58733 43%);
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
-}
-
-.card::after {
-  position: absolute;
-  content: '';
-  /* top: calc(var(--card-height) / 6); */
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  /* filter: blur(calc(var(--card-height) / 6)); */
-  background-image: linear-gradient(var(--rotate), #22ace3, #f58733 43);
-  opacity: 1;
-  transition: opacity 0.5s;
-  animation: spin 2.5s linear infinite;
-}
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
 }
 
 .card5 {
   background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673252945/Lalita_c8l0bj.jpg') center center
     no-repeat;
   background-size: 300px;
+  z-index: 9;
 }
 .card5:hover {
   background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673252953/Lalita-dark_eye8b9.jpg') left center
     no-repeat;
   background-size: 600px;
+  z-index: 9;
 }
 .card5:hover h2 {
   opacity: 1;
