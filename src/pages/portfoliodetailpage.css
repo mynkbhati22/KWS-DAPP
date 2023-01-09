@@ -45,15 +45,18 @@ h4.MuiTypography-root.MuiTypography-h4.css-agrfiu {
 h1.mb-3 {
   color: #212529;
   font-weight: 800;
+  font-family: Poppins, sans-serif;
 }
 span.bd {
   color: #22abe3;
+  font-family: Poppins, sans-serif;
 }
 .dynamic-heading {
   margin-top: 4rem;
 }
 b.heading {
   font-size: 2rem;
+  font-family: Poppins, sans-serif;
 }
 
 @media screen and (max-width: 1920px) {

@@ -23,7 +23,7 @@ export default function DenseTable() {
   useEffect(() => {
     const portfolioInterval = setInterval(() => {
       axios.get(`${window.URL}/api/gettingcontracts`).then((res) => {
-        console.log('gettingcontracts', res.data);
+        // console.log('gettingcontracts', res.data);
         setContracts(res.data);
       });
     }, 1100);
@@ -49,7 +49,61 @@ export default function DenseTable() {
         >
           Contracts by KWS
         </Typography> */}
-        <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
+        <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
+          Contract By Us
+        </Typography>
+
+        <div className="row mt-5">
+          <div className="col-xl-1 col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">SNO.</h3>
+
+              {contracts &&
+                contracts.map((res, index) => {
+                  return (
+                    <>
+                      <p className="text-left" key={index}>
+                        {contracts.indexOf(res) + 1}.
+                      </p>
+                    </>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">Project Name</h3>
+
+              {contracts &&
+                contracts.map((res, index) => {
+                  return (
+                    <>
+                      <p className="text-left name" key={index}>
+                        {res.projectname}
+                      </p>
+                    </>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">Smart Contract Type</h3>
+            </div>
+          </div>
+          <div className="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">Chain</h3>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">Explorer Link</h3>
+            </div>
+          </div>
+        </div>
+
+        {/* <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
@@ -88,11 +142,11 @@ export default function DenseTable() {
                   <p className="data">Loading...</p>
                 </div>
               )}
-              {/* {contractTableInfo.map(renderContractsDetails)}
-              {console.log(contractTableInfo.map(renderContractsDetails))} */}
+              {contractTableInfo.map(renderContractsDetails)}
+              {console.log(contractTableInfo.map(renderContractsDetails))}
             </TableBody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
       </Container>
     </Page>
   );

@@ -7,6 +7,24 @@ export default function TeamDetails() {
     <div>
       <div className="row mt-5">
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card card5 mt-5">
+            <div class="border">
+              <h2>LALITA</h2>
+              <p className="designation">MD/QA</p> <br />
+              <a href="https://www.linkedin.com/in/lalita-lalita-169747170/" target="_blank" rel="noreferrer">
+                {' '}
+                <AiFillLinkedin size={32} color="#fff" className="fa fa-codepen" />
+              </a>
+              <i aria-hidden="true"></i>
+              <p className="description">
+                <br />
+                Exceptional leadership qualities and authority over the entire KWS team. Extremely supportive of the
+                needs of the team and commands respect.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
           <div class="card card0 mt-5">
             <div class="border">
               <h2>ARRNAYA</h2>
@@ -24,6 +42,7 @@ export default function TeamDetails() {
             </div>
           </div>
         </div>
+
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
           <div class="card card1 mt-5">
             <div class="border">
@@ -56,7 +75,7 @@ export default function TeamDetails() {
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
-                Lead frontend dev at KWS with expertise in JavaScript, Micro services and API, MUI, and BootStrap.
+                Fullstack dev at KWS with expertise in JavaScript, Micro services & API, MUI, and BootStrap.
               </p>
             </div>
           </div>
@@ -75,7 +94,7 @@ export default function TeamDetails() {
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
-                Manager of Arrnaya's Community and intern at KWS learning JavaScript.
+                Manager of Arrnaya's Community and JavaScript , SCSS intern at KWS.
               </p>
             </div>
           </div>
@@ -94,7 +113,7 @@ export default function TeamDetails() {
               <i aria-hidden="true"></i>
               <p className="description">
                 <br />
-                UI/UX Developer with expertise in React Js and MUI.
+                UI/UX Developer with expertise in ReactJs, CSS ,SCSS, MUI and Bootstrap.
               </p>
             </div>
           </div>

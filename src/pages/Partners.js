@@ -78,7 +78,7 @@ export default function EcommerceShop() {
         <Typography variant="h3" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}>
           Expanding Boundaries Every Day
         </Typography>
-        <Grid container spacing={2} textAlign="center">
+        <Grid container spacing={2} textAlign="center" className="mt-5">
           {partners &&
             partners.map((res, index) => (
               <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={index}>

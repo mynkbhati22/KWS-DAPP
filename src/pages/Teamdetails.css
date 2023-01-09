@@ -18,10 +18,10 @@
   transition: border 1s;
   position: relative;
 }
-.border:hover {
+/* .border:hover {
   border: 1px solid #fff;
-}
-.card {
+} */
+/* .card {
   height: 379px;
   width: 300px;
   background: #808080;
@@ -35,7 +35,86 @@
   justify-content: center;
   align-items: center;
   position: relative;
+} */
+.card {
+  background: #191c29;
+  /* width: var(--card-width);
+    height: var(--card-height); */
+  height: 379px;
+  width: 300px;
+  /* padding: 3px; */
+  position: relative;
+  border-radius: 10px;
+  transition: background 0.8s;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* font-size: 1.5em; */
+  /* color: rgb(88 199 250 / 0%); */
+  cursor: pointer;
 }
+.card::before {
+  content: '';
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #22ace3, #f58733 43%);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: '';
+  /* top: calc(var(--card-height) / 6); */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  /* filter: blur(calc(var(--card-height) / 6)); */
+  background-image: linear-gradient(var(--rotate), #22ace3, #f58733 43);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.card5 {
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673252945/Lalita_c8l0bj.jpg') center center
+    no-repeat;
+  background-size: 300px;
+}
+.card5:hover {
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673252953/Lalita-dark_eye8b9.jpg') left center
+    no-repeat;
+  background-size: 600px;
+}
+.card5:hover h2 {
+  opacity: 1;
+}
+.card5:hover p.designation {
+  opacity: 1;
+}
+.card5:hover p.description {
+  opacity: 1;
+}
+.card5:hover .fa {
+  opacity: 1;
+}
+
 .card0 {
   background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1672922887/color1_mi4b2q.png') center center
     no-repeat;
@@ -58,12 +137,12 @@
   opacity: 1;
 }
 .card1 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003964/Nikhil_cynjbm.jpg') center center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673253574/Nikhil_sumw5w.jpg') center center
     no-repeat;
   background-size: 300px;
 }
 .card1:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003959/Nikhil-dark_te2rtx.jpg') left center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673253578/Nikhil-dark_wz1n8w.jpg') left center
     no-repeat;
   background-size: 600px;
 }
@@ -80,12 +159,12 @@
   opacity: 1;
 }
 .card2 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003300/Mayank_orldnp.jpg') center center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673254767/Mayank_hqmbmb.jpg') center center
     no-repeat;
   background-size: 300px;
 }
 .card2:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003292/Mayank-dark_gd3neh.jpg') left center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673254763/Mayank-dark_clzb83.jpg') left center
     no-repeat;
   background-size: 600px;
 }
@@ -102,12 +181,12 @@
   opacity: 1;
 }
 .card3 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673001750/Saurav_uxbi27.jpg') center center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673253588/Saurav_oi6vvl.jpg') center center
     no-repeat;
   background-size: 300px;
 }
 .card3:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673001750/saurav-dark_ivza4n.jpg') left center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673253583/Saurav-dark_ebskbj.jpg') left center
     no-repeat;
   background-size: 600px;
 }
@@ -124,12 +203,12 @@
   opacity: 1;
 }
 .card4 {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003589/Chaitanya_i4kga3.jpg') center center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673254756/Ritu_l94zue.jpg') center center
     no-repeat;
   background-size: 300px;
 }
 .card4:hover {
-  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673003595/Chaitanya-dark_qv1jln.jpg') left center
+  background: url('https://res.cloudinary.com/dqscjbzij/image/upload/v1673254759/Ritu-dark_lxebdl.jpg') left center
     no-repeat;
   background-size: 600px;
 }

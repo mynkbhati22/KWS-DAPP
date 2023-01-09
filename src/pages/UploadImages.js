@@ -66,7 +66,7 @@ export default function UploadImages() {
             DAPPS BUILT BY US
           </Typography>
 
-          <Box className="container-portfolio">
+          <Box className="container-portfolio mt-5">
             <Grid container spacing={4}>
               {portfolio && portfolio.length > 0 ? (
                 portfolio.map((res, index) => {
