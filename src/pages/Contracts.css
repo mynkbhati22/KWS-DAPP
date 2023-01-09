@@ -6,11 +6,69 @@ h3.projectname {
   font-size: 1.5rem;
   text-align: left;
 }
-/* .css-18mhetb {
-  padding: 10px !important;
-} */
-@media screen and (max-width: 1400px) {
+.row.mt-5.desktop {
+  display: flex;
+}
+
+.responsive {
+  display: none;
+}
+
+.responsivemobile {
+  display: none;
+}
+.responsivesmaller {
+  display: none;
+}
+
+@media screen and (min-width: 1400px) {
+  p.text-left {
+    font-size: 15px;
+  }
   p.text-left.name {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .row.mt-5.desktop {
+    display: none;
+  }
+
+  .responsive {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .responsivemobile {
+    display: flex;
+    justify-content: space-between;
+  }
+  .row.mt-5.desktop {
+    display: none;
+  }
+  .responsive {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  p.text-left {
+    font-size: 12px;
+  }
+  p.text-left.name {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .responsivesmaller {
+    display: flex;
+    justify-content: center;
+    margin-left: 3rem;
+  }
+  .responsivemobile {
+    display: none;
   }
 }

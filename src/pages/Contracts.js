@@ -53,7 +53,134 @@ export default function DenseTable() {
           Contract By Us
         </Typography>
 
-        <div className="row mt-5">
+        {/* ...............FOR SMALLER SCREEN .......................... */}
+
+        <div className="responsivesmaller">
+          <div className="contractheading">
+            <h3 className="projectname">Project Name</h3>
+
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.projectname}
+                      </Link>
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+
+        {/* ..................FOR MOBILE RESPONSIVE....................  */}
+
+        <div className="responsivemobile">
+          {/* <div className="contractheading">
+            <h3 className="projectname">SNO.</h3>
+
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left" key={index}>
+                      {contracts.indexOf(res) + 1}.
+                    </p>
+                  </>
+                );
+              })}
+          </div> */}
+          <div className="contractheading">
+            <h3 className="projectname">Project Name</h3>
+
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      {res.projectname}
+                    </p>
+
+                    {/* <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.projectname}
+                      </Link> */}
+                  </>
+                );
+              })}
+          </div>
+          <div className="contractheading">
+            <h3 className="projectname">Explorer Link</h3>
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.explorerlink.slice(0, 32)}...{' '}
+                      </Link>
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+
+        {/* ......................FOR RESPONSIVE VIEW................... */}
+
+        <div className="responsive">
+          <div className="contractheading">
+            <h3 className="projectname">SNO.</h3>
+
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left" key={index}>
+                      {contracts.indexOf(res) + 1}.
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+          <div className="contractheading">
+            <h3 className="projectname">Project Name</h3>
+
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      {res.projectname}
+                    </p>
+
+                    {/* <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.projectname}
+                      </Link> */}
+                  </>
+                );
+              })}
+          </div>
+          <div className="contractheading">
+            <h3 className="projectname">Explorer Link</h3>
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                        {res.explorerlink.slice(0, 32)}...{' '}
+                      </Link>
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+
+        {/* ....................FOR DEKSTOP VIEW...................... */}
+
+        <div className="row mt-5 desktop">
           <div className="col-xl-1 col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">SNO.</h3>
@@ -89,65 +216,97 @@ export default function DenseTable() {
           <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Smart Contract Type</h3>
+              {contracts &&
+                contracts.map((res, index) => {
+                  return (
+                    <>
+                      <p className="text-left name" key={index}>
+                        {res.smartcontracttype}
+                      </p>
+                    </>
+                  );
+                })}
             </div>
           </div>
           <div className="col-xl-2 col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Chain</h3>
+              {contracts &&
+                contracts.map((res, index) => {
+                  return (
+                    <>
+                      <p className="text-left name" key={index}>
+                        {res.chainnetwork}
+                      </p>
+                    </>
+                  );
+                })}
             </div>
           </div>
           <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Explorer Link</h3>
+              {contracts &&
+                contracts.map((res, index) => {
+                  return (
+                    <>
+                      <p className="text-left name" key={index}>
+                        <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+                          {res.explorerlink.slice(0, 32)}...{' '}
+                        </Link>
+                      </p>
+                    </>
+                  );
+                })}
             </div>
           </div>
         </div>
-
-        {/* <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
-          <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow>
-                <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell>
-                <TableCell align="center" sx={{ fontSize: '22px' }}>
-                  Project Name
-                </TableCell>
-                <TableCell align="center" sx={{ fontSize: '22px' }}>
-                  Smart Contract Type
-                </TableCell>
-                <TableCell align="center" sx={{ fontSize: '22px' }}>
-                  Chain
-                </TableCell>
-                <TableCell align="left" sx={{ fontSize: '22px' }}>
-                  Explorer Link
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {contracts && contracts.length > 0 ? (
-                contracts.map((res, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{contracts.indexOf(res) + 1}.</TableCell>
-                    <TableCell align="center">{res.projectname}</TableCell>
-                    <TableCell align="center">{res.smartcontracttype}</TableCell>
-                    <TableCell align="center">{res.chainnetwork}</TableCell>
-                    <TableCell>
-                      <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
-                        {res.explorerlink}{' '}
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                ))
-              ) : (
-                <div className="nodata">
-                  <p className="data">Loading...</p>
-                </div>
-              )}
-              {contractTableInfo.map(renderContractsDetails)}
-              {console.log(contractTableInfo.map(renderContractsDetails))}
-            </TableBody>
-          </Table>
-        </TableContainer> */}
       </Container>
     </Page>
   );
 }
+
+// {/* <TableContainer component={Paper} sx={{ border: '1px solid', padding: '20px 0px' }} id="table-contract">
+//           <Table sx={{ minWidth: 65 }} size="small" aria-label="a dense table">
+//             <TableHead>
+//               <TableRow>
+//                 <TableCell sx={{ fontSize: '22px' }}>SNo.</TableCell>
+//                 <TableCell align="center" sx={{ fontSize: '22px' }}>
+//                   Project Name
+//                 </TableCell>
+//                 <TableCell align="center" sx={{ fontSize: '22px' }}>
+//                   Smart Contract Type
+//                 </TableCell>
+//                 <TableCell align="center" sx={{ fontSize: '22px' }}>
+//                   Chain
+//                 </TableCell>
+//                 <TableCell align="left" sx={{ fontSize: '22px' }}>
+//                   Explorer Link
+//                 </TableCell>
+//               </TableRow>
+//             </TableHead>
+//             <TableBody>
+//               {contracts && contracts.length > 0 ? (
+//                 contracts.map((res, index) => (
+//                   <TableRow key={index}>
+//                     <TableCell>{contracts.indexOf(res) + 1}.</TableCell>
+//                     <TableCell align="center">{res.projectname}</TableCell>
+//                     <TableCell align="center">{res.smartcontracttype}</TableCell>
+//                     <TableCell align="center">{res.chainnetwork}</TableCell>
+//                     <TableCell>
+//                       <Link target="_blank" href={res.explorerlink} sx={{ display: 'block', margin: 'auto' }}>
+//                         {res.explorerlink}{' '}
+//                       </Link>
+//                     </TableCell>
+//                   </TableRow>
+//                 ))
+//               ) : (
+//                 <div className="nodata">
+//                   <p className="data">Loading...</p>
+//                 </div>
+//               )}
+//               {contractTableInfo.map(renderContractsDetails)}
+//               {console.log(contractTableInfo.map(renderContractsDetails))}
+//             </TableBody>
+//           </Table>
+//         </TableContainer> */}
