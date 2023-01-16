@@ -108,13 +108,13 @@ export default function PortfolioDetailpage() {
           </Grid>
         </Container>
 
-        {/* <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
+        <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
           <Typography variant="h4" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'left' }}>
             More Images of the project : -
           </Typography>
 
           <DetailCards />
-        </Container> */}
+        </Container>
 
         <Typography
           variant="h4"
