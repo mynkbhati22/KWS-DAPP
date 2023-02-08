@@ -137,6 +137,11 @@ svg.iconsocial {
   box-shadow: rgb(34 171 227 / 30%) 0px 0px 7px 1px;
   position: relative;
 }
+img.imgmaintain {
+  width: 100vh !important;
+  display: block;
+  margin: auto;
+}
 img.portfolio-background-image {
   position: absolute;
   top: 0;

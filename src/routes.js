@@ -18,6 +18,7 @@ import UploadImages from './pages/UploadImages';
 import Adminpage from './pages/Admin/Adminpage';
 import PortfolioDetailpage from './pages/PortfolioDetailpage';
 import Portfolioupdate from './pages/Admin/Portfolioupdate';
+import UnderMaintainance from './pages/UnderMaintainance';
 
 // ----------------------------------------------------------------------
 
@@ -29,16 +30,16 @@ export default function Router() {
       children: [
         { path: '', element: <DashboardApp /> },
         { path: 'create-token', element: <User /> },
-        { path: 'partners', element: <Products /> },
-        { path: 'services', element: <Services /> },
-        { path: 'our-team', element: <Team /> },
-        { path: 'dapps-built-by-us', element: <UploadImages /> },
-        { path: 'contracts-by-us', element: <Contracts /> },
-        { path: '/portfolio-detail/:generateslug/:id', element: <PortfolioDetailpage /> },
+        { path: 'partners', element: <UnderMaintainance /> },
+        { path: 'services', element: <UnderMaintainance /> },
+        { path: 'our-team', element: <UnderMaintainance /> },
+        { path: 'dapps-built-by-us', element: <UnderMaintainance /> },
+        { path: 'contracts-by-us', element: <UnderMaintainance /> },
+        { path: '/portfolio-detail/:generateslug/:id', element: <UnderMaintainance /> },
         // { path: 'safu-reports', element: <SafuReports /> },
         // { path: 'portfolio', element: <Blog /> },
-        { path: 'admin-page', element: <Adminpage /> },
-        { path: '/update/:id', element: <Portfolioupdate /> },
+        { path: 'admin-page', element: <UnderMaintainance /> },
+        { path: '/update/:id', element: <UnderMaintainance /> },
       ],
     },
     {
@@ -49,9 +50,11 @@ export default function Router() {
         { path: 'contact-us', element: <Contact /> },
         { path: '404', element: <NotFound /> },
         { path: 'coming-soon', element: <ComingSoon /> },
+        { path: '*', element: <UnderMaintainance /> },
         { path: '*', element: <Navigate to="/404" /> },
       ],
     },
     { path: '*', element: <Navigate to="/404" replace /> },
+    { path: '*', element: <UnderMaintainance /> },
   ]);
 }

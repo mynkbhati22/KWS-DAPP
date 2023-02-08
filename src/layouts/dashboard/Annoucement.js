@@ -41,7 +41,7 @@ export default function Annoucement() {
       <Box className="MuiBox-root css-19idom">
         <Box className="marquee-container">
           <Box className="marquee">
-            {annoucement && annoucement.length > 0 ? (
+            {annoucement &&
               annoucement.map((res, index) => (
                 <Link
                   href={`/portfolio-detail/${res.generateslug}/${res._id}`}
@@ -58,11 +58,16 @@ export default function Annoucement() {
                     {/* <Typography sx={{ paddingLeft: '-20px' }}>{res.portfoliotitle}</Typography> */}
                   </Box>
                 </Link>
-              ))
+              ))}
+
+            {annoucement && annoucement.length === 0 ? (
+              <>
+                <div>
+                  <p className="text-center">undermaintenance....</p>
+                </div>
+              </>
             ) : (
-              <div>
-                <p className="text-center">Loading....</p>
-              </div>
+              ''
             )}
           </Box>
           <Box className="marquee">
