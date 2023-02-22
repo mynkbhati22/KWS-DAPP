@@ -95,7 +95,7 @@ export default function PortfolioDetailpage() {
                     SOLUTIONS PROVIDED : <span className="detail">{portsolution}</span>
                   </h6>
                   <h6 className="details my-3">
-                    TEAM INVOLVED : <span className="detail">{portteaminvolved}</span>
+                    TEAM INVOLVED : <span className="detail">{portteaminvolved ? portteaminvolved : 'TBW'}</span>
                   </h6>
                   <h6 className="details mt-5">
                     <a href={websiteLink} target="blank" className="viewprojectdetails">
@@ -108,13 +108,13 @@ export default function PortfolioDetailpage() {
           </Grid>
         </Container>
 
-        <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
+        {/* <Container maxWidth="xl" sx={{ marginTop: '150px' }}>
           <Typography variant="h4" sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'left' }}>
             More Images of the project : -
           </Typography>
 
           <DetailCards />
-        </Container>
+        </Container> */}
 
         <Typography
           variant="h4"
