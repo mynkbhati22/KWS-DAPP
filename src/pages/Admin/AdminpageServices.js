@@ -15,24 +15,31 @@ import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import TextArea from 'antd/lib/input/TextArea';
 import AdminNavbar from './AdminNavbar';
 
 const columns = [
   { id: 'name', label: 'SNO.', minWidth: 170, align: 'center' },
-  { id: 'name', label: 'Project Catogery', minWidth: 170, align: 'center' },
+  { id: 'name', label: 'Service Image', minWidth: 170, align: 'center' },
   {
     id: 'population',
-    label: 'Project Name',
+    label: 'Service Heading',
     minWidth: 170,
     align: 'center',
-    format: (value) => value.toLocaleString('en-US'),
   },
+  {
+    id: 'population',
+    label: 'Service Description',
+    minWidth: 170,
+    align: 'center',
+  },
+
+
   {
     id: 'size',
     label: 'Update',
     minWidth: 170,
     align: 'center',
-    format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'density',
@@ -44,22 +51,15 @@ const columns = [
 ];
 
 function Adminpage() {
+  const [serviceimage, setserviceimages] = useState();
+  const [serviceheading, setserviceheadings] = useState();
+  const [servicedescriptions, setservicedescriptionss] = useState();
   const [portdeatils, setPortdeatils] = useState([]);
-  const [portTitle, setPortTitle] = useState();
-  const [portCatogery, setPortCatogery] = useState();
-  const [slug, setSlug] = useState();
-  const [portDescription, setPortDescription] = useState();
-  const [websiteLink, setWebsiteLink] = useState();
-  const [portImage, setPortImage] = useState();
-  const [portBackgroundImage, setPortBackgroundImage] = useState();
-  const [deliveredOn, setDeliveredOn] = useState();
-  const [requirements, setRequirements] = useState();
-  const [solutionProvided, setSolutionProvided] = useState();
-  const [teamInvolved, setTeamInvolved] = useState();
 
   useEffect(() => {
-    axios.get(`${window.URL}/api/gettingportfolios`).then((res) => {
+    axios.get(`${window.URL}/api/gettingservices`).then((res) => {
       setPortdeatils(res.data);
+      console.log('#', res.data);
     });
   }, []);
   const navigate = useNavigate();
@@ -67,24 +67,30 @@ function Adminpage() {
     try {
       e.preventDefault();
 
-      const creatingPortfolio = await axios
-        .post(`${window.URL}/api/addingportfolios`, {
-          portfoliotitle: portTitle,
-          portfoliocatogery: portCatogery,
-          generateslug: slug,
-          portfoliodescription: portDescription,
-          portfoliolink: websiteLink,
-          portfolioimage: portImage,
-          portbackgroundimage: portBackgroundImage,
-          portfoliodeveleron: deliveredOn,
-          portfoliorequirements: requirements,
-          portfoliosolutionprovider: solutionProvided,
-          portfoliteaminvolved: teamInvolved,
-        })
-        .then((creatingPortfolio) => {
+      const creatingPortfolio = await axios.post(`${window.URL}/api/addingservices`, {
+        serviceimage: serviceimage,
+        serviceheading: serviceheading,
+        servicedescriptions: servicedescriptions,
+  
+      });
+      {
+        /*   .then((creatingPortfolio) => {
           navigate('/dapps-built-by-us');
-        });
+        }); */
+      }
       console.log('createdPortfolio', creatingPortfolio);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const aboutsecondsection = async (id) => {
+    try {
+      await axios.delete(`${window.URL}/api/deletingservices/${id}`).then((res) => {
+        console.log(res);
+      });
+
+      window.location.reload('/');
     } catch (error) {
       console.log(error);
     }
@@ -96,134 +102,49 @@ function Adminpage() {
         <div className="admin-page">
           <Stack className="section-kws">
           <div className=''><AdminNavbar /></div>
-          
             <div className="portfolio-admin">
-          
               <Typography
                 variant="h3"
                 sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}
               >
-                Provide details for Portfolio
+                Provide details for Partner
               </Typography>
-            
 
               <form onSubmit={CreatePortfolio}>
-                <p className="form-para">Card Title</p>
+                <p className="form-para">Service Image</p>
                 <TextField
                   id="outlined-basic"
-                  label="Card Title"
+                  label="Service Image"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={portTitle}
-                  onChange={(e) => setPortTitle(e.target.value)}
+                  value={serviceimage}
+                  onChange={(e) => setserviceimages(e.target.value)}
                 />
 
-                <p className="form-para">Generate Slug</p>
+                <p className="form-para">Service Heading</p>
                 <TextField
                   id="outlined-basic"
-                  label="Slug"
+                  label="Service Heading"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={slug}
-                  onChange={(e) => setSlug(e.target.value)}
+                  value={serviceheading}
+                  onChange={(e) => setserviceheadings(e.target.value)}
                 />
 
-                <p className="form-para">Catogery</p>
+                <p className="form-para">Service Description</p>
                 <TextField
                   id="outlined-basic"
-                  label="Catogery"
+                  label="Service Description"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={portCatogery}
-                  onChange={(e) => setPortCatogery(e.target.value)}
+                  value={servicedescriptions}
+                  onChange={(e) => setservicedescriptionss(e.target.value)}
                 />
-                <p className="form-para">Card Description</p>
-                <FloatingLabel controlId="floatingTextarea2" label="Description" className="mt-4">
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Enter Description"
-                    style={{ height: '100px' }}
-                    required
-                    value={portDescription}
-                    onChange={(e) => setPortDescription(e.target.value)}
-                  />
-                </FloatingLabel>
+             
 
-                <p className="form-para">Card Website Link</p>
-                <TextField
-                  id="outlined-basic"
-                  label="Website Link"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={websiteLink}
-                  onChange={(e) => setWebsiteLink(e.target.value)}
-                />
-
-                <p className="form-para">Card Image Link </p>
-                <TextField
-                  id="outlined-basic"
-                  label="Card Image Link "
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={portImage}
-                  onChange={(e) => setPortImage(e.target.value)}
-                />
-                <p className="form-para">Card Background Image Link </p>
-                <TextField
-                  id="outlined-basic"
-                  label="Card Background Image Link "
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={portBackgroundImage}
-                  onChange={(e) => setPortBackgroundImage(e.target.value)}
-                />
-                <p className="form-para">Delivered on</p>
-                <TextField
-                  id="outlined-basic"
-                  label="delivered on"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={deliveredOn}
-                  onChange={(e) => setDeliveredOn(e.target.value)}
-                />
-                <p className="form-para">Requirements</p>
-                <TextField
-                  id="outlined-basic"
-                  label="Requirements"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={requirements}
-                  onChange={(e) => setRequirements(e.target.value)}
-                />
-                <p className="form-para">Soluton Provided</p>
-                <FloatingLabel controlId="floatingTextarea2" label="Soultion provided" className="mt-4">
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Enter Soultion"
-                    style={{ height: '100px' }}
-                    required
-                    value={solutionProvided}
-                    onChange={(e) => setSolutionProvided(e.target.value)}
-                  />
-                </FloatingLabel>
-                <p className="form-para">Team Involved</p>
-                <TextField
-                  id="outlined-basic"
-                  label="Team Involved"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={teamInvolved}
-                  onChange={(e) => setTeamInvolved(e.target.value)}
-                />
                 <p className="form-para">
                   <Button variant="contained" type="submit">
                     Create
@@ -256,17 +177,19 @@ function Adminpage() {
                           return (
                             <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                               <TableCell align="center">{portdeatils.indexOf(res) + 1}.</TableCell>
-                              <TableCell align="center">{res.portfoliotitle}</TableCell>
-                              <TableCell align="center">{res.portfoliotitle}</TableCell>
+                              <TableCell align="center"> {res.serviceimage} </TableCell>
+                              <TableCell align="center">{res.serviceheading} </TableCell>
+                              <TableCell align="center">{res.servicedescriptions} </TableCell>
+                           
                               <TableCell align="center">
-                                {' '}
-                                <Button href={`/update/${res._id}`} variant="contained">
+                                <Button href={`/services-update/${res._id}`} variant="contained">
                                   Update
                                 </Button>
                               </TableCell>
                               <TableCell align="center">
-                                {' '}
-                                <Button variant="contained">Delete</Button>
+                                <Button variant="contained" onClick={() => aboutsecondsection(res._id)}>
+                                  Delete
+                                </Button>
                               </TableCell>
                             </TableRow>
                           );

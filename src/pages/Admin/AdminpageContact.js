@@ -19,20 +19,35 @@ import AdminNavbar from './AdminNavbar';
 
 const columns = [
   { id: 'name', label: 'SNO.', minWidth: 170, align: 'center' },
-  { id: 'name', label: 'Project Catogery', minWidth: 170, align: 'center' },
+  { id: 'name', label: 'Project Name', minWidth: 170, align: 'center' },
   {
     id: 'population',
-    label: 'Project Name',
+    label: 'Smart Contract Type',
     minWidth: 170,
     align: 'center',
-    format: (value) => value.toLocaleString('en-US'),
+ 
   },
+  {
+    id: 'population',
+    label: 'Chain Network',
+    minWidth: 170,
+    align: 'center',
+ 
+  },
+  {
+    id: 'population',
+    label: 'Explore Link',
+    minWidth: 170,
+    align: 'center',
+ 
+  },
+
   {
     id: 'size',
     label: 'Update',
     minWidth: 170,
     align: 'center',
-    format: (value) => value.toLocaleString('en-US'),
+ 
   },
   {
     id: 'density',
@@ -44,22 +59,18 @@ const columns = [
 ];
 
 function Adminpage() {
+  const [projectname, setprojectnames] = useState();
+  const [smartcontracttype, setsmartcontracttypes] = useState();
+  const [chainnetwork, setchainnetworks] = useState();
+  const [explorerlink, setexplorerlinks] = useState();
   const [portdeatils, setPortdeatils] = useState([]);
-  const [portTitle, setPortTitle] = useState();
-  const [portCatogery, setPortCatogery] = useState();
-  const [slug, setSlug] = useState();
-  const [portDescription, setPortDescription] = useState();
-  const [websiteLink, setWebsiteLink] = useState();
-  const [portImage, setPortImage] = useState();
-  const [portBackgroundImage, setPortBackgroundImage] = useState();
-  const [deliveredOn, setDeliveredOn] = useState();
-  const [requirements, setRequirements] = useState();
-  const [solutionProvided, setSolutionProvided] = useState();
-  const [teamInvolved, setTeamInvolved] = useState();
+ 
 
   useEffect(() => {
-    axios.get(`${window.URL}/api/gettingportfolios`).then((res) => {
+    axios.get(`${window.URL}/api/gettingcontracts`).then((res) => {
+   
       setPortdeatils(res.data);
+      console.log("!",res.data);
     });
   }, []);
   const navigate = useNavigate();
@@ -68,27 +79,40 @@ function Adminpage() {
       e.preventDefault();
 
       const creatingPortfolio = await axios
-        .post(`${window.URL}/api/addingportfolios`, {
-          portfoliotitle: portTitle,
-          portfoliocatogery: portCatogery,
-          generateslug: slug,
-          portfoliodescription: portDescription,
-          portfoliolink: websiteLink,
-          portfolioimage: portImage,
-          portbackgroundimage: portBackgroundImage,
-          portfoliodeveleron: deliveredOn,
-          portfoliorequirements: requirements,
-          portfoliosolutionprovider: solutionProvided,
-          portfoliteaminvolved: teamInvolved,
+        .post(`${window.URL}/api/addingcontracts`, {
+          projectname: projectname,
+          smartcontracttype: smartcontracttype,
+          chainnetwork: chainnetwork,
+          explorerlink: explorerlink,
+        
         })
-        .then((creatingPortfolio) => {
+      {/*   .then((creatingPortfolio) => {
           navigate('/dapps-built-by-us');
-        });
+        }); */}
       console.log('createdPortfolio', creatingPortfolio);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const aboutsecondsection = async (id) => {
+
+    try {
+      await axios.delete(`${window.URL}/api/deletingcontracts/${id}`).then((res) => {
+        console.log(res);
+      });
+ 
+   
+      window.location.reload("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+
+
 
   return (
     <>
@@ -96,134 +120,59 @@ function Adminpage() {
         <div className="admin-page">
           <Stack className="section-kws">
           <div className=''><AdminNavbar /></div>
-          
             <div className="portfolio-admin">
-          
               <Typography
                 variant="h3"
                 sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}
               >
-                Provide details for Portfolio
+                Provide details for Contact
               </Typography>
-            
 
               <form onSubmit={CreatePortfolio}>
-                <p className="form-para">Card Title</p>
+                <p className="form-para">Project Name</p>
                 <TextField
                   id="outlined-basic"
-                  label="Card Title"
+                  label="Project Name"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={portTitle}
-                  onChange={(e) => setPortTitle(e.target.value)}
+                  value={projectname}
+                  onChange={(e) => setprojectnames(e.target.value)}
                 />
 
-                <p className="form-para">Generate Slug</p>
+                <p className="form-para">Smart Contract Type</p>
                 <TextField
                   id="outlined-basic"
-                  label="Slug"
+                  label="Smart Contract Type"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={slug}
-                  onChange={(e) => setSlug(e.target.value)}
+                  value={smartcontracttype}
+                  onChange={(e) => setsmartcontracttypes(e.target.value)}
                 />
 
-                <p className="form-para">Catogery</p>
+                <p className="form-para">Chain Network</p>
                 <TextField
                   id="outlined-basic"
-                  label="Catogery"
+                  label="Chain Network"
                   variant="outlined"
                   className="text-field-card"
                   required
-                  value={portCatogery}
-                  onChange={(e) => setPortCatogery(e.target.value)}
+                  value={chainnetwork}
+                  onChange={(e) => setchainnetworks(e.target.value)}
                 />
-                <p className="form-para">Card Description</p>
-                <FloatingLabel controlId="floatingTextarea2" label="Description" className="mt-4">
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Enter Description"
-                    style={{ height: '100px' }}
-                    required
-                    value={portDescription}
-                    onChange={(e) => setPortDescription(e.target.value)}
-                  />
-                </FloatingLabel>
-
-                <p className="form-para">Card Website Link</p>
+                <p className="form-para">Explore Link</p>
                 <TextField
-                  id="outlined-basic"
-                  label="Website Link"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={websiteLink}
-                  onChange={(e) => setWebsiteLink(e.target.value)}
-                />
-
-                <p className="form-para">Card Image Link </p>
-                <TextField
-                  id="outlined-basic"
-                  label="Card Image Link "
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={portImage}
-                  onChange={(e) => setPortImage(e.target.value)}
-                />
-                <p className="form-para">Card Background Image Link </p>
-                <TextField
-                  id="outlined-basic"
-                  label="Card Background Image Link "
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={portBackgroundImage}
-                  onChange={(e) => setPortBackgroundImage(e.target.value)}
-                />
-                <p className="form-para">Delivered on</p>
-                <TextField
-                  id="outlined-basic"
-                  label="delivered on"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={deliveredOn}
-                  onChange={(e) => setDeliveredOn(e.target.value)}
-                />
-                <p className="form-para">Requirements</p>
-                <TextField
-                  id="outlined-basic"
-                  label="Requirements"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={requirements}
-                  onChange={(e) => setRequirements(e.target.value)}
-                />
-                <p className="form-para">Soluton Provided</p>
-                <FloatingLabel controlId="floatingTextarea2" label="Soultion provided" className="mt-4">
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Enter Soultion"
-                    style={{ height: '100px' }}
-                    required
-                    value={solutionProvided}
-                    onChange={(e) => setSolutionProvided(e.target.value)}
-                  />
-                </FloatingLabel>
-                <p className="form-para">Team Involved</p>
-                <TextField
-                  id="outlined-basic"
-                  label="Team Involved"
-                  variant="outlined"
-                  className="text-field-card"
-                  required
-                  value={teamInvolved}
-                  onChange={(e) => setTeamInvolved(e.target.value)}
-                />
+                id="outlined-basic"
+                label="Explore Link"
+                variant="outlined"
+                className="text-field-card"
+                required
+                value={explorerlink}
+                onChange={(e) => setexplorerlinks(e.target.value)}
+              />
+             
+            
                 <p className="form-para">
                   <Button variant="contained" type="submit">
                     Create
@@ -256,17 +205,17 @@ function Adminpage() {
                           return (
                             <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                               <TableCell align="center">{portdeatils.indexOf(res) + 1}.</TableCell>
-                              <TableCell align="center">{res.portfoliotitle}</TableCell>
-                              <TableCell align="center">{res.portfoliotitle}</TableCell>
+                              <TableCell align="center">{res.projectname}</TableCell>
+                              <TableCell align="center"> {res.smartcontracttype} </TableCell>
+                              <TableCell align="center"> {res.chainnetwork} </TableCell>
+                              <TableCell align="center"> {res.explorerlink} </TableCell>
                               <TableCell align="center">
-                                {' '}
-                                <Button href={`/update/${res._id}`} variant="contained">
+                                <Button href={`/contact-update/${res._id}`} variant="contained">
                                   Update
                                 </Button>
                               </TableCell>
-                              <TableCell align="center">
-                                {' '}
-                                <Button variant="contained">Delete</Button>
+                              <TableCell align="center">              
+                                <Button variant="contained"  onClick={() => aboutsecondsection(res._id)}  >Delete</Button>
                               </TableCell>
                             </TableRow>
                           );

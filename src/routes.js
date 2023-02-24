@@ -19,6 +19,12 @@ import Adminpage from './pages/Admin/Adminpage';
 import PortfolioDetailpage from './pages/PortfolioDetailpage';
 import Portfolioupdate from './pages/Admin/Portfolioupdate';
 import UnderMaintainance from './pages/UnderMaintainance';
+import AdminpageContact from "./pages/Admin/AdminpageContact";
+import AdminpagePartner from "./pages/Admin/AdminpagePartner";
+import Contactupdate from "./pages/Admin/Contactupdate";
+import PartnerUpdate from "./pages/Admin/PartnerUpdate";
+import AdminpageServices from "./pages/Admin/AdminpageServices";
+import ServicesUpdate from "./pages/Admin/ServicesUpdate";
 
 // ----------------------------------------------------------------------
 
@@ -39,7 +45,14 @@ export default function Router() {
         // { path: 'safu-reports', element: <SafuReports /> },
         // { path: 'portfolio', element: <Blog /> },
         { path: 'admin-page', element: <Adminpage /> },
+      { path: 'admin-page-contact', element: <AdminpageContact /> },
+      { path: 'admin-page-partner', element: <AdminpagePartner /> },
+      { path: 'admin-page-services', element: <AdminpageServices /> },
         { path: '/update/:id', element: <Portfolioupdate /> },
+        { path: '/contact-update/:id', element: <Contactupdate /> },
+        { path: '/partner-update/:id', element: <PartnerUpdate /> },
+        { path: '/services-update/:id', element: <ServicesUpdate /> },
+
       ],
     },
     {
