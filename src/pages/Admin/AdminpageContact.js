@@ -25,21 +25,18 @@ const columns = [
     label: 'Smart Contract Type',
     minWidth: 170,
     align: 'center',
- 
   },
   {
     id: 'population',
     label: 'Chain Network',
     minWidth: 170,
     align: 'center',
- 
   },
   {
     id: 'population',
     label: 'Explore Link',
     minWidth: 170,
     align: 'center',
- 
   },
 
   {
@@ -47,7 +44,6 @@ const columns = [
     label: 'Update',
     minWidth: 170,
     align: 'center',
- 
   },
   {
     id: 'density',
@@ -63,14 +59,13 @@ function Adminpage() {
   const [smartcontracttype, setsmartcontracttypes] = useState();
   const [chainnetwork, setchainnetworks] = useState();
   const [explorerlink, setexplorerlinks] = useState();
+  const [feature, setfeatures] = useState();
   const [portdeatils, setPortdeatils] = useState([]);
- 
 
   useEffect(() => {
     axios.get(`${window.URL}/api/gettingcontracts`).then((res) => {
-   
       setPortdeatils(res.data);
-      console.log("!",res.data);
+      console.log('!', res.data);
     });
   }, []);
   const navigate = useNavigate();
@@ -78,17 +73,19 @@ function Adminpage() {
     try {
       e.preventDefault();
 
-      const creatingPortfolio = await axios
-        .post(`${window.URL}/api/addingcontracts`, {
-          projectname: projectname,
-          smartcontracttype: smartcontracttype,
-          chainnetwork: chainnetwork,
-          explorerlink: explorerlink,
-        
-        })
-      {/*   .then((creatingPortfolio) => {
+      const creatingPortfolio = await axios.post(`${window.URL}/api/addingcontracts`, {
+        feature: feature,
+        projectname: projectname,
+        smartcontracttype: smartcontracttype,
+        chainnetwork: chainnetwork,
+        explorerlink: explorerlink,
+
+      });
+      {
+        /*   .then((creatingPortfolio) => {
           navigate('/dapps-built-by-us');
-        }); */}
+        }); */
+      }
       console.log('createdPortfolio', creatingPortfolio);
     } catch (error) {
       console.log(error);
@@ -96,31 +93,26 @@ function Adminpage() {
   };
 
   const aboutsecondsection = async (id) => {
-
     try {
       await axios.delete(`${window.URL}/api/deletingcontracts/${id}`).then((res) => {
         console.log(res);
       });
- 
-   
-      window.location.reload("/");
+
+      window.location.reload('/');
     } catch (error) {
       console.log(error);
     }
   };
-
-
-
-
-
 
   return (
     <>
       <Grid className="container-portfolio">
         <div className="admin-page">
           <Stack className="section-kws">
-          <div className=''><AdminNavbar /></div>
-            <div className="portfolio-admin">
+            <div className="">
+              <AdminNavbar />
+            </div>
+             <div className="portfolio-admin">
               <Typography
                 variant="h3"
                 sx={{ marginBottom: '15px', fontFamily: 'Poppins, sans-serif', textAlign: 'center' }}
@@ -138,6 +130,17 @@ function Adminpage() {
                   required
                   value={projectname}
                   onChange={(e) => setprojectnames(e.target.value)}
+                />
+
+                <p className="form-para">Feature</p>
+                <TextField
+                  id="outlined-basic"
+                  label="Feature"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={feature}
+                  onChange={(e) => setfeatures(e.target.value)}
                 />
 
                 <p className="form-para">Smart Contract Type</p>
@@ -163,16 +166,15 @@ function Adminpage() {
                 />
                 <p className="form-para">Explore Link</p>
                 <TextField
-                id="outlined-basic"
-                label="Explore Link"
-                variant="outlined"
-                className="text-field-card"
-                required
-                value={explorerlink}
-                onChange={(e) => setexplorerlinks(e.target.value)}
-              />
-             
-            
+                  id="outlined-basic"
+                  label="Explore Link"
+                  variant="outlined"
+                  className="text-field-card"
+                  required
+                  value={explorerlink}
+                  onChange={(e) => setexplorerlinks(e.target.value)}
+                />
+
                 <p className="form-para">
                   <Button variant="contained" type="submit">
                     Create
@@ -214,8 +216,10 @@ function Adminpage() {
                                   Update
                                 </Button>
                               </TableCell>
-                              <TableCell align="center">              
-                                <Button variant="contained"  onClick={() => aboutsecondsection(res._id)}  >Delete</Button>
+                              <TableCell align="center">
+                                <Button variant="contained" onClick={() => aboutsecondsection(res._id)}>
+                                  Delete
+                                </Button>
                               </TableCell>
                             </TableRow>
                           );
@@ -224,7 +228,7 @@ function Adminpage() {
                   </Table>
                 </TableContainer>
               </Paper>
-            </div>
+            </div> 
           </Stack>
 
           {/* ---------------------------contract-------------------------- */}

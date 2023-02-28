@@ -181,7 +181,7 @@ export default function DenseTable() {
         {/* ....................FOR DEKSTOP VIEW...................... */}
 
         <div className="row mt-5 desktop">
-          <div className="col-xl-1 col-lg-3 col-md-6 col-sm-12">
+     {/*      <div className="col-xl col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">SNO.</h3>
 
@@ -196,24 +196,40 @@ export default function DenseTable() {
                   );
                 })}
             </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-            <div className="contractheading">
-              <h3 className="projectname">Project Name</h3>
+          </div> */}
+          <div className="col-xl col-lg-3 col-md-6 col-sm-12">
+          <div className="contractheading">
+            <h3 className="projectname">Project Name</h3>
 
-              {contracts &&
+            {contracts &&
+              contracts.map((res, index) => {
+                return (
+                  <>
+                    <p className="text-left name" key={index}>
+                      {res.projectname}
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+        </div>
+          <div className="col-xl col-lg-3 col-md-6 col-sm-12">
+            <div className="contractheading">
+              <h3 className="projectname">Feature</h3>
+
+           {/*    {contracts &&
                 contracts.map((res, index) => {
                   return (
-                    <>
-                      <p className="text-left name" key={index}>
-                        {res.projectname}
+                    <> */}
+                      <p className="text-left name" >
+                      Feature
                       </p>
-                    </>
+                {/*     </>
                   );
-                })}
+                })} */}
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div className="col-xl col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Smart Contract Type</h3>
               {contracts &&
@@ -228,7 +244,7 @@ export default function DenseTable() {
                 })}
             </div>
           </div>
-          <div className="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+          <div className="col-xl col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Chain</h3>
               {contracts &&
@@ -243,7 +259,7 @@ export default function DenseTable() {
                 })}
             </div>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div className="col-xl col-lg-3 col-md-6 col-sm-12">
             <div className="contractheading">
               <h3 className="projectname">Explorer Link</h3>
               {contracts &&

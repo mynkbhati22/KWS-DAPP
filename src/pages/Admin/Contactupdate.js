@@ -11,6 +11,7 @@ export default function Portfolioupdate() {
   const [smartcontracttype, setsmartcontracttypes] = useState();
   const [chainnetwork, setchainnetworks] = useState();
   const [explorerlink, setexplorerlinks] = useState();
+  const [feature, setfeatures] = useState();
   const { id } = useParams();
   console.log('portfolioid', id);
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ export default function Portfolioupdate() {
         smartcontracttype: smartcontracttype,
         chainnetwork: chainnetwork,
         explorerlink: explorerlink,
+        feature:feature,
       })
       .then((res) => {
         console.log('updated', res);
@@ -58,6 +60,16 @@ export default function Portfolioupdate() {
               value={projectname}
               onChange={(e) => setprojectnames(e.target.value)}
             />
+            <p className="form-para">Feature</p>
+            <TextField
+            id="outlined-basic"
+            label="Feature"
+            variant="outlined"
+            className="text-field-card"
+            required
+            value={feature}
+            onChange={(e) => setfeatures(e.target.value)}
+          />
               <p className="form-para">Smart Contract Type</p>
               <TextField
                 id="outlined-basic"
