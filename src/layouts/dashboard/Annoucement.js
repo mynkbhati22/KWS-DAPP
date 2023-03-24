@@ -63,7 +63,7 @@ export default function Annoucement() {
             {annoucement && annoucement.length === 0 ? (
               <>
                 <div>
-                  <p className="text-center">undermaintenance....</p>
+                  <p className="text-center">Loading....</p>
                 </div>
               </>
             ) : (

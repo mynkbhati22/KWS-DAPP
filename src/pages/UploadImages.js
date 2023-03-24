@@ -86,7 +86,7 @@ export default function UploadImages() {
                                 <span className="title-text-value">DEFI APP</span>
                               </div>
                             </Grid>
-                            <Grid item xs={6}>
+                            {/* <Grid item xs={6}>
                               <div className="portfolio-title">
                                 <Button
                                   href={`/portfolio-detail/${res.generateslug}/${res._id}`}
@@ -95,7 +95,7 @@ export default function UploadImages() {
                                   VIEW
                                 </Button>
                               </div>
-                            </Grid>
+                            </Grid> */}
                           </Grid>
                         </div>
                       </div>
