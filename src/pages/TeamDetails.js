@@ -75,7 +75,7 @@ export default function TeamDetails() {
           </div>
         </div>
 
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    {/*     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <div className='position-relative mt-5'>
         <div className='box-team'>
           <div class="card card2 ">
@@ -96,7 +96,7 @@ export default function TeamDetails() {
           </div>
           </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <div className='position-relative mt-5'>
